@@ -311,6 +311,7 @@ namespace UsersManagement
         /// </summary>
         public ObjectSet<vw_aspnet_Applications> vw_aspnet_Applications
         {
+            
             get
             {
                 if ((_vw_aspnet_Applications == null))
