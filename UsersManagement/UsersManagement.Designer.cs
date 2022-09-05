@@ -18,6 +18,7 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
+
 [assembly: EdmRelationshipAttribute("UsersManagement", "FK__aspnet_Me__Appli__395884C4", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(UsersManagement.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(UsersManagement.aspnet_Membership), true)]
 [assembly: EdmRelationshipAttribute("UsersManagement", "FK__aspnet_Me__Appli__3A4CA8FD", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(UsersManagement.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(UsersManagement.aspnet_Membership), true)]
 [assembly: EdmRelationshipAttribute("UsersManagement", "FK__aspnet_Me__Appli__3B40CD36", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(UsersManagement.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(UsersManagement.aspnet_Membership), true)]
