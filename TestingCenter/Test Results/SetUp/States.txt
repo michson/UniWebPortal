@@ -1,0 +1,52 @@
+﻿
++++++++++++++++Tested By		:	Godwin Mathias+++++++++++++++
++++++++++++++++Reviewer			:	Godwin Mathias++++++++++++++++++++++	
++++++++++++++++Tested On		:	07/22/2011+++++++++++++++++++ 
++++++++++++++++Test Remark		:	All the Methods were successfully executed+++++++++++++++++++
+
+
+
+Assembly Name: SetUp
+Class Name: StatesBLL
+Name Space: SetUp.BLL
+Assemblies referenced: SetUp.DAL
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Insert Method-------------------
+
+State item = new State
+{
+    Code = "AD",
+    Name = "Adamawa",
+    CountriesCode = "NGN"
+};
+MessageBox.Show(StatesBLL.Insert(item));
+Execution Status: Successful
+--------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Update Method-------------------
+
+State item = new State
+{
+    Code="AD",
+    Name="Adamawa State",
+    CountriesCode="NGN"
+};
+MessageBox.Show(StatesBLL.Update(item));
+Execution Status: Successful
+------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Delete Method---------------------
+
+MessageBox.Show(StatesBLL.DeletePermanently("AD", "NGN"));
+Execution Status: Successful
+----------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Select Methods---------------------
+
+ctrlGrid.DataSource = StatesBLL.Retrieve(String.Empty,"ngn");
+//ctrlGrid.DataSource = StatesBLL.Retrieve("CR", "NGN");
+Execution Status: Successful
+

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AAD3875B-6C93-48E4-B10F-3C3A6FF92B0F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SetUp</RootNamespace>
+    <AssemblyName>SetUp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ApprovalsBLL.cs" />
+    <Compile Include="BLL\AreasOfSpecializationsBLL.cs" />
+    <Compile Include="BLL\CourseNumberingsBLL.cs" />
+    <Compile Include="BLL\CourseRegulationsBLL.cs" />
+    <Compile Include="BLL\CoursesBLL.cs" />
+    <Compile Include="BLL\CountriesBLL.cs" />
+    <Compile Include="BLL\DepartmentsBLL.cs" />
+    <Compile Include="BLL\DescriptionsBLL.cs" />
+    <Compile Include="BLL\DesignationsBLL.cs" />
+    <Compile Include="BLL\DurationsBLL.cs" />
+    <Compile Include="BLL\EntryRequirementsBLL.cs" />
+    <Compile Include="BLL\FacultiesBLL.cs" />
+    <Compile Include="BLL\GradingSystemsBLL.cs" />
+    <Compile Include="BLL\LGAsBLL.cs" />
+    <Compile Include="BLL\LockingsBLL.cs" />
+    <Compile Include="BLL\ModulesBLL.cs" />
+    <Compile Include="BLL\ParametersBLL.cs" />
+    <Compile Include="BLL\PermissionsBLL.cs" />
+    <Compile Include="BLL\ProgramRequirementsBLL.cs" />
+    <Compile Include="BLL\ProgramsBLL.cs" />
+    <Compile Include="BLL\SchedulesBLL.cs" />
+    <Compile Include="BLL\ScreensBLL.cs" />
+    <Compile Include="BLL\StaffsBLL.cs" />
+    <Compile Include="BLL\StatesBLL.cs" />
+    <Compile Include="BLL\SubCoursesBLL.cs" />
+    <Compile Include="BLL\SubjectRequirementDetailsBLL.cs" />
+    <Compile Include="BLL\SubjectRequirementsBLL.cs" />
+    <Compile Include="BLL\UniversitiesBLL.cs" />
+    <Compile Include="DAL\ApprovalsDAL.cs" />
+    <Compile Include="DAL\AreasOfSpecializationsDAL.cs" />
+    <Compile Include="DAL\CountriesDAL.cs" />
+    <Compile Include="DAL\CourseNumberingsDAL.cs" />
+    <Compile Include="DAL\CourseRegulationsDAL.cs" />
+    <Compile Include="DAL\CoursesDAL.cs" />
+    <Compile Include="DAL\DepartmentsDAL.cs" />
+    <Compile Include="DAL\DescriptionsDAL.cs" />
+    <Compile Include="DAL\DesignationsDAL.cs" />
+    <Compile Include="DAL\DurationsDAL.cs" />
+    <Compile Include="DAL\EntryRequirementsDAL.cs" />
+    <Compile Include="DAL\FacultiesDAL.cs" />
+    <Compile Include="DAL\GradingSystemsDAL.cs" />
+    <Compile Include="DAL\LGAsDAL.cs" />
+    <Compile Include="DAL\LockingsDAL.cs" />
+    <Compile Include="DAL\ModulesDAL.cs" />
+    <Compile Include="DAL\ParametersDAL.cs" />
+    <Compile Include="DAL\PermissionsDAL.cs" />
+    <Compile Include="DAL\ProgramRequirementsDAL.cs" />
+    <Compile Include="DAL\ProgramsDAL.cs" />
+    <Compile Include="DAL\SchedulesDAL.cs" />
+    <Compile Include="DAL\ScreensDAL.cs" />
+    <Compile Include="DAL\StaffsDAL.cs" />
+    <Compile Include="DAL\StatesDAL.cs" />
+    <Compile Include="DAL\SubCoursesDAL.cs" />
+    <Compile Include="DAL\SubjectRequirementDetailsDAL.cs" />
+    <Compile Include="DAL\SubjectRequirementsDAL.cs" />
+    <Compile Include="DAL\UniversitiesDAL.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetUp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SetUp.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="SetUp.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SetUp.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\SetUpEntities.datasource" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,18 @@
+c:\users\administrator\documents\visual studio 2010\Projects\University\Assessment\bin\Debug\Assessment.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\Assessment\bin\Debug\Assessment.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\University\Assessment\obj\Debug\ResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2010\Projects\University\Assessment\obj\Debug\Assessment.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\Assessment\obj\Debug\Assessment.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\Assessment\bin\Debug\Assessment.dll.config
+E:\UniversityPortal\Assessment\bin\Debug\Assessment.dll.config
+E:\UniversityPortal\Assessment\bin\Debug\Assessment.dll
+E:\UniversityPortal\Assessment\bin\Debug\Assessment.pdb
+E:\UniversityPortal\Assessment\obj\Debug\ResolveAssemblyReference.cache
+E:\UniversityPortal\Assessment\obj\Debug\Assessment.dll
+E:\UniversityPortal\Assessment\obj\Debug\Assessment.pdb
+H:\NatGualang\UniversityPortal\Assessment\bin\Debug\Assessment.dll.config
+H:\NatGualang\UniversityPortal\Assessment\bin\Debug\Assessment.dll
+H:\NatGualang\UniversityPortal\Assessment\bin\Debug\Assessment.pdb
+H:\NatGualang\UniversityPortal\Assessment\obj\Debug\ResolveAssemblyReference.cache
+H:\NatGualang\UniversityPortal\Assessment\obj\Debug\Assessment.dll
+H:\NatGualang\UniversityPortal\Assessment\obj\Debug\Assessment.pdb

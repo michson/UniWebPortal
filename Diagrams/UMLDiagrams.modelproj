@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03f2ce4f-9fc5-4157-b9dd-bc2e0fc86fb7}</ProjectGuid>
+    <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
+    <Name>UMLDiagrams</Name>
+    <RootNamespace>Diagrams</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
+  <ItemGroup>
+    <Content Include="UniversityPortal.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UniversityPortal.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UniversityPortal.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="UniversityPortal.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UniversityPortal.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UniversityPortal.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UniversityPortal.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UniversityPortal.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UniversityPortal.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="UniversityPortal.dgml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UniversityPortal.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UniversityPortal.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UniversityPortal.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UniversityPortal.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UniversityPortal.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UniversityPortal.usecasediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\Diagrams.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="UniversityPortal.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="UniversityPortal.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UniversityPortal.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="UniversityPortal.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>UniversityPortal.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

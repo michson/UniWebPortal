@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Finance" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="FinanceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Finance.Account" />
+    <EntitySet Name="AccountSubs" EntityType="Finance.AccountSub" />
+    <EntitySet Name="AccountTypes" EntityType="Finance.AccountType" />
+    <EntitySet Name="FeeAllotments" EntityType="Finance.FeeAllotment" />
+    <EntitySet Name="FeeDefinitions" EntityType="Finance.FeeDefinition" />
+    <EntitySet Name="Fees" EntityType="Finance.Fee" />
+    <EntitySet Name="FeesDetails" EntityType="Finance.FeesDetail" />
+    <EntitySet Name="PaymentPlanDetails" EntityType="Finance.PaymentPlanDetail" />
+    <EntitySet Name="PaymentPlans" EntityType="Finance.PaymentPlan" />
+    <EntitySet Name="Refunds" EntityType="Finance.Refund" />
+    <EntitySet Name="Transactions" EntityType="Finance.Transaction" />
+    <EntitySet Name="TransactionsDetails" EntityType="Finance.TransactionsDetail" />
+    <EntitySet Name="Vouchers" EntityType="Finance.Voucher" />
+    <AssociationSet Name="FK_FeesDetail_Fees" Association="Finance.FK_FeesDetail_Fees">
+      <End Role="Fees" EntitySet="Fees" />
+      <End Role="FeesDetail" EntitySet="FeesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentPlanDetails_PaymentPlans" Association="Finance.FK_PaymentPlanDetails_PaymentPlans">
+      <End Role="PaymentPlans" EntitySet="PaymentPlans" />
+      <End Role="PaymentPlanDetails" EntitySet="PaymentPlanDetails" />
+    </AssociationSet>
+    <FunctionImport Name="SPAccountsDeletePermanently" EntitySet="Accounts" ReturnType="Collection(Finance.Account)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SPAccountsInsertUpdate" EntitySet="Accounts" ReturnType="Collection(Finance.Account)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="AccountTypeCode" Mode="In" Type="Decimal" />
+      <Parameter Name="AccountSubCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPAccountsSelect" EntitySet="Accounts" ReturnType="Collection(Finance.Account)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAccountSubDeletePermanently" EntitySet="AccountSubs" ReturnType="Collection(Finance.AccountSub)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPAccountSubInsertUpdate" EntitySet="AccountSubs" ReturnType="Collection(Finance.AccountSub)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="DescriptionCode" Mode="In" Type="String" />
+      <Parameter Name="ParameterCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAccountSubSelect" EntitySet="AccountSubs" ReturnType="Collection(Finance.AccountSub)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAccountTypesDeletePermanently" EntitySet="AccountTypes" ReturnType="Collection(Finance.AccountType)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SPAccountTypesInsertUpdate" EntitySet="AccountTypes" ReturnType="Collection(Finance.AccountType)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="DescriptionCode" Mode="In" Type="String" />
+      <Parameter Name="AccountSubCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAccountTypesSelect" EntitySet="AccountTypes" ReturnType="Collection(Finance.AccountType)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeeAllotmentDelete" EntitySet="FeeAllotments" ReturnType="Collection(Finance.FeeAllotment)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeeAllotmentDeletePermanently" EntitySet="FeeAllotments" ReturnType="Collection(Finance.FeeAllotment)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeeAllotmentInsertUpdate" EntitySet="FeeAllotments" ReturnType="Collection(Finance.FeeAllotment)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+      <Parameter Name="EntryMode" Mode="In" Type="String" />
+      <Parameter Name="StudyMode" Mode="In" Type="String" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="FeeDefinitionCode" Mode="In" Type="String" />
+      <Parameter Name="Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="DiscountPercentage" Mode="In" Type="Int32" />
+      <Parameter Name="Approved" Mode="In" Type="Boolean" />
+      <Parameter Name="ApproveBy" Mode="In" Type="String" />
+      <Parameter Name="ApproveOn" Mode="In" Type="DateTime" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeeAllotmentSelect" EntitySet="FeeAllotments" ReturnType="Collection(Finance.FeeAllotment)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeeDefinitionDeletePermanently" EntitySet="FeeDefinitions" ReturnType="Collection(Finance.FeeDefinition)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeeDefinitionInsertUpdate" EntitySet="FeeDefinitions" ReturnType="Collection(Finance.FeeDefinition)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="FeeStatusCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeeDefinitionSelect" EntitySet="FeeDefinitions" ReturnType="Collection(Finance.FeeDefinition)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeesDelete" EntitySet="Fees" ReturnType="Collection(Finance.Fee)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeesDeletePermanently" EntitySet="Fees" ReturnType="Collection(Finance.Fee)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeesDetailDeletePermanently" EntitySet="FeesDetails" ReturnType="Collection(Finance.FeesDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeesDetailInsertUpdate" EntitySet="FeesDetails" ReturnType="Collection(Finance.FeesDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="MatricNo" Mode="In" Type="String" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+      <Parameter Name="FeesCode" Mode="In" Type="Int64" />
+      <Parameter Name="FeeDefinitionCode" Mode="In" Type="String" />
+      <Parameter Name="FeeAllotmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="ExtraDiscount" Mode="In" Type="Int32" />
+      <Parameter Name="FinalAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeesDetailSelect" EntitySet="FeesDetails" ReturnType="Collection(Finance.FeesDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeesInsertUpdate" EntitySet="Fees" ReturnType="Collection(Finance.Fee)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="MatricNo" Mode="In" Type="String" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="AccountTitle" Mode="In" Type="String" />
+      <Parameter Name="AccountNo" Mode="In" Type="String" />
+      <Parameter Name="BankCode" Mode="In" Type="String" />
+      <Parameter Name="BankBranch" Mode="In" Type="String" />
+      <Parameter Name="PaymentMode" Mode="In" Type="String" />
+      <Parameter Name="DateX" Mode="In" Type="DateTime" />
+      <Parameter Name="Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="Balance" Mode="In" Type="Decimal" />
+      <Parameter Name="PaymentStatus" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeesSelect" EntitySet="Fees" ReturnType="Collection(Finance.Fee)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPPaymentPlanDetailsDelete" EntitySet="PaymentPlanDetails" ReturnType="Collection(Finance.PaymentPlanDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPaymentPlanDetailsDeletePermanently" EntitySet="PaymentPlanDetails" ReturnType="Collection(Finance.PaymentPlanDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPPaymentPlanDetailsInsertUpdate" EntitySet="PaymentPlanDetails" ReturnType="Collection(Finance.PaymentPlanDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="PaymentPlanCode" Mode="In" Type="Int64" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="DiscountedAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="DiscountedPercentage" Mode="In" Type="Int32" />
+      <Parameter Name="Total" Mode="In" Type="Decimal" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPaymentPlanDetailsSelect" EntitySet="PaymentPlanDetails" ReturnType="Collection(Finance.PaymentPlanDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="PaymentPlanCode" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPPaymentPlansDelete" EntitySet="PaymentPlans" ReturnType="Collection(Finance.PaymentPlan)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPaymentPlansDeletePermanently" EntitySet="PaymentPlans" ReturnType="Collection(Finance.PaymentPlan)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPPaymentPlansInsertUpdate" EntitySet="PaymentPlans" ReturnType="Collection(Finance.PaymentPlan)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="NoOfPaymentAllowed" Mode="In" Type="Int32" />
+      <Parameter Name="DateX" Mode="In" Type="DateTime" />
+      <Parameter Name="StatusCode" Mode="In" Type="String" />
+      <Parameter Name="Applicable" Mode="In" Type="Boolean" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPaymentPlansSelect" EntitySet="PaymentPlans" ReturnType="Collection(Finance.PaymentPlan)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPRefundsDelete" EntitySet="Refunds" ReturnType="Collection(Finance.Refund)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPRefundsDeletePermanently" EntitySet="Refunds" ReturnType="Collection(Finance.Refund)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPRefundsInsertUpdate" EntitySet="Refunds" ReturnType="Collection(Finance.Refund)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="MatricNo" Mode="In" Type="String" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+      <Parameter Name="FeesCode" Mode="In" Type="Decimal" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="Refunded" Mode="In" Type="Boolean" />
+      <Parameter Name="RefundedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="RefundedBy" Mode="In" Type="String" />
+      <Parameter Name="Approved" Mode="In" Type="Boolean" />
+      <Parameter Name="ApproveBy" Mode="In" Type="String" />
+      <Parameter Name="ApproveOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPRefundsSelect" EntitySet="Refunds" ReturnType="Collection(Finance.Refund)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPTransactionsDelete" EntitySet="Transactions" ReturnType="Collection(Finance.Transaction)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPTransactionsDeletePermanently" EntitySet="Transactions" ReturnType="Collection(Finance.Transaction)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPTransactionsDetailDeletePermanently" EntitySet="TransactionsDetails" ReturnType="Collection(Finance.TransactionsDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPTransactionsDetailInsertUpdate" EntitySet="TransactionsDetails" ReturnType="Collection(Finance.TransactionsDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="InvoiceCode" Mode="In" Type="Decimal" />
+      <Parameter Name="ItemDescription" Mode="In" Type="String" />
+      <Parameter Name="Quantity" Mode="In" Type="Int32" />
+      <Parameter Name="Unit" Mode="In" Type="String" />
+      <Parameter Name="UnitCost" Mode="In" Type="Decimal" />
+      <Parameter Name="DiscountPercentage" Mode="In" Type="Decimal" />
+      <Parameter Name="DiscountAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="TaxType" Mode="In" Type="String" />
+      <Parameter Name="TaxValue" Mode="In" Type="Decimal" />
+      <Parameter Name="TotalCost" Mode="In" Type="Decimal" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPTransactionsDetailSelect" EntitySet="TransactionsDetails" ReturnType="Collection(Finance.TransactionsDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPTransactionsInsertUpdate" EntitySet="Transactions" ReturnType="Collection(Finance.Transaction)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="TransactionActivityCode" Mode="In" Type="String" />
+      <Parameter Name="InvoiceTypeCode" Mode="In" Type="String" />
+      <Parameter Name="LpoNo" Mode="In" Type="Decimal" />
+      <Parameter Name="PoNo" Mode="In" Type="Decimal" />
+      <Parameter Name="CategoryCode" Mode="In" Type="String" />
+      <Parameter Name="Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="AmountPaid" Mode="In" Type="Decimal" />
+      <Parameter Name="Balance" Mode="In" Type="Decimal" />
+      <Parameter Name="Total" Mode="In" Type="Decimal" />
+      <Parameter Name="CompanyCode" Mode="In" Type="String" />
+      <Parameter Name="PaymentStatus" Mode="In" Type="String" />
+      <Parameter Name="DateX" Mode="In" Type="DateTime" />
+      <Parameter Name="AmountInWords" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPTransactionsSelect" EntitySet="Transactions" ReturnType="Collection(Finance.Transaction)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPVouchersDelete" EntitySet="Vouchers" ReturnType="Collection(Finance.Voucher)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPVouchersDeletePermanently" EntitySet="Vouchers" ReturnType="Collection(Finance.Voucher)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPVouchersInsertUpdate" EntitySet="Vouchers" ReturnType="Collection(Finance.Voucher)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="AccountGroupCode" Mode="In" Type="String" />
+      <Parameter Name="AccountSubCode" Mode="In" Type="Int32" />
+      <Parameter Name="AccountTypeCode" Mode="In" Type="Decimal" />
+      <Parameter Name="AccountCode" Mode="In" Type="Decimal" />
+      <Parameter Name="VoucherTypeCode" Mode="In" Type="String" />
+      <Parameter Name="TransactionTypeCode" Mode="In" Type="String" />
+      <Parameter Name="EntityTypeCode" Mode="In" Type="String" />
+      <Parameter Name="ParticularsCode" Mode="In" Type="String" />
+      <Parameter Name="DateX" Mode="In" Type="DateTime" />
+      <Parameter Name="DebitAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="CreditAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="Narration" Mode="In" Type="String" />
+      <Parameter Name="Approved" Mode="In" Type="Boolean" />
+      <Parameter Name="ApproveBy" Mode="In" Type="String" />
+      <Parameter Name="ApproveOn" Mode="In" Type="DateTime" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPVouchersSelect" EntitySet="Vouchers" ReturnType="Collection(Finance.Voucher)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPFeesDetailDelete" EntitySet="FeesDetails" ReturnType="Collection(Finance.FeesDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPTransactionsDetailDelete" EntitySet="TransactionsDetails" ReturnType="Collection(Finance.TransactionsDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="AccountTypeCode" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AccountSubCode" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AccountSub">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescriptionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ParameterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="AccountType">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="AccountSubCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DescriptionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="FeeAllotment">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="FeeDefinitionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EntryMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StudyMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountPercentage" Type="Int32" />
+    <Property Name="DiscountedAmount" Type="Decimal" Precision="30" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="ApproveBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ApproveOn" Type="DateTime" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="FeeDefinition">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="FeeStatusCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Fee">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="MatricNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountTitle" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="AccountNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BankCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BankBranch" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PaymentMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DateX" Type="DateTime" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="FeesDetails" Relationship="Finance.FK_FeesDetail_Fees" FromRole="Fees" ToRole="FeesDetail" />
+  </EntityType>
+  <EntityType Name="FeesDetail">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MatricNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="FeesCode" Type="Int64" />
+    <Property Name="FeeDefinitionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FeeAllotmentCode" Type="Int64" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ExtraDiscount" Type="Int32" />
+    <Property Name="FinalAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Fee" Relationship="Finance.FK_FeesDetail_Fees" FromRole="FeesDetail" ToRole="Fees" />
+    <Property Type="Boolean" Name="Deleted" />
+    <Property Type="DateTime" Name="DeletedOn" />
+    <Property Type="String" Name="DeletedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PaymentPlanDetail">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="PaymentPlanCode" Type="Int64" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountedAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountedPercentage" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PaymentPlan" Relationship="Finance.FK_PaymentPlanDetails_PaymentPlans" FromRole="PaymentPlanDetails" ToRole="PaymentPlans" />
+  </EntityType>
+  <EntityType Name="PaymentPlan">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NoOfPaymentAllowed" Type="Int32" />
+    <Property Name="DateX" Type="DateTime" />
+    <Property Name="StatusCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Applicable" Type="Boolean" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PaymentPlanDetails" Relationship="Finance.FK_PaymentPlanDetails_PaymentPlans" FromRole="PaymentPlans" ToRole="PaymentPlanDetails" />
+  </EntityType>
+  <EntityType Name="Refund">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MatricNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="FeesCode" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Refunded" Type="Boolean" />
+    <Property Name="RefundedOn" Type="DateTime" />
+    <Property Name="RefundedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="ApproveBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ApproveOn" Type="DateTime" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TransactionActivityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="InvoiceTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LpoNo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PoNo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CategoryCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AmountPaid" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Balance" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CompanyCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PaymentStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DateX" Type="DateTime" />
+    <Property Name="AmountInWords" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TransactionsDetail">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="InvoiceCode" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ItemDescription" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Unit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UnitCost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountPercentage" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TaxType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TaxValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Boolean" Name="Deleted" />
+    <Property Type="DateTime" Name="DeletedOn" />
+    <Property Type="String" Name="DeletedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Voucher">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountGroupCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountSubCode" Type="Int32" />
+    <Property Name="AccountTypeCode" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AccountCode" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="VoucherTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TransactionTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EntityTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ParticularsCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DateX" Type="DateTime" />
+    <Property Name="DebitAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreditAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Narration" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="ApproveBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ApproveOn" Type="DateTime" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_FeesDetail_Fees">
+    <End Role="Fees" Type="Finance.Fee" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FeesDetail" Type="Finance.FeesDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fees">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="FeesDetail">
+        <PropertyRef Name="FeesCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentPlanDetails_PaymentPlans">
+    <End Role="PaymentPlans" Type="Finance.PaymentPlan" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PaymentPlanDetails" Type="Finance.PaymentPlanDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentPlans">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="PaymentPlanDetails">
+        <PropertyRef Name="PaymentPlanCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

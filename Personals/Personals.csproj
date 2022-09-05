@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA7CA5AA-EA1C-4F42-8C12-EE55B2ABBEF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Personals</RootNamespace>
+    <AssemblyName>Personals</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AddressesBLL.cs" />
+    <Compile Include="BLL\AreasOfExpertisesBLL.cs" />
+    <Compile Include="BLL\BioDatasBLL.cs" />
+    <Compile Include="BLL\CertificatesBLL.cs" />
+    <Compile Include="BLL\ChoicesBLL.cs" />
+    <Compile Include="BLL\CompaniesBLL.cs" />
+    <Compile Include="BLL\ComputerSkillsBLL.cs" />
+    <Compile Include="BLL\DeclarationsBLL.cs" />
+    <Compile Include="BLL\EmailsBLL.cs" />
+    <Compile Include="BLL\EmergenciesBLL.cs" />
+    <Compile Include="BLL\EmploymentHistoriesBLL.cs" />
+    <Compile Include="BLL\GuarantorsBLL.cs" />
+    <Compile Include="BLL\GuardiansBLL.cs" />
+    <Compile Include="BLL\HobbiesBLL.cs" />
+    <Compile Include="BLL\JAMBsBLL.cs" />
+    <Compile Include="BLL\LanguageSkillsBLL.cs" />
+    <Compile Include="BLL\MedicalConditionsBLL.cs" />
+    <Compile Include="BLL\NextOfKinsBLL.cs" />
+    <Compile Include="BLL\OLevelsBLL.cs" />
+    <Compile Include="BLL\OthersBLL.cs" />
+    <Compile Include="BLL\PhonesBLL.cs" />
+    <Compile Include="BLL\PhotosBLL.cs" />
+    <Compile Include="BLL\QualificationsBLL.cs" />
+    <Compile Include="BLL\RefereesBLL.cs" />
+    <Compile Include="BLL\ReligionsBLL.cs" />
+    <Compile Include="BLL\SponsorsBLL.cs" />
+    <Compile Include="BLL\SportsBLL.cs" />
+    <Compile Include="DAL\AddressesDAL.cs" />
+    <Compile Include="DAL\AreasOfExpertisesDAL.cs" />
+    <Compile Include="DAL\BioDatasDAL.cs" />
+    <Compile Include="DAL\CertificatesDAL.cs" />
+    <Compile Include="DAL\ChoicesDAL.cs" />
+    <Compile Include="DAL\CompaniesDAL.cs" />
+    <Compile Include="DAL\ComputerSkillsDAL.cs" />
+    <Compile Include="DAL\DeclarationsDALcs.cs" />
+    <Compile Include="DAL\EmailsDAL.cs" />
+    <Compile Include="DAL\EmergenciesDAL.cs" />
+    <Compile Include="DAL\EmploymentHistoriesDAL.cs" />
+    <Compile Include="DAL\GuarantorsDAL.cs" />
+    <Compile Include="DAL\GuardiansDAL.cs" />
+    <Compile Include="DAL\HobbiesDAL.cs" />
+    <Compile Include="DAL\JAMBsDAL.cs" />
+    <Compile Include="DAL\LanguageSkillsDAL.cs" />
+    <Compile Include="DAL\MedicalConditionsDAL.cs" />
+    <Compile Include="DAL\NextOfKinsDAL.cs" />
+    <Compile Include="DAL\OLevelsDAL.cs" />
+    <Compile Include="DAL\OthersDAL.cs" />
+    <Compile Include="DAL\PhonesDAL.cs" />
+    <Compile Include="DAL\PhotosDAL.cs" />
+    <Compile Include="DAL\QualificationsDAL.cs" />
+    <Compile Include="DAL\RefereesDAL.cs" />
+    <Compile Include="DAL\ReligionsDAL.cs" />
+    <Compile Include="DAL\SponsorsDAL.cs" />
+    <Compile Include="DAL\SportsDAL.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="Personals.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Personals.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Site.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Personals.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Personals.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

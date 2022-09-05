@@ -1,0 +1,78 @@
+﻿
++++++++++++++++Tested By		:	Godwin Mathias+++++++++++++++
++++++++++++++++Reviewer			:	Godwin Mathias++++++++++++++++++++++	
++++++++++++++++Tested On		:	07/22/2011+++++++++++++++++++ 
++++++++++++++++Test Remark		:	All the Methods were successfully executed+++++++++++++++++++
+
+
+
+Assembly Name: SetUp
+Class Name: StatesBLL
+Name Space: SetUp.BLL
+Assemblies referenced: SetUp.DAL
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Insert Method-------------------
+
+University item = new University
+{
+    Code = "LC",
+    Description = "Leaders College",
+    UniversityTypeCode = "UTC-24",
+    CountryCode = "NGN",
+    StateCode = "LG",
+    LgaCode = "APP",
+    Motto = "Better By Far",
+    Url = "www.leaderscollege.edu.ng",
+    EstablishedYear = 2012,
+    Deleted=false,
+    CreatedOn=DateTime.Now,
+    CreatedBy="Ademola"
+};
+MessageBox.Show(UniversitiesBLL.Insert(item));
+Execution Status: Successful
+--------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Update Method-------------------
+
+University item = new University
+{
+    Code = "LC",
+    Description = "Leaders College",
+    UniversityTypeCode = "UTC-24",
+    CountryCode = "NGN",
+    StateCode = "LG",
+    LgaCode = "APP",
+    Motto = "Better By Far",
+    Url = "www.leaderscollege.edu.ng",
+    EstablishedYear = 2012,
+    Deleted=false,
+    ModifiedOn=DateTime.Now,
+    ModifiedBy="Ademola"
+};
+MessageBox.Show(UniversitiesBLL.Update(item));
+Execution Status: Successful
+------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Delete Method---------------------
+
+MessageBox.Show(UniversitiesBLL.DeletePermanently("LC"));
+University item = new University
+{
+    Code = "LC",
+    Deleted = true,
+    DeletedOn = DateTime.Now,
+    DeletedBy = "Ademola"
+};
+MessageBox.Show(UniversitiesBLL.Delete(item));
+Execution Status: Successful
+----------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Select Methods---------------------
+
+ctrlGrid.DataSource = UniversitiesBLL.Retrieve(String.Empty, false);
+//ctrlGrid.DataSource = UniversitiesBLL.Retrieve("ACU", false);
+Execution Status: Successful
+

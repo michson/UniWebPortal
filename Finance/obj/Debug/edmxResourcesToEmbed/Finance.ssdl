@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Finance.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="FinanceStoreContainer">
+    <EntitySet Name="Accounts" EntityType="Finance.Store.Accounts" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="AccountSub" EntityType="Finance.Store.AccountSub" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="AccountTypes" EntityType="Finance.Store.AccountTypes" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="FeeAllotment" EntityType="Finance.Store.FeeAllotment" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="FeeDefinition" EntityType="Finance.Store.FeeDefinition" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="Fees" EntityType="Finance.Store.Fees" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="FeesDetail" EntityType="Finance.Store.FeesDetail" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="PaymentPlanDetails" EntityType="Finance.Store.PaymentPlanDetails" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="PaymentPlans" EntityType="Finance.Store.PaymentPlans" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="Refunds" EntityType="Finance.Store.Refunds" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="Transactions" EntityType="Finance.Store.Transactions" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="TransactionsDetail" EntityType="Finance.Store.TransactionsDetail" store:Type="Tables" Schema="Finance" />
+    <EntitySet Name="Vouchers" EntityType="Finance.Store.Vouchers" store:Type="Tables" Schema="Finance" />
+    <AssociationSet Name="FK_FeesDetail_Fees" Association="Finance.Store.FK_FeesDetail_Fees">
+      <End Role="Fees" EntitySet="Fees" />
+      <End Role="FeesDetail" EntitySet="FeesDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentPlanDetails_PaymentPlans" Association="Finance.Store.FK_PaymentPlanDetails_PaymentPlans">
+      <End Role="PaymentPlans" EntitySet="PaymentPlans" />
+      <End Role="PaymentPlanDetails" EntitySet="PaymentPlanDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="decimal" Nullable="false" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="AccountTypeCode" Type="decimal" />
+    <Property Name="AccountSubCode" Type="int" />
+  </EntityType>
+  <EntityType Name="AccountSub">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DescriptionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParameterCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AccountTypes">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="decimal" Nullable="false" />
+    <Property Name="AccountSubCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DescriptionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FeeAllotment">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FacultyCode" Type="bigint" />
+    <Property Name="DepartmentCode" Type="bigint" />
+    <Property Name="CourseCode" Type="bigint" />
+    <Property Name="ProgramCode" Type="bigint" />
+    <Property Name="LevelCode" Type="int" />
+    <Property Name="FeeDefinitionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryMode" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudyMode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Scale="2" />
+    <Property Name="DiscountPercentage" Type="int" />
+    <Property Name="DiscountedAmount" Type="decimal" Precision="30" Scale="2" StoreGeneratedPattern="Computed" />
+    <Property Name="Approved" Type="bit" />
+    <Property Name="ApproveBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApproveOn" Type="datetime2" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="FeeDefinition">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="FeeStatusCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Fees">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" />
+    <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FacultyCode" Type="bigint" />
+    <Property Name="DepartmentCode" Type="bigint" />
+    <Property Name="CourseCode" Type="bigint" />
+    <Property Name="ProgramCode" Type="bigint" />
+    <Property Name="LevelCode" Type="int" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountTitle" Type="nvarchar" MaxLength="256" />
+    <Property Name="AccountNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankBranch" Type="nvarchar" MaxLength="256" />
+    <Property Name="PaymentMode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateX" Type="datetime2" />
+    <Property Name="Amount" Type="decimal" Scale="2" />
+    <Property Name="Balance" Type="decimal" Scale="2" />
+    <Property Name="PaymentStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FeesDetail">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FacultyCode" Type="bigint" />
+    <Property Name="DepartmentCode" Type="bigint" />
+    <Property Name="CourseCode" Type="bigint" />
+    <Property Name="ProgramCode" Type="bigint" />
+    <Property Name="LevelCode" Type="int" />
+    <Property Name="FeesCode" Type="bigint" />
+    <Property Name="FeeDefinitionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FeeAllotmentCode" Type="bigint" />
+    <Property Name="Amount" Type="decimal" Scale="2" />
+    <Property Name="ExtraDiscount" Type="int" />
+    <Property Name="FinalAmount" Type="decimal" Scale="2" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PaymentPlanDetails">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" />
+    <Property Name="PaymentPlanCode" Type="bigint" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="Amount" Type="decimal" Scale="2" />
+    <Property Name="DiscountedAmount" Type="decimal" Scale="2" />
+    <Property Name="DiscountedPercentage" Type="int" />
+    <Property Name="Total" Type="decimal" Scale="2" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PaymentPlans">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoOfPaymentAllowed" Type="int" />
+    <Property Name="DateX" Type="datetime2" />
+    <Property Name="StatusCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Applicable" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Refunds">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FacultyCode" Type="bigint" />
+    <Property Name="DepartmentCode" Type="bigint" />
+    <Property Name="CourseCode" Type="bigint" />
+    <Property Name="ProgramCode" Type="bigint" />
+    <Property Name="LevelCode" Type="int" />
+    <Property Name="FeesCode" Type="decimal" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Scale="2" />
+    <Property Name="Refunded" Type="bit" />
+    <Property Name="RefundedOn" Type="datetime2" />
+    <Property Name="RefundedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Approved" Type="bit" />
+    <Property Name="ApproveBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApproveOn" Type="datetime2" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransactionActivityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="InvoiceTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LpoNo" Type="decimal" />
+    <Property Name="PoNo" Type="decimal" />
+    <Property Name="CategoryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" />
+    <Property Name="AmountPaid" Type="decimal" />
+    <Property Name="Balance" Type="decimal" />
+    <Property Name="Total" Type="decimal" />
+    <Property Name="CompanyCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateX" Type="datetime2" />
+    <Property Name="AmountInWords" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TransactionsDetail">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="InvoiceCode" Type="decimal" />
+    <Property Name="ItemDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="UnitCost" Type="decimal" Scale="2" />
+    <Property Name="DiscountPercentage" Type="decimal" Scale="2" />
+    <Property Name="DiscountAmount" Type="decimal" Scale="2" />
+    <Property Name="TaxType" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxValue" Type="decimal" Scale="2" />
+    <Property Name="TotalCost" Type="decimal" Scale="2" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vouchers">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountGroupCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountSubCode" Type="int" />
+    <Property Name="AccountTypeCode" Type="decimal" />
+    <Property Name="AccountCode" Type="decimal" />
+    <Property Name="VoucherTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransactionTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntityTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParticularsCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateX" Type="datetime" />
+    <Property Name="DebitAmount" Type="decimal" Scale="2" />
+    <Property Name="CreditAmount" Type="decimal" Scale="2" />
+    <Property Name="Narration" Type="nvarchar" MaxLength="256" />
+    <Property Name="Approved" Type="bit" />
+    <Property Name="ApproveBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApproveOn" Type="datetime2" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <Association Name="FK_FeesDetail_Fees">
+    <End Role="Fees" Type="Finance.Store.Fees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FeesDetail" Type="Finance.Store.FeesDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fees">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="FeesDetail">
+        <PropertyRef Name="FeesCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentPlanDetails_PaymentPlans">
+    <End Role="PaymentPlans" Type="Finance.Store.PaymentPlans" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PaymentPlanDetails" Type="Finance.Store.PaymentPlanDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentPlans">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="PaymentPlanDetails">
+        <PropertyRef Name="PaymentPlanCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SPAccountsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="SPAccountsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="decimal" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountTypeCode" Type="decimal" Mode="In" />
+    <Parameter Name="AccountSubCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPAccountsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="decimal" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPAccountSubDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPAccountSubInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="DescriptionCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ParameterCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPAccountSubSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPAccountTypesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="SPAccountTypesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="decimal" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="DescriptionCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountSubCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPAccountTypesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="decimal" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeeAllotmentDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeeAllotmentDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPFeeAllotmentInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+    <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+    <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+    <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+    <Parameter Name="LevelCode" Type="int" Mode="In" />
+    <Parameter Name="EntryMode" Type="nvarchar" Mode="In" />
+    <Parameter Name="StudyMode" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FeeDefinitionCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="DiscountPercentage" Type="int" Mode="In" />
+    <Parameter Name="Approved" Type="bit" Mode="In" />
+    <Parameter Name="ApproveBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApproveOn" Type="datetime2" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeeAllotmentSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPFeeDefinitionDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeeDefinitionInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="FeeStatusCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeeDefinitionSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPFeesDetailDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeesDetailDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPFeesDetailInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="MatricNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+    <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+    <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+    <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+    <Parameter Name="LevelCode" Type="int" Mode="In" />
+    <Parameter Name="FeesCode" Type="bigint" Mode="In" />
+    <Parameter Name="FeeDefinitionCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FeeAllotmentCode" Type="bigint" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="ExtraDiscount" Type="int" Mode="In" />
+    <Parameter Name="FinalAmount" Type="decimal" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeesDetailSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPFeesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="MatricNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+    <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+    <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+    <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+    <Parameter Name="LevelCode" Type="int" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountTitle" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="BankCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="BankBranch" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaymentMode" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateX" Type="datetime2" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="Balance" Type="decimal" Mode="In" />
+    <Parameter Name="PaymentStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFeesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPPaymentPlanDetailsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPPaymentPlanDetailsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPPaymentPlanDetailsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="PaymentPlanCode" Type="bigint" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="DiscountedAmount" Type="decimal" Mode="In" />
+    <Parameter Name="DiscountedPercentage" Type="int" Mode="In" />
+    <Parameter Name="Total" Type="decimal" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPPaymentPlanDetailsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="PaymentPlanCode" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPPaymentPlansDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPPaymentPlansDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPPaymentPlansInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="NoOfPaymentAllowed" Type="int" Mode="In" />
+    <Parameter Name="DateX" Type="datetime2" Mode="In" />
+    <Parameter Name="StatusCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Applicable" Type="bit" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPPaymentPlansSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPRefundsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPRefundsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPRefundsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="MatricNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+    <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+    <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+    <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+    <Parameter Name="LevelCode" Type="int" Mode="In" />
+    <Parameter Name="FeesCode" Type="decimal" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="Refunded" Type="bit" Mode="In" />
+    <Parameter Name="RefundedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="RefundedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Approved" Type="bit" Mode="In" />
+    <Parameter Name="ApproveBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApproveOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPRefundsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPTransactionsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPTransactionsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPTransactionsDetailDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPTransactionsDetailDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPTransactionsDetailInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="InvoiceCode" Type="decimal" Mode="In" />
+    <Parameter Name="ItemDescription" Type="nvarchar" Mode="In" />
+    <Parameter Name="Quantity" Type="int" Mode="In" />
+    <Parameter Name="Unit" Type="nvarchar" Mode="In" />
+    <Parameter Name="UnitCost" Type="decimal" Mode="In" />
+    <Parameter Name="DiscountPercentage" Type="decimal" Mode="In" />
+    <Parameter Name="DiscountAmount" Type="decimal" Mode="In" />
+    <Parameter Name="TaxType" Type="nvarchar" Mode="In" />
+    <Parameter Name="TaxValue" Type="decimal" Mode="In" />
+    <Parameter Name="TotalCost" Type="decimal" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPTransactionsDetailSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPTransactionsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="TransactionActivityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="InvoiceTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="LpoNo" Type="decimal" Mode="In" />
+    <Parameter Name="PoNo" Type="decimal" Mode="In" />
+    <Parameter Name="CategoryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="AmountPaid" Type="decimal" Mode="In" />
+    <Parameter Name="Balance" Type="decimal" Mode="In" />
+    <Parameter Name="Total" Type="decimal" Mode="In" />
+    <Parameter Name="CompanyCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaymentStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateX" Type="datetime2" Mode="In" />
+    <Parameter Name="AmountInWords" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPTransactionsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPVouchersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPVouchersDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPVouchersInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountGroupCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountSubCode" Type="int" Mode="In" />
+    <Parameter Name="AccountTypeCode" Type="decimal" Mode="In" />
+    <Parameter Name="AccountCode" Type="decimal" Mode="In" />
+    <Parameter Name="VoucherTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="TransactionTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="EntityTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ParticularsCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateX" Type="datetime" Mode="In" />
+    <Parameter Name="DebitAmount" Type="decimal" Mode="In" />
+    <Parameter Name="CreditAmount" Type="decimal" Mode="In" />
+    <Parameter Name="Narration" Type="nvarchar" Mode="In" />
+    <Parameter Name="Approved" Type="bit" Mode="In" />
+    <Parameter Name="ApproveBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApproveOn" Type="datetime2" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPVouchersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Finance">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+</Schema>

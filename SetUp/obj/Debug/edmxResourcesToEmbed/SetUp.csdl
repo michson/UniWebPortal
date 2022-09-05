@@ -1,0 +1,1682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SetUp" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SetUpEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Approvals" EntityType="SetUp.Approval" />
+    <EntitySet Name="AreasOfSpecializations" EntityType="SetUp.AreasOfSpecialization" />
+    <EntitySet Name="Countries" EntityType="SetUp.Country" />
+    <EntitySet Name="CourseNumberings" EntityType="SetUp.CourseNumbering" />
+    <EntitySet Name="CourseRegulations" EntityType="SetUp.CourseRegulation" />
+    <EntitySet Name="Courses" EntityType="SetUp.Cours" />
+    <EntitySet Name="Departments" EntityType="SetUp.Department" />
+    <EntitySet Name="Designations" EntityType="SetUp.Designation" />
+    <EntitySet Name="Durations" EntityType="SetUp.Duration" />
+    <EntitySet Name="EntryRequirements" EntityType="SetUp.EntryRequirement" />
+    <EntitySet Name="Faculties" EntityType="SetUp.Faculty" />
+    <EntitySet Name="GradingSystems" EntityType="SetUp.GradingSystem" />
+    <EntitySet Name="LGAs" EntityType="SetUp.LGA" />
+    <EntitySet Name="Lockings" EntityType="SetUp.Locking" />
+    <EntitySet Name="Modules" EntityType="SetUp.Module" />
+    <EntitySet Name="Parameters" EntityType="SetUp.Parameter" />
+    <EntitySet Name="ProgramRequirements" EntityType="SetUp.ProgramRequirement" />
+    <EntitySet Name="Programs" EntityType="SetUp.Program" />
+    <EntitySet Name="Schedules" EntityType="SetUp.Schedule" />
+    <EntitySet Name="Screens" EntityType="SetUp.Screen" />
+    <EntitySet Name="Staffs" EntityType="SetUp.Staff" />
+    <EntitySet Name="States" EntityType="SetUp.State" />
+    <EntitySet Name="SubCourses" EntityType="SetUp.SubCours" />
+    <EntitySet Name="SubjectRequirementDetails" EntityType="SetUp.SubjectRequirementDetail" />
+    <EntitySet Name="SubjectRequirements" EntityType="SetUp.SubjectRequirement" />
+    <EntitySet Name="Universities" EntityType="SetUp.University" />
+    <AssociationSet Name="FK_Approvals_Universities" Association="SetUp.FK_Approvals_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Approvals" EntitySet="Approvals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountriesLGA" Association="SetUp.FK_CountriesLGA">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="LGAs" EntitySet="LGAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountriesStates" Association="SetUp.FK_CountriesStates">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="States" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseNumbering_Universities" Association="SetUp.FK_CourseNumbering_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="CourseNumbering" EntitySet="CourseNumberings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubCourses_CourseNumbering" Association="SetUp.FK_SubCourses_CourseNumbering">
+      <End Role="CourseNumbering" EntitySet="CourseNumberings" />
+      <End Role="SubCourses" EntitySet="SubCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_Departments" Association="SetUp.FK_Courses_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Programs_Courses" Association="SetUp.FK_Programs_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Programs" EntitySet="Programs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Departments_Faculties" Association="SetUp.FK_Departments_Faculties">
+      <End Role="Faculties" EntitySet="Faculties" />
+      <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Designations_Staff" Association="SetUp.FK_Designations_Staff">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Designations" EntitySet="Designations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Durations_Programs" Association="SetUp.FK_Durations_Programs">
+      <End Role="Programs" EntitySet="Programs" />
+      <End Role="Durations" EntitySet="Durations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Faculties_Universities" Association="SetUp.FK_Faculties_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Faculties" EntitySet="Faculties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GradingSystem_Universities" Association="SetUp.FK_GradingSystem_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="GradingSystem" EntitySet="GradingSystems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatesLGA" Association="SetUp.FK_StatesLGA">
+      <End Role="States" EntitySet="States" />
+      <End Role="LGAs" EntitySet="LGAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modules_Universities" Association="SetUp.FK_Modules_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Modules" EntitySet="Modules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Screens_Screens" Association="SetUp.FK_Screens_Screens">
+      <End Role="Modules" EntitySet="Modules" />
+      <End Role="Screens" EntitySet="Screens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Universities" Association="SetUp.FK_Staff_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectRequirementDetails_SubjectRequirements" Association="SetUp.FK_SubjectRequirementDetails_SubjectRequirements">
+      <End Role="SubjectRequirements" EntitySet="SubjectRequirements" />
+      <End Role="SubjectRequirementDetails" EntitySet="SubjectRequirementDetails" />
+    </AssociationSet>
+    <FunctionImport Name="SPApprovalsDeletePermanently" EntitySet="Approvals" ReturnType="Collection(SetUp.Approval)">
+      <Parameter Name="Code" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="SPApprovalsInsertUpdate" EntitySet="Approvals" ReturnType="Collection(SetUp.Approval)">
+      <Parameter Name="Code" Mode="In" Type="Guid" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int32" />
+      <Parameter Name="SessionCode" Mode="In" Type="String" />
+      <Parameter Name="ModuleCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+      <Parameter Name="RoleCode" Mode="In" Type="Guid" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="EntityCode" Mode="In" Type="String" />
+      <Parameter Name="ApprovalType" Mode="In" Type="String" />
+      <Parameter Name="Order" Mode="In" Type="Int32" />
+      <Parameter Name="Approved" Mode="In" Type="Boolean" />
+      <Parameter Name="ApprovedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ApprovedBy" Mode="In" Type="String" />
+      <Parameter Name="ApprovedNotes" Mode="In" Type="String" />
+      <Parameter Name="Requested" Mode="In" Type="Boolean" />
+      <Parameter Name="RequestedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="RequestedBy" Mode="In" Type="String" />
+      <Parameter Name="RequestedNotes" Mode="In" Type="String" />
+      <Parameter Name="Rejected" Mode="In" Type="Boolean" />
+      <Parameter Name="RejectedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="RejectedBy" Mode="In" Type="String" />
+      <Parameter Name="RejectedNotes" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPApprovalsSelect" EntitySet="Approvals" ReturnType="Collection(SetUp.Approval)">
+      <Parameter Name="Code" Mode="In" Type="Guid" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAreasOfSpecializationsDeletePermanently" EntitySet="AreasOfSpecializations" ReturnType="Collection(SetUp.AreasOfSpecialization)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPAreasOfSpecializationsInsertUpdate" EntitySet="AreasOfSpecializations" ReturnType="Collection(SetUp.AreasOfSpecialization)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="DescriptionsCode" Mode="In" Type="String" />
+      <Parameter Name="Specialization" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAreasOfSpecializationsSelect" EntitySet="AreasOfSpecializations" ReturnType="Collection(SetUp.AreasOfSpecialization)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="DescriptionsCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCountriesDeletePermanently" EntitySet="Countries" ReturnType="Collection(SetUp.Country)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCountriesInsertUpdate" EntitySet="Countries" ReturnType="Collection(SetUp.Country)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCountriesSelect" EntitySet="Countries" ReturnType="Collection(SetUp.Country)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCourseNumberingDeletePermanently" EntitySet="CourseNumberings" ReturnType="Collection(SetUp.CourseNumbering)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPCourseNumberingInsertUpdate" EntitySet="CourseNumberings" ReturnType="Collection(SetUp.CourseNumbering)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="NumberingLowerBound" Mode="In" Type="Int64" />
+      <Parameter Name="NumberingUpperBound" Mode="In" Type="Int64" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCourseNumberingSelect" EntitySet="CourseNumberings" ReturnType="Collection(SetUp.CourseNumbering)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPCourseRegulationDeletePermanently" EntitySet="CourseRegulations" ReturnType="Collection(SetUp.CourseRegulation)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPCourseRegulationInsertUpdate" EntitySet="CourseRegulations" ReturnType="Collection(SetUp.CourseRegulation)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="CreditLowerBound" Mode="In" Type="Int32" />
+      <Parameter Name="CreditUpperBound" Mode="In" Type="Int32" />
+      <Parameter Name="ModeOfStudyCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCourseRegulationSelect" EntitySet="CourseRegulations" ReturnType="Collection(SetUp.CourseRegulation)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPCoursesDeletePermanently" EntitySet="Courses" ReturnType="Collection(SetUp.Cours)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPCoursesInsertUpdate" EntitySet="Courses" ReturnType="Collection(SetUp.Cours)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="Acronym" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCoursesSelect" EntitySet="Courses" ReturnType="Collection(SetUp.Cours)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPDepartmentsDeletePermanently" EntitySet="Departments" ReturnType="Collection(SetUp.Department)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPDepartmentsInsertUpdate" EntitySet="Departments" ReturnType="Collection(SetUp.Department)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="Acronym" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDepartmentsSelect" EntitySet="Departments" ReturnType="Collection(SetUp.Department)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPDescriptionsDeletePermanently" EntitySet="Descriptions" ReturnType="Collection(SetUp.Description)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDescriptionsInsertUpdate" EntitySet="Descriptions" ReturnType="Collection(SetUp.Description)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="ParametersCode" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDescriptionsSelect" EntitySet="Descriptions" ReturnType="Collection(SetUp.Description)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="ParametersCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDesignationsDeletePermanently" EntitySet="Designations" ReturnType="Collection(SetUp.Designation)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPDesignationsInsertUpdate" EntitySet="Designations" ReturnType="Collection(SetUp.Designation)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="StaffCode" Mode="In" Type="String" />
+      <Parameter Name="ComDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CessDate" Mode="In" Type="DateTime" />
+      <Parameter Name="DesignationCode" Mode="In" Type="String" />
+      <Parameter Name="TypeCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDesignationsSelect" EntitySet="Designations" ReturnType="Collection(SetUp.Designation)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="StaffCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPDurationsDeletePermanently" EntitySet="Durations" ReturnType="Collection(SetUp.Duration)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPDurationsInsertUpdate" EntitySet="Durations" ReturnType="Collection(SetUp.Duration)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="ModeOfStudy" Mode="In" Type="String" />
+      <Parameter Name="Duration" Mode="In" Type="Int64" />
+      <Parameter Name="DurationUnit" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDurationsSelect" EntitySet="Durations" ReturnType="Collection(SetUp.Duration)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPEntryRequirementsDeletePermanently" EntitySet="EntryRequirements" ReturnType="Collection(SetUp.EntryRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPEntryRequirementsInsertUpdate" EntitySet="EntryRequirements" ReturnType="Collection(SetUp.EntryRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="EntryMode" Mode="In" Type="String" />
+      <Parameter Name="ModeOfStudy" Mode="In" Type="String" />
+      <Parameter Name="NoOfCredits" Mode="In" Type="Int32" />
+      <Parameter Name="NoOfSittings" Mode="In" Type="Int32" />
+      <Parameter Name="RequirementType" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPEntryRequirementsSelect" EntitySet="EntryRequirements" ReturnType="Collection(SetUp.EntryRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPFacultiesDeletePermanently" EntitySet="Faculties" ReturnType="Collection(SetUp.Faculty)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPFacultiesInsertUpdate" EntitySet="Faculties" ReturnType="Collection(SetUp.Faculty)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Acronym" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFacultiesSelect" EntitySet="Faculties" ReturnType="Collection(SetUp.Faculty)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPGradingSystemDeletePermanently" EntitySet="GradingSystems" ReturnType="Collection(SetUp.GradingSystem)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPGradingSystemInsertUpdate" EntitySet="GradingSystems" ReturnType="Collection(SetUp.GradingSystem)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="ScoreLowerBound" Mode="In" Type="Decimal" />
+      <Parameter Name="ScoreUpperBound" Mode="In" Type="Decimal" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="CGPALowerBound" Mode="In" Type="Decimal" />
+      <Parameter Name="CGPAUpperBound" Mode="In" Type="Decimal" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPGradingSystemSelect" EntitySet="GradingSystems" ReturnType="Collection(SetUp.GradingSystem)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPLGAsDeletePermanently" EntitySet="LGAs" ReturnType="Collection(SetUp.LGA)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="StatesCode" Mode="In" Type="String" />
+      <Parameter Name="CountriesCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPLGAsInsertUpdate" EntitySet="LGAs" ReturnType="Collection(SetUp.LGA)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="StatesCode" Mode="In" Type="String" />
+      <Parameter Name="CountriesCode" Mode="In" Type="String" />
+      <Parameter Name="LgName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPLGAsSelect" EntitySet="LGAs" ReturnType="Collection(SetUp.LGA)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="StatesCode" Mode="In" Type="String" />
+      <Parameter Name="CountriesCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPLockingsDeletePermanently" EntitySet="Lockings" ReturnType="Collection(SetUp.Locking)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPLockingsInsertUpdate" EntitySet="Lockings" ReturnType="Collection(SetUp.Locking)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="SessionCode" Mode="In" Type="String" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="EntityCode" Mode="In" Type="String" />
+      <Parameter Name="Locked" Mode="In" Type="Boolean" />
+      <Parameter Name="LockedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="LockedBy" Mode="In" Type="String" />
+      <Parameter Name="UnlockedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="UnlockedBy" Mode="In" Type="String" />
+      <Parameter Name="LastLockedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="LastLockedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPLockingsSelect" EntitySet="Lockings" ReturnType="Collection(SetUp.Locking)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPModulesDeletePermanently" EntitySet="Modules" ReturnType="Collection(SetUp.Module)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPModulesInsertUpdate" EntitySet="Modules" ReturnType="Collection(SetUp.Module)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Url" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPModulesSelect" EntitySet="Modules" ReturnType="Collection(SetUp.Module)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPParametersDeletePermanently" EntitySet="Parameters" ReturnType="Collection(SetUp.Parameter)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPParametersInsertUpdate" EntitySet="Parameters" ReturnType="Collection(SetUp.Parameter)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPParametersSelect" EntitySet="Parameters" ReturnType="Collection(SetUp.Parameter)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPProgramRequirementsDeletePermanently" EntitySet="ProgramRequirements" ReturnType="Collection(SetUp.ProgramRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPProgramRequirementsInsertUpdate" EntitySet="ProgramRequirements" ReturnType="Collection(SetUp.ProgramRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="MinimumCredit" Mode="In" Type="Int32" />
+      <Parameter Name="MaximumCredit" Mode="In" Type="Int32" />
+      <Parameter Name="TotalDuration" Mode="In" Type="Int64" />
+      <Parameter Name="DurationUnit" Mode="In" Type="String" />
+      <Parameter Name="EntryMode" Mode="In" Type="String" />
+      <Parameter Name="ModeOfStudy" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPProgramRequirementsSelect" EntitySet="ProgramRequirements" ReturnType="Collection(SetUp.ProgramRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPProgramsDeletePermanently" EntitySet="Programs" ReturnType="Collection(SetUp.Program)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPProgramsInsertUpdate" EntitySet="Programs" ReturnType="Collection(SetUp.Program)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="AwardCode" Mode="In" Type="String" />
+      <Parameter Name="ProgCode" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPProgramsSelect" EntitySet="Programs" ReturnType="Collection(SetUp.Program)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPSchedulesDeletePermanently" EntitySet="Schedules" ReturnType="Collection(SetUp.Schedule)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPSchedulesInsertUpdate" EntitySet="Schedules" ReturnType="Collection(SetUp.Schedule)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="SubCode" Mode="In" Type="Int64" />
+      <Parameter Name="ModeOfStudy" Mode="In" Type="String" />
+      <Parameter Name="StaffCode" Mode="In" Type="String" />
+      <Parameter Name="DateX" Mode="In" Type="DateTime" />
+      <Parameter Name="StartTime" Mode="In" Type="String" />
+      <Parameter Name="StopTime" Mode="In" Type="String" />
+      <Parameter Name="ScheduleType" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSchedulesSelect" EntitySet="Schedules" ReturnType="Collection(SetUp.Schedule)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPScreensDeletePermanently" EntitySet="Screens" ReturnType="Collection(SetUp.Screen)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPScreensInsertUpdate" EntitySet="Screens" ReturnType="Collection(SetUp.Screen)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="ModuleCode" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenDescription" Mode="In" Type="String" />
+      <Parameter Name="Url" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPScreensSelect" EntitySet="Screens" ReturnType="Collection(SetUp.Screen)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPStaffDeletePermanently" EntitySet="Staffs" ReturnType="Collection(SetUp.Staff)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPStaffInsertUpdate" EntitySet="Staffs" ReturnType="Collection(SetUp.Staff)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="StaffType" Mode="In" Type="String" />
+      <Parameter Name="ContractType" Mode="In" Type="String" />
+      <Parameter Name="ComDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CessDate" Mode="In" Type="DateTime" />
+      <Parameter Name="StatusCode" Mode="In" Type="String" />
+      <Parameter Name="StatusReason" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPStaffSelect" EntitySet="Staffs" ReturnType="Collection(SetUp.Staff)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPStatesDeletePermanently" EntitySet="States" ReturnType="Collection(SetUp.State)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="CountriesCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPStatesInsertUpdate" EntitySet="States" ReturnType="Collection(SetUp.State)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="CountriesCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPStatesSelect" EntitySet="States" ReturnType="Collection(SetUp.State)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="CountriesCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubCoursesDeletePermanently" EntitySet="SubCourses" ReturnType="Collection(SetUp.SubCours)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubCoursesInsertUpdate" EntitySet="SubCourses" ReturnType="Collection(SetUp.SubCours)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="StatusCode" Mode="In" Type="String" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int64" />
+      <Parameter Name="Practical" Mode="In" Type="Int32" />
+      <Parameter Name="Laboratory" Mode="In" Type="Int32" />
+      <Parameter Name="Credit" Mode="In" Type="Int32" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="PrefixCode" Mode="In" Type="String" />
+      <Parameter Name="SubNo" Mode="In" Type="Int32" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubCoursesSelect" EntitySet="SubCourses" ReturnType="Collection(SetUp.SubCours)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubjectRequirementDetailsDeletePermanently" EntitySet="SubjectRequirementDetails" ReturnType="Collection(SetUp.SubjectRequirementDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubjectRequirementDetailsInsertUpdate" EntitySet="SubjectRequirementDetails" ReturnType="Collection(SetUp.SubjectRequirementDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="SubjectRequirementCode" Mode="In" Type="Int64" />
+      <Parameter Name="GradeCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubjectRequirementDetailsSelect" EntitySet="SubjectRequirementDetails" ReturnType="Collection(SetUp.SubjectRequirementDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubjectRequirementsDeletePermanently" EntitySet="SubjectRequirements" ReturnType="Collection(SetUp.SubjectRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubjectRequirementsInsertUpdate" EntitySet="SubjectRequirements" ReturnType="Collection(SetUp.SubjectRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="SubjectCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubjectRequirementsSelect" EntitySet="SubjectRequirements" ReturnType="Collection(SetUp.SubjectRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPUniversitiesDeletePermanently" EntitySet="Universities" ReturnType="Collection(SetUp.University)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPUniversitiesInsertUpdate" EntitySet="Universities" ReturnType="Collection(SetUp.University)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="UniversityTypeCode" Mode="In" Type="String" />
+      <Parameter Name="BannerCode" Mode="In" Type="String" />
+      <Parameter Name="LogoCode" Mode="In" Type="String" />
+      <Parameter Name="Url" Mode="In" Type="String" />
+      <Parameter Name="CountryCode" Mode="In" Type="String" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="LgaCode" Mode="In" Type="String" />
+      <Parameter Name="Motto" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="EstablishedYear" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPUniversitiesSelect" EntitySet="Universities" ReturnType="Collection(SetUp.University)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPUniversitiesDelete" EntitySet="Universities" ReturnType="Collection(SetUp.University)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCourseRegulationDelete" EntitySet="CourseRegulations" ReturnType="Collection(SetUp.CourseRegulation)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCoursesDelete" EntitySet="Courses" ReturnType="Collection(SetUp.Cours)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDepartmentsDelete" EntitySet="Departments" ReturnType="Collection(SetUp.Department)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDesignationsDelete" EntitySet="Designations" ReturnType="Collection(SetUp.Designation)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDurationsDelete" EntitySet="Durations" ReturnType="Collection(SetUp.Duration)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPEntryRequirementsDelete" EntitySet="EntryRequirements" ReturnType="Collection(SetUp.EntryRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPFacultiesDelete" EntitySet="Faculties" ReturnType="Collection(SetUp.Faculty)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPGradingSystemDelete" EntitySet="GradingSystems" ReturnType="Collection(SetUp.GradingSystem)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPModulesDelete" EntitySet="Modules" ReturnType="Collection(SetUp.Module)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPProgramRequirementsDelete" EntitySet="ProgramRequirements" ReturnType="Collection(SetUp.ProgramRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPProgramsDelete" EntitySet="Programs" ReturnType="Collection(SetUp.Program)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSchedulesDelete" EntitySet="Schedules" ReturnType="Collection(SetUp.Schedule)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPScreensDelete" EntitySet="Screens" ReturnType="Collection(SetUp.Screen)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPStaffDelete" EntitySet="Staffs" ReturnType="Collection(SetUp.Staff)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubCoursesDelete" EntitySet="SubCourses" ReturnType="Collection(SetUp.SubCours)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubjectRequirementDetailsDelete" EntitySet="SubjectRequirementDetails" ReturnType="Collection(SetUp.SubjectRequirementDetail)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSubjectRequirementsDelete" EntitySet="SubjectRequirements" ReturnType="Collection(SetUp.SubjectRequirement)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Descriptions" EntityType="SetUp.Description" />
+    <AssociationSet Name="FK_ParametersDescriptions" Association="SetUp.FK_ParametersDescriptions">
+      <End Role="Parameter" EntitySet="Parameters" />
+      <End Role="Description" EntitySet="Descriptions" />
+    </AssociationSet>
+    <EntitySet Name="Permissions" EntityType="SetUp.Permission" />
+    <FunctionImport Name="SPPermissionsDelete" EntitySet="Permissions" ReturnType="Collection(SetUp.Permission)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPermissionsDeletePermanently" EntitySet="Permissions" ReturnType="Collection(SetUp.Permission)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPPermissionsInsertUpdate" EntitySet="Permissions" ReturnType="Collection(SetUp.Permission)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="ModuleCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="RoleCode" Mode="In" Type="Guid" />
+      <Parameter Name="ActionCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPermissionsSelect" EntitySet="Permissions" ReturnType="Collection(SetUp.Permission)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Approval">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Guid" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int32" />
+    <Property Name="SessionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModuleCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="RoleCode" Type="Guid" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EntityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ApprovalType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="ApprovedOn" Type="DateTime" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ApprovedNotes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Requested" Type="Boolean" />
+    <Property Name="RequestedOn" Type="DateTime" />
+    <Property Name="RequestedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="RequestedNotes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Rejected" Type="Boolean" />
+    <Property Name="RejectedOn" Type="DateTime" />
+    <Property Name="RejectedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="RejectedNotes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="University" Relationship="SetUp.FK_Approvals_Universities" FromRole="Approvals" ToRole="Universities" />
+  </EntityType>
+  <EntityType Name="AreasOfSpecialization">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescriptionsCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Specialization" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="LGAs" Relationship="SetUp.FK_CountriesLGA" FromRole="Countries" ToRole="LGAs" />
+    <NavigationProperty Name="States" Relationship="SetUp.FK_CountriesStates" FromRole="Countries" ToRole="States" />
+  </EntityType>
+  <EntityType Name="CourseNumbering">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="NumberingLowerBound" Type="Int64" />
+    <Property Name="NumberingUpperBound" Type="Int64" />
+    <Property Name="Notes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="UniversityCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="University" Relationship="SetUp.FK_CourseNumbering_Universities" FromRole="CourseNumbering" ToRole="Universities" />
+    <NavigationProperty Name="SubCourses" Relationship="SetUp.FK_SubCourses_CourseNumbering" FromRole="CourseNumbering" ToRole="SubCourses" />
+    <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="CourseRegulation">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="LevelCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreditLowerBound" Type="Int32" />
+    <Property Name="CreditUpperBound" Type="Int32" />
+    <Property Name="ModeOfStudyCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" Nullable="false" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="Acronym" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Department" Relationship="SetUp.FK_Courses_Departments" FromRole="Courses" ToRole="Departments" />
+    <NavigationProperty Name="Programs" Relationship="SetUp.FK_Programs_Courses" FromRole="Courses" ToRole="Programs" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="Acronym" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Courses" Relationship="SetUp.FK_Courses_Departments" FromRole="Departments" ToRole="Courses" />
+    <NavigationProperty Name="Faculty" Relationship="SetUp.FK_Departments_Faculties" FromRole="Departments" ToRole="Faculties" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StaffCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ComDate" Type="DateTime" />
+    <Property Name="CessDate" Type="DateTime" />
+    <Property Name="DesignationCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Staff" Relationship="SetUp.FK_Designations_Staff" FromRole="Designations" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Duration">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="ModeOfStudy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Duration1" Type="Int64" />
+    <Property Name="DurationUnit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Program" Relationship="SetUp.FK_Durations_Programs" FromRole="Durations" ToRole="Programs" />
+  </EntityType>
+  <EntityType Name="EntryRequirement">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="EntryMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModeOfStudy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NoOfCredits" Type="Int32" />
+    <Property Name="NoOfSittings" Type="Int32" />
+    <Property Name="RequirementType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Acronym" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Departments" Relationship="SetUp.FK_Departments_Faculties" FromRole="Faculties" ToRole="Departments" />
+    <NavigationProperty Name="University" Relationship="SetUp.FK_Faculties_Universities" FromRole="Faculties" ToRole="Universities" />
+  </EntityType>
+  <EntityType Name="GradingSystem">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScoreLowerBound" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ScoreUpperBound" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="CGPALowerBound" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CGPAUpperBound" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Notes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="University" Relationship="SetUp.FK_GradingSystem_Universities" FromRole="GradingSystem" ToRole="Universities" />
+  </EntityType>
+  <EntityType Name="LGA">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StatesCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CountriesCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LgName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Country" Relationship="SetUp.FK_CountriesLGA" FromRole="LGAs" ToRole="Countries" />
+    <NavigationProperty Name="State" Relationship="SetUp.FK_StatesLGA" FromRole="LGAs" ToRole="States" />
+  </EntityType>
+  <EntityType Name="Locking">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="SessionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EntityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Locked" Type="Boolean" />
+    <Property Name="LockedOn" Type="DateTime" />
+    <Property Name="LockedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UnlockedOn" Type="DateTime" />
+    <Property Name="UnlockedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastLockedOn" Type="DateTime" />
+    <Property Name="LastLockedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Url" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="University" Relationship="SetUp.FK_Modules_Universities" FromRole="Modules" ToRole="Universities" />
+    <NavigationProperty Name="Screens" Relationship="SetUp.FK_Screens_Screens" FromRole="Modules" ToRole="Screens" />
+  </EntityType>
+  <EntityType Name="Parameter">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Descriptions" Relationship="SetUp.FK_ParametersDescriptions" FromRole="Parameter" ToRole="Description" />
+  </EntityType>
+  <EntityType Name="ProgramRequirement">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="MinimumCredit" Type="Int32" />
+    <Property Name="MaximumCredit" Type="Int32" />
+    <Property Name="TotalDuration" Type="Int64" />
+    <Property Name="DurationUnit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EntryMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModeOfStudy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Program">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="AwardCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ProgCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Cours" Relationship="SetUp.FK_Programs_Courses" FromRole="Programs" ToRole="Courses" />
+    <NavigationProperty Name="Durations" Relationship="SetUp.FK_Durations_Programs" FromRole="Programs" ToRole="Durations" />
+    <Property Type="String" Name="ProgName" MaxLength="256" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="String" Name="AwardInViewName" MaxLength="256" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="SubCode" Type="Int64" />
+    <Property Name="ModeOfStudy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StaffCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DateX" Type="DateTime" />
+    <Property Name="StartTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StopTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScheduleType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Screen">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModuleCode" Type="Int64" />
+    <Property Name="UniversityCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Url" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Module" Relationship="SetUp.FK_Screens_Screens" FromRole="Screens" ToRole="Modules" />
+    <Property Type="String" Name="ScreenDescription" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="StaffType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ContractType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ComDate" Type="DateTime" />
+    <Property Name="CessDate" Type="DateTime" />
+    <Property Name="StatusCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StatusReason" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Designations" Relationship="SetUp.FK_Designations_Staff" FromRole="Staff" ToRole="Designations" />
+    <NavigationProperty Name="University" Relationship="SetUp.FK_Staff_Universities" FromRole="Staff" ToRole="Universities" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="CountriesCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Country" Relationship="SetUp.FK_CountriesStates" FromRole="States" ToRole="Countries" />
+    <NavigationProperty Name="LGAs" Relationship="SetUp.FK_StatesLGA" FromRole="States" ToRole="LGAs" />
+  </EntityType>
+  <EntityType Name="SubCours">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LevelCode" Type="Int64" />
+    <Property Name="Practical" Type="Int32" />
+    <Property Name="Laboratory" Type="Int32" />
+    <Property Name="Credit" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PrefixCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SubNo" Type="Int32" />
+    <Property Name="SubCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="CourseNumbering" Relationship="SetUp.FK_SubCourses_CourseNumbering" FromRole="SubCourses" ToRole="CourseNumbering" />
+    <Property Type="String" Name="StatusDescription" MaxLength="256" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SubjectRequirementDetail">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectRequirementCode" Type="Int64" />
+    <Property Name="GradeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SubjectRequirement" Relationship="SetUp.FK_SubjectRequirementDetails_SubjectRequirements" FromRole="SubjectRequirementDetails" ToRole="SubjectRequirements" />
+  </EntityType>
+  <EntityType Name="SubjectRequirement">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="SubjectCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SubjectRequirementDetails" Relationship="SetUp.FK_SubjectRequirementDetails_SubjectRequirements" FromRole="SubjectRequirements" ToRole="SubjectRequirementDetails" />
+  </EntityType>
+  <EntityType Name="University">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="UniversityTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BannerCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LogoCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Url" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StateCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LgaCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Motto" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="EstablishedYear" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Approvals" Relationship="SetUp.FK_Approvals_Universities" FromRole="Universities" ToRole="Approvals" />
+    <NavigationProperty Name="CourseNumberings" Relationship="SetUp.FK_CourseNumbering_Universities" FromRole="Universities" ToRole="CourseNumbering" />
+    <NavigationProperty Name="Faculties" Relationship="SetUp.FK_Faculties_Universities" FromRole="Universities" ToRole="Faculties" />
+    <NavigationProperty Name="GradingSystems" Relationship="SetUp.FK_GradingSystem_Universities" FromRole="Universities" ToRole="GradingSystem" />
+    <NavigationProperty Name="Modules" Relationship="SetUp.FK_Modules_Universities" FromRole="Universities" ToRole="Modules" />
+    <NavigationProperty Name="Staffs" Relationship="SetUp.FK_Staff_Universities" FromRole="Universities" ToRole="Staff" />
+  </EntityType>
+  <Association Name="FK_Approvals_Universities">
+    <End Role="Universities" Type="SetUp.University" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Approvals" Type="SetUp.Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Approvals">
+        <PropertyRef Name="UniversityCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountriesLGA">
+    <End Role="Countries" Type="SetUp.Country" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LGAs" Type="SetUp.LGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="LGAs">
+        <PropertyRef Name="CountriesCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountriesStates">
+    <End Role="Countries" Type="SetUp.Country" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="States" Type="SetUp.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="States">
+        <PropertyRef Name="CountriesCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseNumbering_Universities">
+    <End Role="Universities" Type="SetUp.University" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CourseNumbering" Type="SetUp.CourseNumbering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="CourseNumbering">
+        <PropertyRef Name="UniversityCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubCourses_CourseNumbering">
+    <End Role="CourseNumbering" Type="SetUp.CourseNumbering" Multiplicity="0..1" />
+    <End Role="SubCourses" Type="SetUp.SubCours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseNumbering">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="SubCourses">
+        <PropertyRef Name="LevelCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_Departments">
+    <End Role="Departments" Type="SetUp.Department" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Courses" Type="SetUp.Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="DepartmentCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Programs_Courses">
+    <End Role="Courses" Type="SetUp.Cours" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Programs" Type="SetUp.Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Programs">
+        <PropertyRef Name="CourseCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Departments_Faculties">
+    <End Role="Faculties" Type="SetUp.Faculty" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Departments" Type="SetUp.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculties">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Departments">
+        <PropertyRef Name="FacultyCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Designations_Staff">
+    <End Role="Staff" Type="SetUp.Staff" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Designations" Type="SetUp.Designation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Designations">
+        <PropertyRef Name="StaffCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Durations_Programs">
+    <End Role="Programs" Type="SetUp.Program" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Durations" Type="SetUp.Duration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programs">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Durations">
+        <PropertyRef Name="ProgramCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Faculties_Universities">
+    <End Role="Universities" Type="SetUp.University" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Faculties" Type="SetUp.Faculty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Faculties">
+        <PropertyRef Name="UniversityCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GradingSystem_Universities">
+    <End Role="Universities" Type="SetUp.University" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GradingSystem" Type="SetUp.GradingSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="GradingSystem">
+        <PropertyRef Name="UniversityCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatesLGA">
+    <End Role="States" Type="SetUp.State" Multiplicity="1" />
+    <End Role="LGAs" Type="SetUp.LGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="LGAs">
+        <PropertyRef Name="StatesCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modules_Universities">
+    <End Role="Universities" Type="SetUp.University" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Modules" Type="SetUp.Module" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Modules">
+        <PropertyRef Name="UniversityCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Screens_Screens">
+    <End Role="Modules" Type="SetUp.Module" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Screens" Type="SetUp.Screen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modules">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Screens">
+        <PropertyRef Name="ModuleCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Universities">
+    <End Role="Universities" Type="SetUp.University" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Staff" Type="SetUp.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="UniversityCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectRequirementDetails_SubjectRequirements">
+    <End Role="SubjectRequirements" Type="SetUp.SubjectRequirement" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SubjectRequirementDetails" Type="SetUp.SubjectRequirementDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubjectRequirements">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="SubjectRequirementDetails">
+        <PropertyRef Name="SubjectRequirementCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Description">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="String" Name="ParametersCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notes" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Parameter" Relationship="SetUp.FK_ParametersDescriptions" FromRole="Description" ToRole="Parameter" />
+  </EntityType>
+  <Association Name="FK_ParametersDescriptions">
+    <End Type="SetUp.Parameter" Role="Parameter" Multiplicity="0..1" />
+    <End Type="SetUp.Description" Role="Description" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameter">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Description">
+        <PropertyRef Name="ParametersCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="Int64" Name="Code" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UniversityCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ModuleCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ScreenCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="RoleCode" />
+    <Property Type="String" Name="ActionCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="String" Name="ModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Deleted" />
+    <Property Type="DateTime" Name="DeletedOn" />
+    <Property Type="String" Name="DeletedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

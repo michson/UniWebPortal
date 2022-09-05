@@ -1,0 +1,1447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Personals" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="PersonalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Personals.Address" />
+    <EntitySet Name="AreasOfExpertises" EntityType="Personals.AreasOfExpertis" />
+    <EntitySet Name="BioDatas" EntityType="Personals.BioData" />
+    <EntitySet Name="Certificates" EntityType="Personals.Certificate" />
+    <EntitySet Name="Choices" EntityType="Personals.Choice" />
+    <EntitySet Name="Companies" EntityType="Personals.Company" />
+    <EntitySet Name="ComputerSkills" EntityType="Personals.ComputerSkill" />
+    <EntitySet Name="Declarations" EntityType="Personals.Declaration" />
+    <EntitySet Name="Emails" EntityType="Personals.Email" />
+    <EntitySet Name="Emergencies" EntityType="Personals.Emergency" />
+    <EntitySet Name="EmploymentHistories" EntityType="Personals.EmploymentHistory" />
+    <EntitySet Name="Guarantors" EntityType="Personals.Guarantor" />
+    <EntitySet Name="Guardians" EntityType="Personals.Guardian" />
+    <EntitySet Name="Hobbies" EntityType="Personals.Hobby" />
+    <EntitySet Name="JAMBs" EntityType="Personals.JAMB" />
+    <EntitySet Name="LanguageSkills" EntityType="Personals.LanguageSkill" />
+    <EntitySet Name="MedicalConditions" EntityType="Personals.MedicalCondition" />
+    <EntitySet Name="NextOfKins" EntityType="Personals.NextOfKin" />
+    <EntitySet Name="OLevels" EntityType="Personals.OLevel" />
+    <EntitySet Name="Others" EntityType="Personals.Others" />
+    <EntitySet Name="Phones" EntityType="Personals.Phone" />
+    <EntitySet Name="Photos" EntityType="Personals.Photo" />
+    <EntitySet Name="Qualifications" EntityType="Personals.Qualification" />
+    <EntitySet Name="Referees" EntityType="Personals.Referee" />
+    <EntitySet Name="Religions" EntityType="Personals.Religion" />
+    <EntitySet Name="Sponsors" EntityType="Personals.Sponsor" />
+    <EntitySet Name="Sports" EntityType="Personals.Sport" />
+    <AssociationSet Name="FK_BioDataReligion" Association="Personals.FK_BioDataReligion">
+      <End Role="BioDatas" EntitySet="BioDatas" />
+      <End Role="Religions" EntitySet="Religions" />
+    </AssociationSet>
+    <FunctionImport Name="SPAddressesDelete" EntitySet="Addresses" ReturnType="Collection(Personals.Address)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAddressesDeletePermanently" EntitySet="Addresses" ReturnType="Collection(Personals.Address)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPAddressesInsertUpdate" EntitySet="Addresses" ReturnType="Collection(Personals.Address)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AddressTypeCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CountryCode" Mode="In" Type="String" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="LgCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAddressesSelect" EntitySet="Addresses" ReturnType="Collection(Personals.Address)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPAreasOfExpertisesDelete" EntitySet="AreasOfExpertises" ReturnType="Collection(Personals.AreasOfExpertis)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAreasOfExpertisesDeletePermanently" EntitySet="AreasOfExpertises" ReturnType="Collection(Personals.AreasOfExpertis)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPAreasOfExpertisesInsertUpdate" EntitySet="AreasOfExpertises" ReturnType="Collection(Personals.AreasOfExpertis)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="JobCategoryCode" Mode="In" Type="String" />
+      <Parameter Name="AOSCode" Mode="In" Type="String" />
+      <Parameter Name="YearOfExperience" Mode="In" Type="String" />
+      <Parameter Name="LeveOfExperience" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAreasOfExpertisesSelect" EntitySet="AreasOfExpertises" ReturnType="Collection(Personals.AreasOfExpertis)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPBioDatasDelete" EntitySet="BioDatas" ReturnType="Collection(Personals.BioData)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPBioDatasDeletePermanently" EntitySet="BioDatas" ReturnType="Collection(Personals.BioData)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPBioDatasInsertUpdate" EntitySet="BioDatas" ReturnType="Collection(Personals.BioData)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Surname" Mode="In" Type="String" />
+      <Parameter Name="MiddleName" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="GenderCode" Mode="In" Type="String" />
+      <Parameter Name="CivilStatus" Mode="In" Type="String" />
+      <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+      <Parameter Name="CountryCode" Mode="In" Type="String" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="LGACode" Mode="In" Type="String" />
+      <Parameter Name="PlaceOfBirth" Mode="In" Type="String" />
+      <Parameter Name="Height" Mode="In" Type="String" />
+      <Parameter Name="Weight" Mode="In" Type="String" />
+      <Parameter Name="HealthStatusCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="PositionInFamily" Mode="In" Type="Int32" />
+      <Parameter Name="NoOfChildren" Mode="In" Type="Int32" />
+      <Parameter Name="TicketCode" Mode="In" Type="Decimal" />
+      <Parameter Name="PinCode" Mode="In" Type="Decimal" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPBioDatasSelect" EntitySet="BioDatas" ReturnType="Collection(Personals.BioData)">
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPCertificatesDelete" EntitySet="Certificates" ReturnType="Collection(Personals.Certificate)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCertificatesDeletePermanently" EntitySet="Certificates" ReturnType="Collection(Personals.Certificate)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPCertificatesInsertUpdate" EntitySet="Certificates" ReturnType="Collection(Personals.Certificate)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="AwardingBody" Mode="In" Type="String" />
+      <Parameter Name="YearObtained" Mode="In" Type="String" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Certificate" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCertificatesSelect" EntitySet="Certificates" ReturnType="Collection(Personals.Certificate)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPChoicesDelete" EntitySet="Choices" ReturnType="Collection(Personals.Choice)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPChoicesDeletePermanently" EntitySet="Choices" ReturnType="Collection(Personals.Choice)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPChoicesInsertUpdate" EntitySet="Choices" ReturnType="Collection(Personals.Choice)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="FirstChoice" Mode="In" Type="String" />
+      <Parameter Name="SecondChoice" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPChoicesSelect" EntitySet="Choices" ReturnType="Collection(Personals.Choice)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPCompaniesDelete" EntitySet="Companies" ReturnType="Collection(Personals.Company)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCompaniesDeletePermanently" EntitySet="Companies" ReturnType="Collection(Personals.Company)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPCompaniesInsertUpdate" EntitySet="Companies" ReturnType="Collection(Personals.Company)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="ContactName" Mode="In" Type="String" />
+      <Parameter Name="ContactTitle" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPCompaniesSelect" EntitySet="Companies" ReturnType="Collection(Personals.Company)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPComputerSkillsDelete" EntitySet="ComputerSkills" ReturnType="Collection(Personals.ComputerSkill)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPComputerSkillsDeletePermanently" EntitySet="ComputerSkills" ReturnType="Collection(Personals.ComputerSkill)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPComputerSkillsInsertUpdate" EntitySet="ComputerSkills" ReturnType="Collection(Personals.ComputerSkill)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="PackageCode" Mode="In" Type="String" />
+      <Parameter Name="LevelOfKnowledgeCode" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPComputerSkillsSelect" EntitySet="ComputerSkills" ReturnType="Collection(Personals.ComputerSkill)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPDeclarationsDelete" EntitySet="Declarations" ReturnType="Collection(Personals.Declaration)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDeclarationsDeletePermanently" EntitySet="Declarations" ReturnType="Collection(Personals.Declaration)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPDeclarationsInsertUpdate" EntitySet="Declarations" ReturnType="Collection(Personals.Declaration)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="GuardianCode" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPDeclarationsSelect" EntitySet="Declarations" ReturnType="Collection(Personals.Declaration)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmailsDelete" EntitySet="Emails" ReturnType="Collection(Personals.Email)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmailsDeletePermanently" EntitySet="Emails" ReturnType="Collection(Personals.Email)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmailsInsertUpdate" EntitySet="Emails" ReturnType="Collection(Personals.Email)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmailsSelect" EntitySet="Emails" ReturnType="Collection(Personals.Email)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmergenciesDelete" EntitySet="Emergencies" ReturnType="Collection(Personals.Emergency)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmergenciesDeletePermanently" EntitySet="Emergencies" ReturnType="Collection(Personals.Emergency)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmergenciesInsertUpdate" EntitySet="Emergencies" ReturnType="Collection(Personals.Emergency)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="TitleCode" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmergenciesSelect" EntitySet="Emergencies" ReturnType="Collection(Personals.Emergency)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmploymentHistoriesDelete" EntitySet="EmploymentHistories" ReturnType="Collection(Personals.EmploymentHistory)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmploymentHistoriesDeletePermanently" EntitySet="EmploymentHistories" ReturnType="Collection(Personals.EmploymentHistory)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmploymentHistoriesInsertUpdate" EntitySet="EmploymentHistories" ReturnType="Collection(Personals.EmploymentHistory)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="TitleCode" Mode="In" Type="String" />
+      <Parameter Name="JobCategoryCode" Mode="In" Type="String" />
+      <Parameter Name="JobDescCode" Mode="In" Type="String" />
+      <Parameter Name="LevelOfXpertiseCode" Mode="In" Type="String" />
+      <Parameter Name="WorkPercentageCode" Mode="In" Type="String" />
+      <Parameter Name="FromYearCode" Mode="In" Type="String" />
+      <Parameter Name="ToYearCode" Mode="In" Type="String" />
+      <Parameter Name="FromMonthCode" Mode="In" Type="String" />
+      <Parameter Name="ToMonthCode" Mode="In" Type="String" />
+      <Parameter Name="FromSAS" Mode="In" Type="String" />
+      <Parameter Name="FromSASCurrencyCode" Mode="In" Type="String" />
+      <Parameter Name="FromSASTotals" Mode="In" Type="Decimal" />
+      <Parameter Name="FromEAS" Mode="In" Type="String" />
+      <Parameter Name="FromEASCurrencyCode" Mode="In" Type="String" />
+      <Parameter Name="FromEASTotals" Mode="In" Type="Decimal" />
+      <Parameter Name="Supervisor" Mode="In" Type="String" />
+      <Parameter Name="SupervisorTitle" Mode="In" Type="String" />
+      <Parameter Name="Employer" Mode="In" Type="String" />
+      <Parameter Name="EmployerAddress" Mode="In" Type="String" />
+      <Parameter Name="EmployerBusinessNatureCode" Mode="In" Type="String" />
+      <Parameter Name="EmployerURL" Mode="In" Type="String" />
+      <Parameter Name="DutiesDescription" Mode="In" Type="String" />
+      <Parameter Name="KeyAchievements" Mode="In" Type="String" />
+      <Parameter Name="ContactRefrenceCode" Mode="In" Type="String" />
+      <Parameter Name="NoOfPeopleSupervised" Mode="In" Type="Int32" />
+      <Parameter Name="ReasonForLeaving" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmploymentHistoriesSelect" EntitySet="EmploymentHistories" ReturnType="Collection(Personals.EmploymentHistory)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPGuarantorsDelete" EntitySet="Guarantors" ReturnType="Collection(Personals.Guarantor)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPGuarantorsDeletePermanently" EntitySet="Guarantors" ReturnType="Collection(Personals.Guarantor)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPGuarantorsInsertUpdate" EntitySet="Guarantors" ReturnType="Collection(Personals.Guarantor)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="TitleCode" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="OccupationCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Undertaking" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPGuarantorsSelect" EntitySet="Guarantors" ReturnType="Collection(Personals.Guarantor)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPGuardiansDelete" EntitySet="Guardians" ReturnType="Collection(Personals.Guardian)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPGuardiansDeletePermanently" EntitySet="Guardians" ReturnType="Collection(Personals.Guardian)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPGuardiansInsertUpdate" EntitySet="Guardians" ReturnType="Collection(Personals.Guardian)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="GuardianCode" Mode="In" Type="String" />
+      <Parameter Name="TitleCode" Mode="In" Type="String" />
+      <Parameter Name="GuardianName" Mode="In" Type="String" />
+      <Parameter Name="OccupationCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPGuardiansSelect" EntitySet="Guardians" ReturnType="Collection(Personals.Guardian)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPHobbiesDelete" EntitySet="Hobbies" ReturnType="Collection(Personals.Hobby)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPHobbiesDeletePermanently" EntitySet="Hobbies" ReturnType="Collection(Personals.Hobby)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPHobbiesInsertUpdate" EntitySet="Hobbies" ReturnType="Collection(Personals.Hobby)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="HobbyCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPHobbiesSelect" EntitySet="Hobbies" ReturnType="Collection(Personals.Hobby)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPJAMBsDelete" EntitySet="JAMBs" ReturnType="Collection(Personals.JAMB)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPJAMBsDeletePermanently" EntitySet="JAMBs" ReturnType="Collection(Personals.JAMB)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPJAMBsInsertUpdate" EntitySet="JAMBs" ReturnType="Collection(Personals.JAMB)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="RegNo" Mode="In" Type="String" />
+      <Parameter Name="Score" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPJAMBsSelect" EntitySet="JAMBs" ReturnType="Collection(Personals.JAMB)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPLanguageSkillsDelete" EntitySet="LanguageSkills" ReturnType="Collection(Personals.LanguageSkill)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPLanguageSkillsDeletePermanently" EntitySet="LanguageSkills" ReturnType="Collection(Personals.LanguageSkill)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPLanguageSkillsInsertUpdate" EntitySet="LanguageSkills" ReturnType="Collection(Personals.LanguageSkill)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="LanguageCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="DateX" Mode="In" Type="DateTime" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="ReadingDegree" Mode="In" Type="String" />
+      <Parameter Name="SpeakingDegree" Mode="In" Type="String" />
+      <Parameter Name="WritingDegree" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPLanguageSkillsSelect" EntitySet="LanguageSkills" ReturnType="Collection(Personals.LanguageSkill)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPMedicalConditionsDelete" EntitySet="MedicalConditions" ReturnType="Collection(Personals.MedicalCondition)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPMedicalConditionsDeletePermanently" EntitySet="MedicalConditions" ReturnType="Collection(Personals.MedicalCondition)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPMedicalConditionsInsertUpdate" EntitySet="MedicalConditions" ReturnType="Collection(Personals.MedicalCondition)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="DiseaseCode" Mode="In" Type="String" />
+      <Parameter Name="Conditions" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPMedicalConditionsSelect" EntitySet="MedicalConditions" ReturnType="Collection(Personals.MedicalCondition)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPNextOfKinsDelete" EntitySet="NextOfKins" ReturnType="Collection(Personals.NextOfKin)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPNextOfKinsDeletePermanently" EntitySet="NextOfKins" ReturnType="Collection(Personals.NextOfKin)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPNextOfKinsInsertUpdate" EntitySet="NextOfKins" ReturnType="Collection(Personals.NextOfKin)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="RelTypeCode" Mode="In" Type="String" />
+      <Parameter Name="TitleCode" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="OccupationCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPNextOfKinsSelect" EntitySet="NextOfKins" ReturnType="Collection(Personals.NextOfKin)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPOLevelsDelete" EntitySet="OLevels" ReturnType="Collection(Personals.OLevel)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPOLevelsDeletePermanently" EntitySet="OLevels" ReturnType="Collection(Personals.OLevel)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPOLevelsInsertUpdate" EntitySet="OLevels" ReturnType="Collection(Personals.OLevel)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="SubjectCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="GradeCode" Mode="In" Type="Int32" />
+      <Parameter Name="GradeDescCode" Mode="In" Type="String" />
+      <Parameter Name="ExamTypeCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPOLevelsSelect" EntitySet="OLevels" ReturnType="Collection(Personals.OLevel)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPOthersDelete" EntitySet="Others" ReturnType="Collection(Personals.Others)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPOthersDeletePermanently" EntitySet="Others" ReturnType="Collection(Personals.Others)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPOthersInsertUpdate" EntitySet="Others" ReturnType="Collection(Personals.Others)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="OthersCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPOthersSelect" EntitySet="Others" ReturnType="Collection(Personals.Others)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPPhonesDelete" EntitySet="Phones" ReturnType="Collection(Personals.Phone)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPhonesDeletePermanently" EntitySet="Phones" ReturnType="Collection(Personals.Phone)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPPhonesInsertUpdate" EntitySet="Phones" ReturnType="Collection(Personals.Phone)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="PhoneTypeCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="PostalCode" Mode="In" Type="String" />
+      <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPhonesSelect" EntitySet="Phones" ReturnType="Collection(Personals.Phone)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPPhotosDelete" EntitySet="Photos" ReturnType="Collection(Personals.Photo)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPhotosDeletePermanently" EntitySet="Photos" ReturnType="Collection(Personals.Photo)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPPhotosInsertUpdate" EntitySet="Photos" ReturnType="Collection(Personals.Photo)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="ModuleCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="ImageTypeCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ByteThumb" Mode="In" Type="Binary" />
+      <Parameter Name="BytePoster" Mode="In" Type="Binary" />
+      <Parameter Name="ByteFull" Mode="In" Type="Binary" />
+      <Parameter Name="ByteOriginal" Mode="In" Type="Binary" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPPhotosSelect" EntitySet="Photos" ReturnType="Collection(Personals.Photo)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPQualificationsDelete" EntitySet="Qualifications" ReturnType="Collection(Personals.Qualification)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPQualificationsDeletePermanently" EntitySet="Qualifications" ReturnType="Collection(Personals.Qualification)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPQualificationsInsertUpdate" EntitySet="Qualifications" ReturnType="Collection(Personals.Qualification)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="EducationTypeCode" Mode="In" Type="String" />
+      <Parameter Name="QualificationTypeCode" Mode="In" Type="String" />
+      <Parameter Name="FromYear" Mode="In" Type="String" />
+      <Parameter Name="ToYear" Mode="In" Type="String" />
+      <Parameter Name="FromMonth" Mode="In" Type="String" />
+      <Parameter Name="ToMonth" Mode="In" Type="String" />
+      <Parameter Name="AwardingBody" Mode="In" Type="String" />
+      <Parameter Name="Certificate" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPQualificationsSelect" EntitySet="Qualifications" ReturnType="Collection(Personals.Qualification)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPRefereesDelete" EntitySet="Referees" ReturnType="Collection(Personals.Referee)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPRefereesDeletePermanently" EntitySet="Referees" ReturnType="Collection(Personals.Referee)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPRefereesInsertUpdate" EntitySet="Referees" ReturnType="Collection(Personals.Referee)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="TitleCode" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="OccupationCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="KnowingMode" Mode="In" Type="String" />
+      <Parameter Name="ContactReferenceCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPRefereesSelect" EntitySet="Referees" ReturnType="Collection(Personals.Referee)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPReligionsDelete" EntitySet="Religions" ReturnType="Collection(Personals.Religion)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPReligionsDeletePermanently" EntitySet="Religions" ReturnType="Collection(Personals.Religion)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPReligionsInsertUpdate" EntitySet="Religions" ReturnType="Collection(Personals.Religion)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="BioDataCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ReligionCode" Mode="In" Type="String" />
+      <Parameter Name="Clergy" Mode="In" Type="String" />
+      <Parameter Name="PlaceOfWorship" Mode="In" Type="String" />
+      <Parameter Name="PlaceOfWorshipAddress" Mode="In" Type="String" />
+      <Parameter Name="ClergyPhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="ClergyEmail" Mode="In" Type="String" />
+      <Parameter Name="PlaceOfWorshipPhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="PlaceOfWorshipEmail" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPReligionsSelect" EntitySet="Religions" ReturnType="Collection(Personals.Religion)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPSponsorsDelete" EntitySet="Sponsors" ReturnType="Collection(Personals.Sponsor)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSponsorsDeletePermanently" EntitySet="Sponsors" ReturnType="Collection(Personals.Sponsor)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPSponsorsInsertUpdate" EntitySet="Sponsors" ReturnType="Collection(Personals.Sponsor)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="SponsorCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSponsorsSelect" EntitySet="Sponsors" ReturnType="Collection(Personals.Sponsor)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPSportsDelete" EntitySet="Sports" ReturnType="Collection(Personals.Sport)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSportsDeletePermanently" EntitySet="Sports" ReturnType="Collection(Personals.Sport)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPSportsInsertUpdate" EntitySet="Sports" ReturnType="Collection(Personals.Sport)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="SportCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPSportsSelect" EntitySet="Sports" ReturnType="Collection(Personals.Sport)">
+      <Parameter Name="Code" Mode="In" Type="Int32" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddressTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StateCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LgCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="AreasOfExpertis">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="JobCategoryCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AOSCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="YearOfExperience" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LeveOfExperience" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BioData">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="GenderCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CivilStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DateOfBirth" Type="DateTime" />
+    <Property Name="CountryCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StateCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LGACode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PlaceOfBirth" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Height" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Weight" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="HealthStatusCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PositionInFamily" Type="Int32" />
+    <Property Name="NoOfChildren" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TicketCode" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PinCode" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Religions" Relationship="Personals.FK_BioDataReligion" FromRole="BioDatas" ToRole="Religions" />
+  </EntityType>
+  <EntityType Name="Certificate">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AwardingBody" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="YearObtained" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="Title" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Certificate1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Choice">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstChoice" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SecondChoice" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ContactName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="ContactTitle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ComputerSkill">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PackageCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LevelOfKnowledgeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Declaration">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="GuardianCode" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Email1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Emergency">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TitleCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="EmploymentHistory">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TitleCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="JobCategoryCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="JobDescCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LevelOfXpertiseCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="WorkPercentageCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FromYearCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ToYearCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FromMonthCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ToMonthCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FromSAS" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FromSASCurrencyCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FromSASTotals" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="FromEAS" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FromEASCurrencyCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FromEASTotals" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Supervisor" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="SupervisorTitle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Employer" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="EmployerAddress" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="EmployerBusinessNatureCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EmployerURL" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="DutiesDescription" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="KeyAchievements" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ContactRefrenceCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NoOfPeopleSupervised" Type="Int32" />
+    <Property Name="ReasonForLeaving" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Guarantor">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="TitleCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="OccupationCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Undertaking" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Guardian">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GuardianCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TitleCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="GuardianName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OccupationCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Hobby">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="HobbyCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="JAMB">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="LanguageSkill">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DateX" Type="DateTime" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ReadingDegree" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SpeakingDegree" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="WritingDegree" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MedicalCondition">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DiseaseCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Conditions" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="NextOfKin">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RelTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TitleCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OccupationCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="OLevel">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="GradeCode" Type="Int32" />
+    <Property Name="GradeDescCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ExamTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Others">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OthersCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Phone">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Photo">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="ModuleCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ImageTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ByteThumb" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="BytePoster" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ByteFull" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ByteOriginal" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Qualification">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EducationTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="QualificationTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FromYear" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ToYear" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FromMonth" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ToMonth" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AwardingBody" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Certificate" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Referee">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="TitleCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="OccupationCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="KnowingMode" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ContactReferenceCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Religion">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BioDataCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ReligionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Clergy" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="PlaceOfWorship" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PlaceOfWorshipAddress" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ClergyPhoneNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ClergyEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PlaceOfWorshipPhoneNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PlaceOfWorshipEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="BioData" Relationship="Personals.FK_BioDataReligion" FromRole="Religions" ToRole="BioDatas" />
+  </EntityType>
+  <EntityType Name="Sponsor">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SponsorCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sport">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SportCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_BioDataReligion">
+    <End Role="BioDatas" Type="Personals.BioData" Multiplicity="1" />
+    <End Role="Religions" Type="Personals.Religion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BioDatas">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Religions">
+        <PropertyRef Name="BioDataCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

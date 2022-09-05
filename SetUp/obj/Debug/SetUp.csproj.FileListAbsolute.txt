@@ -1,0 +1,18 @@
+c:\users\administrator\documents\visual studio 2010\Projects\University\SetUp\bin\Debug\SetUp.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\SetUp\bin\Debug\SetUp.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\University\SetUp\obj\Debug\ResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2010\Projects\University\SetUp\obj\Debug\SetUp.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\SetUp\obj\Debug\SetUp.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\SetUp\bin\Debug\SetUp.dll.config
+E:\UniversityPortal\SetUp\bin\Debug\SetUp.dll.config
+E:\UniversityPortal\SetUp\bin\Debug\SetUp.dll
+E:\UniversityPortal\SetUp\bin\Debug\SetUp.pdb
+E:\UniversityPortal\SetUp\obj\Debug\ResolveAssemblyReference.cache
+E:\UniversityPortal\SetUp\obj\Debug\SetUp.dll
+E:\UniversityPortal\SetUp\obj\Debug\SetUp.pdb
+H:\NatGualang\UniversityPortal\SetUp\bin\Debug\SetUp.dll.config
+H:\NatGualang\UniversityPortal\SetUp\bin\Debug\SetUp.dll
+H:\NatGualang\UniversityPortal\SetUp\bin\Debug\SetUp.pdb
+H:\NatGualang\UniversityPortal\SetUp\obj\Debug\ResolveAssemblyReference.cache
+H:\NatGualang\UniversityPortal\SetUp\obj\Debug\SetUp.dll
+H:\NatGualang\UniversityPortal\SetUp\obj\Debug\SetUp.pdb

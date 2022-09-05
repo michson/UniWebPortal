@@ -1,0 +1,61 @@
+﻿
++++++++++++++++Tested By		:	Godwin Mathias+++++++++++++++
++++++++++++++++Reviewer			:	Godwin Mathias++++++++++++++++++++++	
++++++++++++++++Tested On		:	07/31/2011+++++++++++++++++++ 
++++++++++++++++Test Remark		:	All the Methods were successfully executed+++++++++++++++++++
+
+
+
+Assembly Name: SetUp
+Class Name: StatesBLL
+Name Space: SetUp.BLL
+Assemblies referenced: SetUp.DAL
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Insert Method-------------------
+
+Module item = new Module
+{
+    UniversityCode = "ACU",
+    Description = "Academics",
+    Url = "http://127.0.0.1/UniversityPortalWeb/Academics",
+    Notes = "Module for Academics",
+    CreatedOn = DateTime.Now,
+    CreatedBy = "Ademola"
+};
+MessageBox.Show(ModulesBLL.Insert(item));
+Execution Status: Successful
+--------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Update Method-------------------
+
+Module item = new Module
+{
+    UniversityCode = "ACU",
+    Description = "Academics",
+    Url = "http://127.0.0.1/UniversityPortalWeb/Academics",
+    CreatedOn = DateTime.Now,
+    CreatedBy = "Ademola",
+    Notes = "Academics Module",
+    Deleted = false,
+    Code = 1
+};
+MessageBox.Show(ModulesBLL.Update(item));
+Execution Status: Successful
+------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Delete Method---------------------
+
+//MessageBox.Show(ModulesBLL.DeletePermanently("2"));
+
+Execution Status: Successful
+----------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Select Methods---------------------
+
+ctrlGrid.DataSource = ModulesBLL.Retrieve(0 , "ACU", false);
+//ctrlGrid.DataSource = ModulesBLL.Retrieve("2", "ACU", false);
+Execution Status: Successful
+

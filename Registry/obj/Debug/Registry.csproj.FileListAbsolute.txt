@@ -1,0 +1,18 @@
+c:\users\administrator\documents\visual studio 2010\Projects\University\Registry\bin\Debug\Registry.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\Registry\bin\Debug\Registry.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\University\Registry\obj\Debug\ResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2010\Projects\University\Registry\obj\Debug\Registry.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\Registry\obj\Debug\Registry.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\Registry\bin\Debug\Registry.dll.config
+E:\UniversityPortal\Registry\bin\Debug\Registry.dll.config
+E:\UniversityPortal\Registry\bin\Debug\Registry.dll
+E:\UniversityPortal\Registry\bin\Debug\Registry.pdb
+E:\UniversityPortal\Registry\obj\Debug\ResolveAssemblyReference.cache
+E:\UniversityPortal\Registry\obj\Debug\Registry.dll
+E:\UniversityPortal\Registry\obj\Debug\Registry.pdb
+H:\NatGualang\UniversityPortal\Registry\bin\Debug\Registry.dll.config
+H:\NatGualang\UniversityPortal\Registry\bin\Debug\Registry.dll
+H:\NatGualang\UniversityPortal\Registry\bin\Debug\Registry.pdb
+H:\NatGualang\UniversityPortal\Registry\obj\Debug\ResolveAssemblyReference.cache
+H:\NatGualang\UniversityPortal\Registry\obj\Debug\Registry.dll
+H:\NatGualang\UniversityPortal\Registry\obj\Debug\Registry.pdb

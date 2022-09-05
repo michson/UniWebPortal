@@ -1,0 +1,52 @@
+﻿
++++++++++++++++Tested By		:	Godwin Mathias+++++++++++++++
++++++++++++++++Reviewer			:	Godwin Mathias++++++++++++++++++++++	
++++++++++++++++Tested On		:	07/31/2011+++++++++++++++++++ 
++++++++++++++++Test Remark		:	All the Methods were successfully executed+++++++++++++++++++
+
+
+
+Assembly Name: SetUp
+Class Name: DescriptionsBLL
+Name Space: SetUp.BLL
+Assemblies referenced: SetUp.DAL
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Insert Method-------------------
+
+Description item = new Description
+{
+    ParametersCode = "UTC",
+    Name = "State Polytechnic"
+};
+MessageBox.Show(DescriptionsBLL.Insert(item));
+Execution Status: Successful
+--------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Update Method-------------------
+
+Description item = new Description
+{
+    ParametersCode = "UTC",
+    ID = 56,
+    Code = "UTC-56",
+    Name = "College Of Education"
+};
+MessageBox.Show(DescriptionsBLL.Update(item));
+Execution Status: Successful
+------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Delete Method---------------------
+
+MessageBox.Show(DescriptionsBLL.DeletePermanently("UTC-56"));
+Execution Status: Successful
+----------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Select Methods---------------------
+
+ctrlGrid.DataSource = DescriptionsBLL.Retrieve(String.Empty, "SUB");
+ctrlGrid.DataSource = DescriptionsBLL.Retrieve("SUB-44", "sub");
+Execution Status: Successful
+

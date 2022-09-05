@@ -1,0 +1,1778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PersonalsStoreContainer" CdmEntityContainer="PersonalEntities">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="Personals.Address">
+        <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AddressTypeCode" ColumnName="AddressTypeCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="LgCode" ColumnName="LgCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Address">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPAddressesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="LgCode" ParameterName="LgCode" />
+            <ScalarProperty Name="StateCode" ParameterName="StateCode" />
+            <ScalarProperty Name="CountryCode" ParameterName="CountryCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="AddressTypeCode" ParameterName="AddressTypeCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPAddressesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="LgCode" ParameterName="LgCode" Version="Current" />
+            <ScalarProperty Name="StateCode" ParameterName="StateCode" Version="Current" />
+            <ScalarProperty Name="CountryCode" ParameterName="CountryCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="AddressTypeCode" ParameterName="AddressTypeCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPAddressesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AreasOfExpertises">
+      <EntityTypeMapping TypeName="Personals.AreasOfExpertis">
+        <MappingFragment StoreEntitySet="AreasOfExpertises">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="JobCategoryCode" ColumnName="JobCategoryCode" />
+          <ScalarProperty Name="AOSCode" ColumnName="AOSCode" />
+          <ScalarProperty Name="YearOfExperience" ColumnName="YearOfExperience" />
+          <ScalarProperty Name="LeveOfExperience" ColumnName="LeveOfExperience" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.AreasOfExpertis">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPAreasOfExpertisesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="LeveOfExperience" ParameterName="LeveOfExperience" />
+            <ScalarProperty Name="YearOfExperience" ParameterName="YearOfExperience" />
+            <ScalarProperty Name="AOSCode" ParameterName="AOSCode" />
+            <ScalarProperty Name="JobCategoryCode" ParameterName="JobCategoryCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPAreasOfExpertisesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="LeveOfExperience" ParameterName="LeveOfExperience" Version="Current" />
+            <ScalarProperty Name="YearOfExperience" ParameterName="YearOfExperience" Version="Current" />
+            <ScalarProperty Name="AOSCode" ParameterName="AOSCode" Version="Current" />
+            <ScalarProperty Name="JobCategoryCode" ParameterName="JobCategoryCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPAreasOfExpertisesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BioDatas">
+      <EntityTypeMapping TypeName="Personals.BioData">
+        <MappingFragment StoreEntitySet="BioDatas">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="GenderCode" ColumnName="GenderCode" />
+          <ScalarProperty Name="CivilStatus" ColumnName="CivilStatus" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="LGACode" ColumnName="LGACode" />
+          <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="HealthStatusCode" ColumnName="HealthStatusCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="PositionInFamily" ColumnName="PositionInFamily" />
+          <ScalarProperty Name="NoOfChildren" ColumnName="NoOfChildren" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="TicketCode" ColumnName="TicketCode" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.BioData">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPBioDatasInsertUpdate">
+            <ScalarProperty Name="PinCode" ParameterName="PinCode" />
+            <ScalarProperty Name="TicketCode" ParameterName="TicketCode" />
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="NoOfChildren" ParameterName="NoOfChildren" />
+            <ScalarProperty Name="PositionInFamily" ParameterName="PositionInFamily" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="HealthStatusCode" ParameterName="HealthStatusCode" />
+            <ScalarProperty Name="Weight" ParameterName="Weight" />
+            <ScalarProperty Name="Height" ParameterName="Height" />
+            <ScalarProperty Name="PlaceOfBirth" ParameterName="PlaceOfBirth" />
+            <ScalarProperty Name="LGACode" ParameterName="LGACode" />
+            <ScalarProperty Name="StateCode" ParameterName="StateCode" />
+            <ScalarProperty Name="CountryCode" ParameterName="CountryCode" />
+            <ScalarProperty Name="DateOfBirth" ParameterName="DateOfBirth" />
+            <ScalarProperty Name="CivilStatus" ParameterName="CivilStatus" />
+            <ScalarProperty Name="GenderCode" ParameterName="GenderCode" />
+            <ScalarProperty Name="FirstName" ParameterName="FirstName" />
+            <ScalarProperty Name="MiddleName" ParameterName="MiddleName" />
+            <ScalarProperty Name="Surname" ParameterName="Surname" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPBioDatasInsertUpdate">
+            <ScalarProperty Name="PinCode" ParameterName="PinCode" Version="Current" />
+            <ScalarProperty Name="TicketCode" ParameterName="TicketCode" Version="Current" />
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="NoOfChildren" ParameterName="NoOfChildren" Version="Current" />
+            <ScalarProperty Name="PositionInFamily" ParameterName="PositionInFamily" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="HealthStatusCode" ParameterName="HealthStatusCode" Version="Current" />
+            <ScalarProperty Name="Weight" ParameterName="Weight" Version="Current" />
+            <ScalarProperty Name="Height" ParameterName="Height" Version="Current" />
+            <ScalarProperty Name="PlaceOfBirth" ParameterName="PlaceOfBirth" Version="Current" />
+            <ScalarProperty Name="LGACode" ParameterName="LGACode" Version="Current" />
+            <ScalarProperty Name="StateCode" ParameterName="StateCode" Version="Current" />
+            <ScalarProperty Name="CountryCode" ParameterName="CountryCode" Version="Current" />
+            <ScalarProperty Name="DateOfBirth" ParameterName="DateOfBirth" Version="Current" />
+            <ScalarProperty Name="CivilStatus" ParameterName="CivilStatus" Version="Current" />
+            <ScalarProperty Name="GenderCode" ParameterName="GenderCode" Version="Current" />
+            <ScalarProperty Name="FirstName" ParameterName="FirstName" Version="Current" />
+            <ScalarProperty Name="MiddleName" ParameterName="MiddleName" Version="Current" />
+            <ScalarProperty Name="Surname" ParameterName="Surname" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPBioDatasDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certificates">
+      <EntityTypeMapping TypeName="Personals.Certificate">
+        <MappingFragment StoreEntitySet="Certificates">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="AwardingBody" ColumnName="AwardingBody" />
+          <ScalarProperty Name="YearObtained" ColumnName="YearObtained" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Certificate1" ColumnName="Certificate" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Certificate">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPCertificatesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Certificate1" ParameterName="Certificate" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Title" ParameterName="Title" />
+            <ScalarProperty Name="YearObtained" ParameterName="YearObtained" />
+            <ScalarProperty Name="AwardingBody" ParameterName="AwardingBody" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPCertificatesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Certificate1" ParameterName="Certificate" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Title" ParameterName="Title" Version="Current" />
+            <ScalarProperty Name="YearObtained" ParameterName="YearObtained" Version="Current" />
+            <ScalarProperty Name="AwardingBody" ParameterName="AwardingBody" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPCertificatesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Choices">
+      <EntityTypeMapping TypeName="Personals.Choice">
+        <MappingFragment StoreEntitySet="Choices">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FirstChoice" ColumnName="FirstChoice" />
+          <ScalarProperty Name="SecondChoice" ColumnName="SecondChoice" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Choice">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPChoicesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="SecondChoice" ParameterName="SecondChoice" />
+            <ScalarProperty Name="FirstChoice" ParameterName="FirstChoice" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPChoicesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="SecondChoice" ParameterName="SecondChoice" Version="Current" />
+            <ScalarProperty Name="FirstChoice" ParameterName="FirstChoice" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPChoicesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="Personals.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Company">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPCompaniesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ContactTitle" ParameterName="ContactTitle" />
+            <ScalarProperty Name="ContactName" ParameterName="ContactName" />
+            <ScalarProperty Name="CompanyName" ParameterName="CompanyName" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPCompaniesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ContactTitle" ParameterName="ContactTitle" Version="Current" />
+            <ScalarProperty Name="ContactName" ParameterName="ContactName" Version="Current" />
+            <ScalarProperty Name="CompanyName" ParameterName="CompanyName" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPCompaniesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComputerSkills">
+      <EntityTypeMapping TypeName="Personals.ComputerSkill">
+        <MappingFragment StoreEntitySet="ComputerSkills">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="PackageCode" ColumnName="PackageCode" />
+          <ScalarProperty Name="LevelOfKnowledgeCode" ColumnName="LevelOfKnowledgeCode" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.ComputerSkill">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPComputerSkillsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" />
+            <ScalarProperty Name="LevelOfKnowledgeCode" ParameterName="LevelOfKnowledgeCode" />
+            <ScalarProperty Name="PackageCode" ParameterName="PackageCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPComputerSkillsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" Version="Current" />
+            <ScalarProperty Name="LevelOfKnowledgeCode" ParameterName="LevelOfKnowledgeCode" Version="Current" />
+            <ScalarProperty Name="PackageCode" ParameterName="PackageCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPComputerSkillsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Declarations">
+      <EntityTypeMapping TypeName="Personals.Declaration">
+        <MappingFragment StoreEntitySet="Declarations">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="GuardianCode" ColumnName="GuardianCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Declaration">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPDeclarationsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="GuardianCode" ParameterName="GuardianCode" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPDeclarationsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="GuardianCode" ParameterName="GuardianCode" Version="Current" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPDeclarationsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emails">
+      <EntityTypeMapping TypeName="Personals.Email">
+        <MappingFragment StoreEntitySet="Emails">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="Email1" ColumnName="Email" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Email">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPEmailsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Email1" ParameterName="Email" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPEmailsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Email1" ParameterName="Email" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPEmailsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emergencies">
+      <EntityTypeMapping TypeName="Personals.Emergency">
+        <MappingFragment StoreEntitySet="Emergencies">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="TitleCode" ColumnName="TitleCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Emergency">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPEmergenciesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Name" ParameterName="Name" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPEmergenciesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Name" ParameterName="Name" Version="Current" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPEmergenciesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmploymentHistories">
+      <EntityTypeMapping TypeName="Personals.EmploymentHistory">
+        <MappingFragment StoreEntitySet="EmploymentHistories">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="TitleCode" ColumnName="TitleCode" />
+          <ScalarProperty Name="JobCategoryCode" ColumnName="JobCategoryCode" />
+          <ScalarProperty Name="JobDescCode" ColumnName="JobDescCode" />
+          <ScalarProperty Name="LevelOfXpertiseCode" ColumnName="LevelOfXpertiseCode" />
+          <ScalarProperty Name="WorkPercentageCode" ColumnName="WorkPercentageCode" />
+          <ScalarProperty Name="FromYearCode" ColumnName="FromYearCode" />
+          <ScalarProperty Name="ToYearCode" ColumnName="ToYearCode" />
+          <ScalarProperty Name="FromMonthCode" ColumnName="FromMonthCode" />
+          <ScalarProperty Name="ToMonthCode" ColumnName="ToMonthCode" />
+          <ScalarProperty Name="FromSAS" ColumnName="FromSAS" />
+          <ScalarProperty Name="FromSASCurrencyCode" ColumnName="FromSASCurrencyCode" />
+          <ScalarProperty Name="FromSASTotals" ColumnName="FromSASTotals" />
+          <ScalarProperty Name="FromEAS" ColumnName="FromEAS" />
+          <ScalarProperty Name="FromEASCurrencyCode" ColumnName="FromEASCurrencyCode" />
+          <ScalarProperty Name="FromEASTotals" ColumnName="FromEASTotals" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="SupervisorTitle" ColumnName="SupervisorTitle" />
+          <ScalarProperty Name="Employer" ColumnName="Employer" />
+          <ScalarProperty Name="EmployerAddress" ColumnName="EmployerAddress" />
+          <ScalarProperty Name="EmployerBusinessNatureCode" ColumnName="EmployerBusinessNatureCode" />
+          <ScalarProperty Name="EmployerURL" ColumnName="EmployerURL" />
+          <ScalarProperty Name="DutiesDescription" ColumnName="DutiesDescription" />
+          <ScalarProperty Name="KeyAchievements" ColumnName="KeyAchievements" />
+          <ScalarProperty Name="ContactRefrenceCode" ColumnName="ContactRefrenceCode" />
+          <ScalarProperty Name="NoOfPeopleSupervised" ColumnName="NoOfPeopleSupervised" />
+          <ScalarProperty Name="ReasonForLeaving" ColumnName="ReasonForLeaving" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.EmploymentHistory">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPEmploymentHistoriesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ReasonForLeaving" ParameterName="ReasonForLeaving" />
+            <ScalarProperty Name="NoOfPeopleSupervised" ParameterName="NoOfPeopleSupervised" />
+            <ScalarProperty Name="ContactRefrenceCode" ParameterName="ContactRefrenceCode" />
+            <ScalarProperty Name="KeyAchievements" ParameterName="KeyAchievements" />
+            <ScalarProperty Name="DutiesDescription" ParameterName="DutiesDescription" />
+            <ScalarProperty Name="EmployerURL" ParameterName="EmployerURL" />
+            <ScalarProperty Name="EmployerBusinessNatureCode" ParameterName="EmployerBusinessNatureCode" />
+            <ScalarProperty Name="EmployerAddress" ParameterName="EmployerAddress" />
+            <ScalarProperty Name="Employer" ParameterName="Employer" />
+            <ScalarProperty Name="SupervisorTitle" ParameterName="SupervisorTitle" />
+            <ScalarProperty Name="Supervisor" ParameterName="Supervisor" />
+            <ScalarProperty Name="FromEASTotals" ParameterName="FromEASTotals" />
+            <ScalarProperty Name="FromEASCurrencyCode" ParameterName="FromEASCurrencyCode" />
+            <ScalarProperty Name="FromEAS" ParameterName="FromEAS" />
+            <ScalarProperty Name="FromSASTotals" ParameterName="FromSASTotals" />
+            <ScalarProperty Name="FromSASCurrencyCode" ParameterName="FromSASCurrencyCode" />
+            <ScalarProperty Name="FromSAS" ParameterName="FromSAS" />
+            <ScalarProperty Name="ToMonthCode" ParameterName="ToMonthCode" />
+            <ScalarProperty Name="FromMonthCode" ParameterName="FromMonthCode" />
+            <ScalarProperty Name="ToYearCode" ParameterName="ToYearCode" />
+            <ScalarProperty Name="FromYearCode" ParameterName="FromYearCode" />
+            <ScalarProperty Name="WorkPercentageCode" ParameterName="WorkPercentageCode" />
+            <ScalarProperty Name="LevelOfXpertiseCode" ParameterName="LevelOfXpertiseCode" />
+            <ScalarProperty Name="JobDescCode" ParameterName="JobDescCode" />
+            <ScalarProperty Name="JobCategoryCode" ParameterName="JobCategoryCode" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPEmploymentHistoriesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ReasonForLeaving" ParameterName="ReasonForLeaving" Version="Current" />
+            <ScalarProperty Name="NoOfPeopleSupervised" ParameterName="NoOfPeopleSupervised" Version="Current" />
+            <ScalarProperty Name="ContactRefrenceCode" ParameterName="ContactRefrenceCode" Version="Current" />
+            <ScalarProperty Name="KeyAchievements" ParameterName="KeyAchievements" Version="Current" />
+            <ScalarProperty Name="DutiesDescription" ParameterName="DutiesDescription" Version="Current" />
+            <ScalarProperty Name="EmployerURL" ParameterName="EmployerURL" Version="Current" />
+            <ScalarProperty Name="EmployerBusinessNatureCode" ParameterName="EmployerBusinessNatureCode" Version="Current" />
+            <ScalarProperty Name="EmployerAddress" ParameterName="EmployerAddress" Version="Current" />
+            <ScalarProperty Name="Employer" ParameterName="Employer" Version="Current" />
+            <ScalarProperty Name="SupervisorTitle" ParameterName="SupervisorTitle" Version="Current" />
+            <ScalarProperty Name="Supervisor" ParameterName="Supervisor" Version="Current" />
+            <ScalarProperty Name="FromEASTotals" ParameterName="FromEASTotals" Version="Current" />
+            <ScalarProperty Name="FromEASCurrencyCode" ParameterName="FromEASCurrencyCode" Version="Current" />
+            <ScalarProperty Name="FromEAS" ParameterName="FromEAS" Version="Current" />
+            <ScalarProperty Name="FromSASTotals" ParameterName="FromSASTotals" Version="Current" />
+            <ScalarProperty Name="FromSASCurrencyCode" ParameterName="FromSASCurrencyCode" Version="Current" />
+            <ScalarProperty Name="FromSAS" ParameterName="FromSAS" Version="Current" />
+            <ScalarProperty Name="ToMonthCode" ParameterName="ToMonthCode" Version="Current" />
+            <ScalarProperty Name="FromMonthCode" ParameterName="FromMonthCode" Version="Current" />
+            <ScalarProperty Name="ToYearCode" ParameterName="ToYearCode" Version="Current" />
+            <ScalarProperty Name="FromYearCode" ParameterName="FromYearCode" Version="Current" />
+            <ScalarProperty Name="WorkPercentageCode" ParameterName="WorkPercentageCode" Version="Current" />
+            <ScalarProperty Name="LevelOfXpertiseCode" ParameterName="LevelOfXpertiseCode" Version="Current" />
+            <ScalarProperty Name="JobDescCode" ParameterName="JobDescCode" Version="Current" />
+            <ScalarProperty Name="JobCategoryCode" ParameterName="JobCategoryCode" Version="Current" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPEmploymentHistoriesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guarantors">
+      <EntityTypeMapping TypeName="Personals.Guarantor">
+        <MappingFragment StoreEntitySet="Guarantors">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="TitleCode" ColumnName="TitleCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OccupationCode" ColumnName="OccupationCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="Undertaking" ColumnName="Undertaking" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Guarantor">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPGuarantorsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" />
+            <ScalarProperty Name="Undertaking" ParameterName="Undertaking" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="OccupationCode" ParameterName="OccupationCode" />
+            <ScalarProperty Name="Name" ParameterName="Name" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPGuarantorsInsertUpdate">
+            <ScalarProperty Name="CreatedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" Version="Current" />
+            <ScalarProperty Name="Undertaking" ParameterName="Undertaking" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="OccupationCode" ParameterName="OccupationCode" Version="Current" />
+            <ScalarProperty Name="Name" ParameterName="Name" Version="Current" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPGuarantorsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guardians">
+      <EntityTypeMapping TypeName="Personals.Guardian">
+        <MappingFragment StoreEntitySet="Guardians">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="GuardianCode" ColumnName="GuardianCode" />
+          <ScalarProperty Name="TitleCode" ColumnName="TitleCode" />
+          <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
+          <ScalarProperty Name="OccupationCode" ColumnName="OccupationCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Guardian">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPGuardiansInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="OccupationCode" ParameterName="OccupationCode" />
+            <ScalarProperty Name="GuardianName" ParameterName="GuardianName" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" />
+            <ScalarProperty Name="GuardianCode" ParameterName="GuardianCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPGuardiansInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="OccupationCode" ParameterName="OccupationCode" Version="Current" />
+            <ScalarProperty Name="GuardianName" ParameterName="GuardianName" Version="Current" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" Version="Current" />
+            <ScalarProperty Name="GuardianCode" ParameterName="GuardianCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPGuardiansDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hobbies">
+      <EntityTypeMapping TypeName="Personals.Hobby">
+        <MappingFragment StoreEntitySet="Hobbies">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="HobbyCode" ColumnName="HobbyCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Hobby">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPHobbiesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="HobbyCode" ParameterName="HobbyCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPHobbiesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="HobbyCode" ParameterName="HobbyCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPHobbiesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JAMBs">
+      <EntityTypeMapping TypeName="Personals.JAMB">
+        <MappingFragment StoreEntitySet="JAMBs">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.JAMB">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPJAMBsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Year" ParameterName="Year" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Score" ParameterName="Score" />
+            <ScalarProperty Name="RegNo" ParameterName="RegNo" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPJAMBsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Year" ParameterName="Year" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Score" ParameterName="Score" Version="Current" />
+            <ScalarProperty Name="RegNo" ParameterName="RegNo" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPJAMBsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LanguageSkills">
+      <EntityTypeMapping TypeName="Personals.LanguageSkill">
+        <MappingFragment StoreEntitySet="LanguageSkills">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="DateX" ColumnName="DateX" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="ReadingDegree" ColumnName="ReadingDegree" />
+          <ScalarProperty Name="SpeakingDegree" ColumnName="SpeakingDegree" />
+          <ScalarProperty Name="WritingDegree" ColumnName="WritingDegree" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.LanguageSkill">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPLanguageSkillsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="WritingDegree" ParameterName="WritingDegree" />
+            <ScalarProperty Name="SpeakingDegree" ParameterName="SpeakingDegree" />
+            <ScalarProperty Name="ReadingDegree" ParameterName="ReadingDegree" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="LanguageCode" ParameterName="LanguageCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPLanguageSkillsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="WritingDegree" ParameterName="WritingDegree" Version="Current" />
+            <ScalarProperty Name="SpeakingDegree" ParameterName="SpeakingDegree" Version="Current" />
+            <ScalarProperty Name="ReadingDegree" ParameterName="ReadingDegree" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="LanguageCode" ParameterName="LanguageCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPLanguageSkillsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicalConditions">
+      <EntityTypeMapping TypeName="Personals.MedicalCondition">
+        <MappingFragment StoreEntitySet="MedicalConditions">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="DiseaseCode" ColumnName="DiseaseCode" />
+          <ScalarProperty Name="Conditions" ColumnName="Conditions" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.MedicalCondition">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPMedicalConditionsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Conditions" ParameterName="Conditions" />
+            <ScalarProperty Name="DiseaseCode" ParameterName="DiseaseCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPMedicalConditionsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Conditions" ParameterName="Conditions" Version="Current" />
+            <ScalarProperty Name="DiseaseCode" ParameterName="DiseaseCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPMedicalConditionsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NextOfKins">
+      <EntityTypeMapping TypeName="Personals.NextOfKin">
+        <MappingFragment StoreEntitySet="NextOfKins">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="RelTypeCode" ColumnName="RelTypeCode" />
+          <ScalarProperty Name="TitleCode" ColumnName="TitleCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OccupationCode" ColumnName="OccupationCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.NextOfKin">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPNextOfKinsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="OccupationCode" ParameterName="OccupationCode" />
+            <ScalarProperty Name="Name" ParameterName="Name" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" />
+            <ScalarProperty Name="RelTypeCode" ParameterName="RelTypeCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPNextOfKinsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="OccupationCode" ParameterName="OccupationCode" Version="Current" />
+            <ScalarProperty Name="Name" ParameterName="Name" Version="Current" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" Version="Current" />
+            <ScalarProperty Name="RelTypeCode" ParameterName="RelTypeCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPNextOfKinsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OLevels">
+      <EntityTypeMapping TypeName="Personals.OLevel">
+        <MappingFragment StoreEntitySet="OLevels">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="SubjectCode" ColumnName="SubjectCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="GradeCode" ColumnName="GradeCode" />
+          <ScalarProperty Name="GradeDescCode" ColumnName="GradeDescCode" />
+          <ScalarProperty Name="ExamTypeCode" ColumnName="ExamTypeCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.OLevel">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPOLevelsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ExamTypeCode" ParameterName="ExamTypeCode" />
+            <ScalarProperty Name="GradeDescCode" ParameterName="GradeDescCode" />
+            <ScalarProperty Name="GradeCode" ParameterName="GradeCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="SubjectCode" ParameterName="SubjectCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPOLevelsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ExamTypeCode" ParameterName="ExamTypeCode" Version="Current" />
+            <ScalarProperty Name="GradeDescCode" ParameterName="GradeDescCode" Version="Current" />
+            <ScalarProperty Name="GradeCode" ParameterName="GradeCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="SubjectCode" ParameterName="SubjectCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPOLevelsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Others">
+      <EntityTypeMapping TypeName="Personals.Others">
+        <MappingFragment StoreEntitySet="Others">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="OthersCode" ColumnName="OthersCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Others">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPOthersInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="OthersCode" ParameterName="OthersCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPOthersInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="OthersCode" ParameterName="OthersCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPOthersDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phones">
+      <EntityTypeMapping TypeName="Personals.Phone">
+        <MappingFragment StoreEntitySet="Phones">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="PhoneTypeCode" ColumnName="PhoneTypeCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Phone">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPPhonesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="PhoneNumber" ParameterName="PhoneNumber" />
+            <ScalarProperty Name="PostalCode" ParameterName="PostalCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="PhoneTypeCode" ParameterName="PhoneTypeCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPPhonesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="PhoneNumber" ParameterName="PhoneNumber" Version="Current" />
+            <ScalarProperty Name="PostalCode" ParameterName="PostalCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="PhoneTypeCode" ParameterName="PhoneTypeCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPPhonesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Photos">
+      <EntityTypeMapping TypeName="Personals.Photo">
+        <MappingFragment StoreEntitySet="Photos">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ModuleCode" ColumnName="ModuleCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="ImageTypeCode" ColumnName="ImageTypeCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ByteThumb" ColumnName="ByteThumb" />
+          <ScalarProperty Name="BytePoster" ColumnName="BytePoster" />
+          <ScalarProperty Name="ByteFull" ColumnName="ByteFull" />
+          <ScalarProperty Name="ByteOriginal" ColumnName="ByteOriginal" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Photo">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPPhotosInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" />
+            <ScalarProperty Name="ByteOriginal" ParameterName="ByteOriginal" />
+            <ScalarProperty Name="ByteFull" ParameterName="ByteFull" />
+            <ScalarProperty Name="BytePoster" ParameterName="BytePoster" />
+            <ScalarProperty Name="ByteThumb" ParameterName="ByteThumb" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="ImageTypeCode" ParameterName="ImageTypeCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="ModuleCode" ParameterName="ModuleCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPPhotosInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" Version="Current" />
+            <ScalarProperty Name="ByteOriginal" ParameterName="ByteOriginal" Version="Current" />
+            <ScalarProperty Name="ByteFull" ParameterName="ByteFull" Version="Current" />
+            <ScalarProperty Name="BytePoster" ParameterName="BytePoster" Version="Current" />
+            <ScalarProperty Name="ByteThumb" ParameterName="ByteThumb" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="ImageTypeCode" ParameterName="ImageTypeCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="ModuleCode" ParameterName="ModuleCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPPhotosDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Qualifications">
+      <EntityTypeMapping TypeName="Personals.Qualification">
+        <MappingFragment StoreEntitySet="Qualifications">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="EducationTypeCode" ColumnName="EducationTypeCode" />
+          <ScalarProperty Name="QualificationTypeCode" ColumnName="QualificationTypeCode" />
+          <ScalarProperty Name="FromYear" ColumnName="FromYear" />
+          <ScalarProperty Name="ToYear" ColumnName="ToYear" />
+          <ScalarProperty Name="FromMonth" ColumnName="FromMonth" />
+          <ScalarProperty Name="ToMonth" ColumnName="ToMonth" />
+          <ScalarProperty Name="AwardingBody" ColumnName="AwardingBody" />
+          <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Qualification">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPQualificationsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Certificate" ParameterName="Certificate" />
+            <ScalarProperty Name="AwardingBody" ParameterName="AwardingBody" />
+            <ScalarProperty Name="ToMonth" ParameterName="ToMonth" />
+            <ScalarProperty Name="FromMonth" ParameterName="FromMonth" />
+            <ScalarProperty Name="ToYear" ParameterName="ToYear" />
+            <ScalarProperty Name="FromYear" ParameterName="FromYear" />
+            <ScalarProperty Name="QualificationTypeCode" ParameterName="QualificationTypeCode" />
+            <ScalarProperty Name="EducationTypeCode" ParameterName="EducationTypeCode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPQualificationsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Certificate" ParameterName="Certificate" Version="Current" />
+            <ScalarProperty Name="AwardingBody" ParameterName="AwardingBody" Version="Current" />
+            <ScalarProperty Name="ToMonth" ParameterName="ToMonth" Version="Current" />
+            <ScalarProperty Name="FromMonth" ParameterName="FromMonth" Version="Current" />
+            <ScalarProperty Name="ToYear" ParameterName="ToYear" Version="Current" />
+            <ScalarProperty Name="FromYear" ParameterName="FromYear" Version="Current" />
+            <ScalarProperty Name="QualificationTypeCode" ParameterName="QualificationTypeCode" Version="Current" />
+            <ScalarProperty Name="EducationTypeCode" ParameterName="EducationTypeCode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPQualificationsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Referees">
+      <EntityTypeMapping TypeName="Personals.Referee">
+        <MappingFragment StoreEntitySet="Referees">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="TitleCode" ColumnName="TitleCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OccupationCode" ColumnName="OccupationCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="KnowingMode" ColumnName="KnowingMode" />
+          <ScalarProperty Name="ContactReferenceCode" ColumnName="ContactReferenceCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Referee">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPRefereesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ContactReferenceCode" ParameterName="ContactReferenceCode" />
+            <ScalarProperty Name="KnowingMode" ParameterName="KnowingMode" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="OccupationCode" ParameterName="OccupationCode" />
+            <ScalarProperty Name="Name" ParameterName="Name" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPRefereesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ContactReferenceCode" ParameterName="ContactReferenceCode" Version="Current" />
+            <ScalarProperty Name="KnowingMode" ParameterName="KnowingMode" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="OccupationCode" ParameterName="OccupationCode" Version="Current" />
+            <ScalarProperty Name="Name" ParameterName="Name" Version="Current" />
+            <ScalarProperty Name="TitleCode" ParameterName="TitleCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPRefereesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Religions">
+      <EntityTypeMapping TypeName="Personals.Religion">
+        <MappingFragment StoreEntitySet="Religions">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="BioDataCode" ColumnName="BioDataCode" />
+          <ScalarProperty Name="ReligionCode" ColumnName="ReligionCode" />
+          <ScalarProperty Name="Clergy" ColumnName="Clergy" />
+          <ScalarProperty Name="PlaceOfWorship" ColumnName="PlaceOfWorship" />
+          <ScalarProperty Name="PlaceOfWorshipAddress" ColumnName="PlaceOfWorshipAddress" />
+          <ScalarProperty Name="ClergyPhoneNumber" ColumnName="ClergyPhoneNumber" />
+          <ScalarProperty Name="ClergyEmail" ColumnName="ClergyEmail" />
+          <ScalarProperty Name="PlaceOfWorshipPhoneNumber" ColumnName="PlaceOfWorshipPhoneNumber" />
+          <ScalarProperty Name="PlaceOfWorshipEmail" ColumnName="PlaceOfWorshipEmail" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Religion">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPReligionsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="PlaceOfWorshipEmail" ParameterName="PlaceOfWorshipEmail" />
+            <ScalarProperty Name="PlaceOfWorshipPhoneNumber" ParameterName="PlaceOfWorshipPhoneNumber" />
+            <ScalarProperty Name="ClergyEmail" ParameterName="ClergyEmail" />
+            <ScalarProperty Name="ClergyPhoneNumber" ParameterName="ClergyPhoneNumber" />
+            <ScalarProperty Name="PlaceOfWorshipAddress" ParameterName="PlaceOfWorshipAddress" />
+            <ScalarProperty Name="PlaceOfWorship" ParameterName="PlaceOfWorship" />
+            <ScalarProperty Name="Clergy" ParameterName="Clergy" />
+            <ScalarProperty Name="ReligionCode" ParameterName="ReligionCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="BioDataCode" ParameterName="BioDataCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPReligionsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="PlaceOfWorshipEmail" ParameterName="PlaceOfWorshipEmail" Version="Current" />
+            <ScalarProperty Name="PlaceOfWorshipPhoneNumber" ParameterName="PlaceOfWorshipPhoneNumber" Version="Current" />
+            <ScalarProperty Name="ClergyEmail" ParameterName="ClergyEmail" Version="Current" />
+            <ScalarProperty Name="ClergyPhoneNumber" ParameterName="ClergyPhoneNumber" Version="Current" />
+            <ScalarProperty Name="PlaceOfWorshipAddress" ParameterName="PlaceOfWorshipAddress" Version="Current" />
+            <ScalarProperty Name="PlaceOfWorship" ParameterName="PlaceOfWorship" Version="Current" />
+            <ScalarProperty Name="Clergy" ParameterName="Clergy" Version="Current" />
+            <ScalarProperty Name="ReligionCode" ParameterName="ReligionCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="BioDataCode" ParameterName="BioDataCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPReligionsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sponsors">
+      <EntityTypeMapping TypeName="Personals.Sponsor">
+        <MappingFragment StoreEntitySet="Sponsors">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="SponsorCode" ColumnName="SponsorCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Sponsor">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPSponsorsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="SponsorCode" ParameterName="SponsorCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPSponsorsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="SponsorCode" ParameterName="SponsorCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPSponsorsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sports">
+      <EntityTypeMapping TypeName="Personals.Sport">
+        <MappingFragment StoreEntitySet="Sports">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="SportCode" ColumnName="SportCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Personals.Sport">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Personals.Store.SPSportsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="SportCode" ParameterName="SportCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Personals.Store.SPSportsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="SportCode" ParameterName="SportCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Personals.Store.SPSportsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SPAddressesDelete" FunctionName="Personals.Store.SPAddressesDelete" />
+    <FunctionImportMapping FunctionImportName="SPAddressesDeletePermanently" FunctionName="Personals.Store.SPAddressesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPAddressesInsertUpdate" FunctionName="Personals.Store.SPAddressesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPAddressesSelect" FunctionName="Personals.Store.SPAddressesSelect" />
+    <FunctionImportMapping FunctionImportName="SPAreasOfExpertisesDelete" FunctionName="Personals.Store.SPAreasOfExpertisesDelete" />
+    <FunctionImportMapping FunctionImportName="SPAreasOfExpertisesDeletePermanently" FunctionName="Personals.Store.SPAreasOfExpertisesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPAreasOfExpertisesInsertUpdate" FunctionName="Personals.Store.SPAreasOfExpertisesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPAreasOfExpertisesSelect" FunctionName="Personals.Store.SPAreasOfExpertisesSelect" />
+    <FunctionImportMapping FunctionImportName="SPBioDatasDelete" FunctionName="Personals.Store.SPBioDatasDelete" />
+    <FunctionImportMapping FunctionImportName="SPBioDatasDeletePermanently" FunctionName="Personals.Store.SPBioDatasDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPBioDatasInsertUpdate" FunctionName="Personals.Store.SPBioDatasInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPBioDatasSelect" FunctionName="Personals.Store.SPBioDatasSelect" />
+    <FunctionImportMapping FunctionImportName="SPCertificatesDelete" FunctionName="Personals.Store.SPCertificatesDelete" />
+    <FunctionImportMapping FunctionImportName="SPCertificatesDeletePermanently" FunctionName="Personals.Store.SPCertificatesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPCertificatesInsertUpdate" FunctionName="Personals.Store.SPCertificatesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPCertificatesSelect" FunctionName="Personals.Store.SPCertificatesSelect" />
+    <FunctionImportMapping FunctionImportName="SPChoicesDelete" FunctionName="Personals.Store.SPChoicesDelete" />
+    <FunctionImportMapping FunctionImportName="SPChoicesDeletePermanently" FunctionName="Personals.Store.SPChoicesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPChoicesInsertUpdate" FunctionName="Personals.Store.SPChoicesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPChoicesSelect" FunctionName="Personals.Store.SPChoicesSelect" />
+    <FunctionImportMapping FunctionImportName="SPCompaniesDelete" FunctionName="Personals.Store.SPCompaniesDelete" />
+    <FunctionImportMapping FunctionImportName="SPCompaniesDeletePermanently" FunctionName="Personals.Store.SPCompaniesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPCompaniesInsertUpdate" FunctionName="Personals.Store.SPCompaniesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPCompaniesSelect" FunctionName="Personals.Store.SPCompaniesSelect" />
+    <FunctionImportMapping FunctionImportName="SPComputerSkillsDelete" FunctionName="Personals.Store.SPComputerSkillsDelete" />
+    <FunctionImportMapping FunctionImportName="SPComputerSkillsDeletePermanently" FunctionName="Personals.Store.SPComputerSkillsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPComputerSkillsInsertUpdate" FunctionName="Personals.Store.SPComputerSkillsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPComputerSkillsSelect" FunctionName="Personals.Store.SPComputerSkillsSelect" />
+    <FunctionImportMapping FunctionImportName="SPDeclarationsDelete" FunctionName="Personals.Store.SPDeclarationsDelete" />
+    <FunctionImportMapping FunctionImportName="SPDeclarationsDeletePermanently" FunctionName="Personals.Store.SPDeclarationsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPDeclarationsInsertUpdate" FunctionName="Personals.Store.SPDeclarationsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPDeclarationsSelect" FunctionName="Personals.Store.SPDeclarationsSelect" />
+    <FunctionImportMapping FunctionImportName="SPEmailsDelete" FunctionName="Personals.Store.SPEmailsDelete" />
+    <FunctionImportMapping FunctionImportName="SPEmailsDeletePermanently" FunctionName="Personals.Store.SPEmailsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPEmailsInsertUpdate" FunctionName="Personals.Store.SPEmailsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPEmailsSelect" FunctionName="Personals.Store.SPEmailsSelect" />
+    <FunctionImportMapping FunctionImportName="SPEmergenciesDelete" FunctionName="Personals.Store.SPEmergenciesDelete" />
+    <FunctionImportMapping FunctionImportName="SPEmergenciesDeletePermanently" FunctionName="Personals.Store.SPEmergenciesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPEmergenciesInsertUpdate" FunctionName="Personals.Store.SPEmergenciesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPEmergenciesSelect" FunctionName="Personals.Store.SPEmergenciesSelect" />
+    <FunctionImportMapping FunctionImportName="SPEmploymentHistoriesDelete" FunctionName="Personals.Store.SPEmploymentHistoriesDelete" />
+    <FunctionImportMapping FunctionImportName="SPEmploymentHistoriesDeletePermanently" FunctionName="Personals.Store.SPEmploymentHistoriesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPEmploymentHistoriesInsertUpdate" FunctionName="Personals.Store.SPEmploymentHistoriesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPEmploymentHistoriesSelect" FunctionName="Personals.Store.SPEmploymentHistoriesSelect" />
+    <FunctionImportMapping FunctionImportName="SPGuarantorsDelete" FunctionName="Personals.Store.SPGuarantorsDelete" />
+    <FunctionImportMapping FunctionImportName="SPGuarantorsDeletePermanently" FunctionName="Personals.Store.SPGuarantorsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPGuarantorsInsertUpdate" FunctionName="Personals.Store.SPGuarantorsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPGuarantorsSelect" FunctionName="Personals.Store.SPGuarantorsSelect" />
+    <FunctionImportMapping FunctionImportName="SPGuardiansDelete" FunctionName="Personals.Store.SPGuardiansDelete" />
+    <FunctionImportMapping FunctionImportName="SPGuardiansDeletePermanently" FunctionName="Personals.Store.SPGuardiansDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPGuardiansInsertUpdate" FunctionName="Personals.Store.SPGuardiansInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPGuardiansSelect" FunctionName="Personals.Store.SPGuardiansSelect" />
+    <FunctionImportMapping FunctionImportName="SPHobbiesDelete" FunctionName="Personals.Store.SPHobbiesDelete" />
+    <FunctionImportMapping FunctionImportName="SPHobbiesDeletePermanently" FunctionName="Personals.Store.SPHobbiesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPHobbiesInsertUpdate" FunctionName="Personals.Store.SPHobbiesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPHobbiesSelect" FunctionName="Personals.Store.SPHobbiesSelect" />
+    <FunctionImportMapping FunctionImportName="SPJAMBsDelete" FunctionName="Personals.Store.SPJAMBsDelete" />
+    <FunctionImportMapping FunctionImportName="SPJAMBsDeletePermanently" FunctionName="Personals.Store.SPJAMBsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPJAMBsInsertUpdate" FunctionName="Personals.Store.SPJAMBsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPJAMBsSelect" FunctionName="Personals.Store.SPJAMBsSelect" />
+    <FunctionImportMapping FunctionImportName="SPLanguageSkillsDelete" FunctionName="Personals.Store.SPLanguageSkillsDelete" />
+    <FunctionImportMapping FunctionImportName="SPLanguageSkillsDeletePermanently" FunctionName="Personals.Store.SPLanguageSkillsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPLanguageSkillsInsertUpdate" FunctionName="Personals.Store.SPLanguageSkillsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPLanguageSkillsSelect" FunctionName="Personals.Store.SPLanguageSkillsSelect" />
+    <FunctionImportMapping FunctionImportName="SPMedicalConditionsDelete" FunctionName="Personals.Store.SPMedicalConditionsDelete" />
+    <FunctionImportMapping FunctionImportName="SPMedicalConditionsDeletePermanently" FunctionName="Personals.Store.SPMedicalConditionsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPMedicalConditionsInsertUpdate" FunctionName="Personals.Store.SPMedicalConditionsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPMedicalConditionsSelect" FunctionName="Personals.Store.SPMedicalConditionsSelect" />
+    <FunctionImportMapping FunctionImportName="SPNextOfKinsDelete" FunctionName="Personals.Store.SPNextOfKinsDelete" />
+    <FunctionImportMapping FunctionImportName="SPNextOfKinsDeletePermanently" FunctionName="Personals.Store.SPNextOfKinsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPNextOfKinsInsertUpdate" FunctionName="Personals.Store.SPNextOfKinsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPNextOfKinsSelect" FunctionName="Personals.Store.SPNextOfKinsSelect" />
+    <FunctionImportMapping FunctionImportName="SPOLevelsDelete" FunctionName="Personals.Store.SPOLevelsDelete" />
+    <FunctionImportMapping FunctionImportName="SPOLevelsDeletePermanently" FunctionName="Personals.Store.SPOLevelsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPOLevelsInsertUpdate" FunctionName="Personals.Store.SPOLevelsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPOLevelsSelect" FunctionName="Personals.Store.SPOLevelsSelect" />
+    <FunctionImportMapping FunctionImportName="SPOthersDelete" FunctionName="Personals.Store.SPOthersDelete" />
+    <FunctionImportMapping FunctionImportName="SPOthersDeletePermanently" FunctionName="Personals.Store.SPOthersDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPOthersInsertUpdate" FunctionName="Personals.Store.SPOthersInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPOthersSelect" FunctionName="Personals.Store.SPOthersSelect" />
+    <FunctionImportMapping FunctionImportName="SPPhonesDelete" FunctionName="Personals.Store.SPPhonesDelete" />
+    <FunctionImportMapping FunctionImportName="SPPhonesDeletePermanently" FunctionName="Personals.Store.SPPhonesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPPhonesInsertUpdate" FunctionName="Personals.Store.SPPhonesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPPhonesSelect" FunctionName="Personals.Store.SPPhonesSelect" />
+    <FunctionImportMapping FunctionImportName="SPPhotosDelete" FunctionName="Personals.Store.SPPhotosDelete" />
+    <FunctionImportMapping FunctionImportName="SPPhotosDeletePermanently" FunctionName="Personals.Store.SPPhotosDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPPhotosInsertUpdate" FunctionName="Personals.Store.SPPhotosInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPPhotosSelect" FunctionName="Personals.Store.SPPhotosSelect" />
+    <FunctionImportMapping FunctionImportName="SPQualificationsDelete" FunctionName="Personals.Store.SPQualificationsDelete" />
+    <FunctionImportMapping FunctionImportName="SPQualificationsDeletePermanently" FunctionName="Personals.Store.SPQualificationsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPQualificationsInsertUpdate" FunctionName="Personals.Store.SPQualificationsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPQualificationsSelect" FunctionName="Personals.Store.SPQualificationsSelect" />
+    <FunctionImportMapping FunctionImportName="SPRefereesDelete" FunctionName="Personals.Store.SPRefereesDelete" />
+    <FunctionImportMapping FunctionImportName="SPRefereesDeletePermanently" FunctionName="Personals.Store.SPRefereesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPRefereesInsertUpdate" FunctionName="Personals.Store.SPRefereesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPRefereesSelect" FunctionName="Personals.Store.SPRefereesSelect" />
+    <FunctionImportMapping FunctionImportName="SPReligionsDelete" FunctionName="Personals.Store.SPReligionsDelete" />
+    <FunctionImportMapping FunctionImportName="SPReligionsDeletePermanently" FunctionName="Personals.Store.SPReligionsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPReligionsInsertUpdate" FunctionName="Personals.Store.SPReligionsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPReligionsSelect" FunctionName="Personals.Store.SPReligionsSelect" />
+    <FunctionImportMapping FunctionImportName="SPSponsorsDelete" FunctionName="Personals.Store.SPSponsorsDelete" />
+    <FunctionImportMapping FunctionImportName="SPSponsorsDeletePermanently" FunctionName="Personals.Store.SPSponsorsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPSponsorsInsertUpdate" FunctionName="Personals.Store.SPSponsorsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPSponsorsSelect" FunctionName="Personals.Store.SPSponsorsSelect" />
+    <FunctionImportMapping FunctionImportName="SPSportsDelete" FunctionName="Personals.Store.SPSportsDelete" />
+    <FunctionImportMapping FunctionImportName="SPSportsDeletePermanently" FunctionName="Personals.Store.SPSportsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPSportsInsertUpdate" FunctionName="Personals.Store.SPSportsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPSportsSelect" FunctionName="Personals.Store.SPSportsSelect" />
+  </EntityContainerMapping>
+</Mapping>

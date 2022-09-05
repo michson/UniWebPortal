@@ -1,0 +1,18 @@
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\UsersManagement\bin\Debug\UsersManagement.dll.config
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\UsersManagement\bin\Debug\UsersManagement.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\UsersManagement\bin\Debug\UsersManagement.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\UsersManagement\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\UsersManagement\obj\Debug\UsersManagement.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\UsersManagement\obj\Debug\UsersManagement.pdb
+E:\UniversityPortal\UsersManagement\bin\Debug\UsersManagement.dll.config
+E:\UniversityPortal\UsersManagement\bin\Debug\UsersManagement.dll
+E:\UniversityPortal\UsersManagement\bin\Debug\UsersManagement.pdb
+E:\UniversityPortal\UsersManagement\obj\Debug\ResolveAssemblyReference.cache
+E:\UniversityPortal\UsersManagement\obj\Debug\UsersManagement.dll
+E:\UniversityPortal\UsersManagement\obj\Debug\UsersManagement.pdb
+H:\NatGualang\UniversityPortal\UsersManagement\bin\Debug\UsersManagement.dll.config
+H:\NatGualang\UniversityPortal\UsersManagement\bin\Debug\UsersManagement.dll
+H:\NatGualang\UniversityPortal\UsersManagement\bin\Debug\UsersManagement.pdb
+H:\NatGualang\UniversityPortal\UsersManagement\obj\Debug\ResolveAssemblyReference.cache
+H:\NatGualang\UniversityPortal\UsersManagement\obj\Debug\UsersManagement.dll
+H:\NatGualang\UniversityPortal\UsersManagement\obj\Debug\UsersManagement.pdb

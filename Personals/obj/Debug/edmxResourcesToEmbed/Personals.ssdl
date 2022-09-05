@@ -1,0 +1,1445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Personals.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PersonalsStoreContainer">
+    <EntitySet Name="Addresses" EntityType="Personals.Store.Addresses" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="AreasOfExpertises" EntityType="Personals.Store.AreasOfExpertises" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="BioDatas" EntityType="Personals.Store.BioDatas" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Certificates" EntityType="Personals.Store.Certificates" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Choices" EntityType="Personals.Store.Choices" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Companies" EntityType="Personals.Store.Companies" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="ComputerSkills" EntityType="Personals.Store.ComputerSkills" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Declarations" EntityType="Personals.Store.Declarations" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Emails" EntityType="Personals.Store.Emails" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Emergencies" EntityType="Personals.Store.Emergencies" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="EmploymentHistories" EntityType="Personals.Store.EmploymentHistories" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Guarantors" EntityType="Personals.Store.Guarantors" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Guardians" EntityType="Personals.Store.Guardians" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Hobbies" EntityType="Personals.Store.Hobbies" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="JAMBs" EntityType="Personals.Store.JAMBs" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="LanguageSkills" EntityType="Personals.Store.LanguageSkills" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="MedicalConditions" EntityType="Personals.Store.MedicalConditions" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="NextOfKins" EntityType="Personals.Store.NextOfKins" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="OLevels" EntityType="Personals.Store.OLevels" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Others" EntityType="Personals.Store.Others" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Phones" EntityType="Personals.Store.Phones" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Photos" EntityType="Personals.Store.Photos" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Qualifications" EntityType="Personals.Store.Qualifications" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Referees" EntityType="Personals.Store.Referees" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Religions" EntityType="Personals.Store.Religions" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Sponsors" EntityType="Personals.Store.Sponsors" store:Type="Tables" Schema="Personals" />
+    <EntitySet Name="Sports" EntityType="Personals.Store.Sports" store:Type="Tables" Schema="Personals" />
+    <AssociationSet Name="FK_BioDataReligion" Association="Personals.Store.FK_BioDataReligion">
+      <End Role="BioDatas" EntitySet="BioDatas" />
+      <End Role="Religions" EntitySet="Religions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Addresses">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AddressTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="StateCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LgCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AreasOfExpertises">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobCategoryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AOSCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="YearOfExperience" Type="nvarchar" MaxLength="50" />
+    <Property Name="LeveOfExperience" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BioDatas">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="GenderCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CivilStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="StateCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LGACode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlaceOfBirth" Type="nvarchar" MaxLength="50" />
+    <Property Name="Height" Type="nvarchar" MaxLength="50" />
+    <Property Name="Weight" Type="nvarchar" MaxLength="50" />
+    <Property Name="HealthStatusCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PositionInFamily" Type="int" />
+    <Property Name="NoOfChildren" Type="int" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="TicketCode" Type="numeric" />
+    <Property Name="PinCode" Type="numeric" />
+  </EntityType>
+  <EntityType Name="Certificates">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AwardingBody" Type="nvarchar" MaxLength="50" />
+    <Property Name="YearObtained" Type="nvarchar" Nullable="false" MaxLength="4" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" />
+    <Property Name="Certificate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Choices">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstChoice" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecondChoice" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContactTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ComputerSkills">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PackageCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LevelOfKnowledgeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Declarations">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+    <Property Name="GuardianCode" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Emails">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Emergencies">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TitleCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmploymentHistories">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TitleCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobCategoryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobDescCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LevelOfXpertiseCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkPercentageCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromYearCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ToYearCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromMonthCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ToMonthCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromSAS" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromSASCurrencyCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromSASTotals" Type="decimal" />
+    <Property Name="FromEAS" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromEASCurrencyCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromEASTotals" Type="decimal" />
+    <Property Name="Supervisor" Type="nvarchar" MaxLength="150" />
+    <Property Name="SupervisorTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employer" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmployerAddress" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmployerBusinessNatureCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmployerURL" Type="nvarchar" MaxLength="256" />
+    <Property Name="DutiesDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="KeyAchievements" Type="nvarchar" MaxLength="500" />
+    <Property Name="ContactRefrenceCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoOfPeopleSupervised" Type="int" />
+    <Property Name="ReasonForLeaving" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Guarantors">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="TitleCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="OccupationCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Undertaking" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Guardians">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GuardianCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TitleCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="GuardianName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OccupationCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hobbies">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="HobbyCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="JAMBs">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RegNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Score" Type="int" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Year" Type="int" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LanguageSkills">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateX" Type="datetime" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReadingDegree" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpeakingDegree" Type="nvarchar" MaxLength="50" />
+    <Property Name="WritingDegree" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MedicalConditions">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DiseaseCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Conditions" Type="nvarchar" MaxLength="500" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NextOfKins">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RelTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TitleCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="OccupationCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OLevels">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="GradeCode" Type="int" />
+    <Property Name="GradeDescCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ExamTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Others">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="OthersCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Phones">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Photos">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="ModuleCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImageTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ByteThumb" Type="varbinary(max)" />
+    <Property Name="BytePoster" Type="varbinary(max)" />
+    <Property Name="ByteFull" Type="varbinary(max)" />
+    <Property Name="ByteOriginal" Type="varbinary(max)" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Qualifications">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="EducationTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="QualificationTypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="ToYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromMonth" Type="nvarchar" MaxLength="50" />
+    <Property Name="ToMonth" Type="nvarchar" MaxLength="50" />
+    <Property Name="AwardingBody" Type="nvarchar" MaxLength="256" />
+    <Property Name="Certificate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Referees">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="TitleCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="OccupationCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="KnowingMode" Type="nvarchar" MaxLength="256" />
+    <Property Name="ContactReferenceCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Religions">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="BioDataCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReligionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Clergy" Type="nvarchar" MaxLength="150" />
+    <Property Name="PlaceOfWorship" Type="nvarchar" MaxLength="256" />
+    <Property Name="PlaceOfWorshipAddress" Type="nvarchar" MaxLength="256" />
+    <Property Name="ClergyPhoneNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ClergyEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlaceOfWorshipPhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlaceOfWorshipEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sponsors">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SponsorCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sports">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SportCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_BioDataReligion">
+    <End Role="BioDatas" Type="Personals.Store.BioDatas" Multiplicity="1" />
+    <End Role="Religions" Type="Personals.Store.Religions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BioDatas">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Religions">
+        <PropertyRef Name="BioDataCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SPAddressesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPAddressesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPAddressesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AddressTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="StateCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="LgCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPAddressesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPAreasOfExpertisesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPAreasOfExpertisesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPAreasOfExpertisesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="JobCategoryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AOSCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="YearOfExperience" Type="nvarchar" Mode="In" />
+    <Parameter Name="LeveOfExperience" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPAreasOfExpertisesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPBioDatasDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPBioDatasDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPBioDatasInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="Surname" Type="nvarchar" Mode="In" />
+    <Parameter Name="MiddleName" Type="nvarchar" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="GenderCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CivilStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateOfBirth" Type="datetime" Mode="In" />
+    <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="StateCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="LGACode" Type="nvarchar" Mode="In" />
+    <Parameter Name="PlaceOfBirth" Type="nvarchar" Mode="In" />
+    <Parameter Name="Height" Type="nvarchar" Mode="In" />
+    <Parameter Name="Weight" Type="nvarchar" Mode="In" />
+    <Parameter Name="HealthStatusCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="PositionInFamily" Type="int" Mode="In" />
+    <Parameter Name="NoOfChildren" Type="int" Mode="In" />
+    <Parameter Name="TicketCode" Type="numeric" Mode="In" />
+    <Parameter Name="PinCode" Type="numeric" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPBioDatasSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPCertificatesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPCertificatesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPCertificatesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AwardingBody" Type="nvarchar" Mode="In" />
+    <Parameter Name="YearObtained" Type="nvarchar" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="Certificate" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPCertificatesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPChoicesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPChoicesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPChoicesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="FirstChoice" Type="nvarchar" Mode="In" />
+    <Parameter Name="SecondChoice" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPChoicesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPCompaniesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPCompaniesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPCompaniesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactTitle" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPCompaniesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPComputerSkillsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPComputerSkillsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPComputerSkillsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="PackageCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="LevelOfKnowledgeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPComputerSkillsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPDeclarationsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPDeclarationsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPDeclarationsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="GuardianCode" Type="int" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPDeclarationsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPEmailsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPEmailsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPEmailsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPEmailsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPEmergenciesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPEmergenciesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPEmergenciesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="TitleCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPEmergenciesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPEmploymentHistoriesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPEmploymentHistoriesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPEmploymentHistoriesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="TitleCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="JobCategoryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="JobDescCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="LevelOfXpertiseCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="WorkPercentageCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromYearCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ToYearCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromMonthCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ToMonthCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromSAS" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromSASCurrencyCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromSASTotals" Type="decimal" Mode="In" />
+    <Parameter Name="FromEAS" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromEASCurrencyCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromEASTotals" Type="decimal" Mode="In" />
+    <Parameter Name="Supervisor" Type="nvarchar" Mode="In" />
+    <Parameter Name="SupervisorTitle" Type="nvarchar" Mode="In" />
+    <Parameter Name="Employer" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmployerAddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmployerBusinessNatureCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmployerURL" Type="nvarchar" Mode="In" />
+    <Parameter Name="DutiesDescription" Type="nvarchar" Mode="In" />
+    <Parameter Name="KeyAchievements" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactRefrenceCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="NoOfPeopleSupervised" Type="int" Mode="In" />
+    <Parameter Name="ReasonForLeaving" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPEmploymentHistoriesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPGuarantorsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPGuarantorsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPGuarantorsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="TitleCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="OccupationCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Undertaking" Type="nvarchar" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPGuarantorsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPGuardiansDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPGuardiansDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPGuardiansInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="GuardianCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="TitleCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="GuardianName" Type="nvarchar" Mode="In" />
+    <Parameter Name="OccupationCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPGuardiansSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPHobbiesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPHobbiesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPHobbiesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="HobbyCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPHobbiesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPJAMBsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPJAMBsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPJAMBsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="RegNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Score" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Year" Type="int" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPJAMBsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPLanguageSkillsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPLanguageSkillsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPLanguageSkillsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="LanguageCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateX" Type="datetime" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ReadingDegree" Type="nvarchar" Mode="In" />
+    <Parameter Name="SpeakingDegree" Type="nvarchar" Mode="In" />
+    <Parameter Name="WritingDegree" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPLanguageSkillsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPMedicalConditionsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPMedicalConditionsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPMedicalConditionsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="DiseaseCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Conditions" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPMedicalConditionsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPNextOfKinsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPNextOfKinsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPNextOfKinsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="RelTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="TitleCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="OccupationCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPNextOfKinsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPOLevelsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPOLevelsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPOLevelsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="SubjectCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="GradeCode" Type="int" Mode="In" />
+    <Parameter Name="GradeDescCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ExamTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPOLevelsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPOthersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPOthersDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPOthersInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="OthersCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPOthersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPPhonesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPPhonesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPPhonesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="PhoneTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostalCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="PhoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPPhonesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPPhotosDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPPhotosDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPPhotosInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="ModuleCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ImageTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ByteThumb" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="BytePoster" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="ByteFull" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="ByteOriginal" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPPhotosSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPQualificationsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPQualificationsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPQualificationsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="EducationTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="QualificationTypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromYear" Type="nvarchar" Mode="In" />
+    <Parameter Name="ToYear" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromMonth" Type="nvarchar" Mode="In" />
+    <Parameter Name="ToMonth" Type="nvarchar" Mode="In" />
+    <Parameter Name="AwardingBody" Type="nvarchar" Mode="In" />
+    <Parameter Name="Certificate" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPQualificationsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPRefereesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPRefereesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPRefereesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="TitleCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="OccupationCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="KnowingMode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactReferenceCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPRefereesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPReligionsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPReligionsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPReligionsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="BioDataCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ReligionCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Clergy" Type="nvarchar" Mode="In" />
+    <Parameter Name="PlaceOfWorship" Type="nvarchar" Mode="In" />
+    <Parameter Name="PlaceOfWorshipAddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="ClergyPhoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="ClergyEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="PlaceOfWorshipPhoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="PlaceOfWorshipEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPReligionsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPSponsorsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSponsorsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPSponsorsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="SponsorCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSponsorsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPSportsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSportsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPSportsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="SportCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSportsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Personals">
+    <Parameter Name="Code" Type="int" Mode="In" />
+    <Parameter Name="AccountCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+</Schema>

@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AssessmentStoreContainer" CdmEntityContainer="AssessmentEntities">
+    <EntitySetMapping Name="Attendances">
+      <EntityTypeMapping TypeName="Assessment.Attendance">
+        <MappingFragment StoreEntitySet="Attendance">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+          <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+          <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+          <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+          <ScalarProperty Name="MatricNo" ColumnName="MatricNo" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="AttendanceStatus" ColumnName="AttendanceStatus" />
+          <ScalarProperty Name="StaffCode" ColumnName="StaffCode" />
+          <ScalarProperty Name="SubCourseCode" ColumnName="SubCourseCode" />
+          <ScalarProperty Name="AttendanceType" ColumnName="AttendanceType" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Assessment.Attendance">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Assessment.Store.SPAttendanceInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="Remark" ParameterName="Remark" />
+            <ScalarProperty Name="AttendanceType" ParameterName="AttendanceType" />
+            <ScalarProperty Name="SubCourseCode" ParameterName="SubCourseCode" />
+            <ScalarProperty Name="StaffCode" ParameterName="StaffCode" />
+            <ScalarProperty Name="AttendanceStatus" ParameterName="AttendanceStatus" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" />
+            <ScalarProperty Name="StudentCode" ParameterName="StudentCode" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Assessment.Store.SPAttendanceInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="Remark" ParameterName="Remark" Version="Current" />
+            <ScalarProperty Name="AttendanceType" ParameterName="AttendanceType" Version="Current" />
+            <ScalarProperty Name="SubCourseCode" ParameterName="SubCourseCode" Version="Current" />
+            <ScalarProperty Name="StaffCode" ParameterName="StaffCode" Version="Current" />
+            <ScalarProperty Name="AttendanceStatus" ParameterName="AttendanceStatus" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" Version="Current" />
+            <ScalarProperty Name="StudentCode" ParameterName="StudentCode" Version="Current" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" Version="Current" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Assessment.Store.SPAttendanceDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Definitions">
+      <EntityTypeMapping TypeName="Assessment.Definition">
+        <MappingFragment StoreEntitySet="Definition">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+          <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="AssessmentTypeCode" ColumnName="AssessmentTypeCode" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="NoOfAssessment" ColumnName="NoOfAssessment" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Assessment.Definition">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Assessment.Store.SPDefinitionInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="NoOfAssessment" ParameterName="NoOfAssessment" />
+            <ScalarProperty Name="Value" ParameterName="Value" />
+            <ScalarProperty Name="AssessmentTypeCode" ParameterName="AssessmentTypeCode" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Assessment.Store.SPDefinitionInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="NoOfAssessment" ParameterName="NoOfAssessment" Version="Current" />
+            <ScalarProperty Name="Value" ParameterName="Value" Version="Current" />
+            <ScalarProperty Name="AssessmentTypeCode" ParameterName="AssessmentTypeCode" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Assessment.Store.SPDefinitionDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Records">
+      <EntityTypeMapping TypeName="Assessment.Record">
+        <MappingFragment StoreEntitySet="Records">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+          <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+          <ScalarProperty Name="AssessmentTypeCode" ColumnName="AssessmentTypeCode" />
+          <ScalarProperty Name="SubCourseCode" ColumnName="SubCourseCode" />
+          <ScalarProperty Name="StaffCode" ColumnName="StaffCode" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="GradeDescription" ColumnName="GradeDescription" />
+          <ScalarProperty Name="GP" ColumnName="GP" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+          <ScalarProperty Name="MatricNo" ColumnName="MatricNo" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Assessment.Record">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Assessment.Store.SPRecordsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+            <ScalarProperty Name="Remark" ParameterName="Remark" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" />
+            <ScalarProperty Name="StudentCode" ParameterName="StudentCode" />
+            <ScalarProperty Name="Position" ParameterName="Position" />
+            <ScalarProperty Name="GP" ParameterName="GP" />
+            <ScalarProperty Name="GradeDescription" ParameterName="GradeDescription" />
+            <ScalarProperty Name="Score" ParameterName="Score" />
+            <ScalarProperty Name="StaffCode" ParameterName="StaffCode" />
+            <ScalarProperty Name="SubCourseCode" ParameterName="SubCourseCode" />
+            <ScalarProperty Name="AssessmentTypeCode" ParameterName="AssessmentTypeCode" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Assessment.Store.SPRecordsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+            <ScalarProperty Name="Remark" ParameterName="Remark" Version="Current" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" Version="Current" />
+            <ScalarProperty Name="StudentCode" ParameterName="StudentCode" Version="Current" />
+            <ScalarProperty Name="Position" ParameterName="Position" Version="Current" />
+            <ScalarProperty Name="GP" ParameterName="GP" Version="Current" />
+            <ScalarProperty Name="GradeDescription" ParameterName="GradeDescription" Version="Current" />
+            <ScalarProperty Name="Score" ParameterName="Score" Version="Current" />
+            <ScalarProperty Name="StaffCode" ParameterName="StaffCode" Version="Current" />
+            <ScalarProperty Name="SubCourseCode" ParameterName="SubCourseCode" Version="Current" />
+            <ScalarProperty Name="AssessmentTypeCode" ParameterName="AssessmentTypeCode" Version="Current" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Assessment.Store.SPRecordsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SPAttendanceDelete" FunctionName="Assessment.Store.SPAttendanceDelete" />
+    <FunctionImportMapping FunctionImportName="SPAttendanceDeletePermanently" FunctionName="Assessment.Store.SPAttendanceDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPAttendanceInsertUpdate" FunctionName="Assessment.Store.SPAttendanceInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPAttendanceSelect" FunctionName="Assessment.Store.SPAttendanceSelect" />
+    <FunctionImportMapping FunctionImportName="SPDefinitionDelete" FunctionName="Assessment.Store.SPDefinitionDelete" />
+    <FunctionImportMapping FunctionImportName="SPDefinitionDeletePermanently" FunctionName="Assessment.Store.SPDefinitionDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPDefinitionInsertUpdate" FunctionName="Assessment.Store.SPDefinitionInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPDefinitionSelect" FunctionName="Assessment.Store.SPDefinitionSelect" />
+    <FunctionImportMapping FunctionImportName="SPRecordsDelete" FunctionName="Assessment.Store.SPRecordsDelete" />
+    <FunctionImportMapping FunctionImportName="SPRecordsDeletePermanently" FunctionName="Assessment.Store.SPRecordsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPRecordsInsertUpdate" FunctionName="Assessment.Store.SPRecordsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPRecordsSelect" FunctionName="Assessment.Store.SPRecordsSelect" />
+  </EntityContainerMapping>
+</Mapping>

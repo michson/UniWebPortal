@@ -1,0 +1,50 @@
+﻿
++++++++++++++++Tested By		:	Godwin Mathias+++++++++++++++
++++++++++++++++Reviewer			:	Godwin Mathias++++++++++++++++++++++	
++++++++++++++++Tested On		:	07/22/2011+++++++++++++++++++ 
++++++++++++++++Test Remark		:	All the Methods were successfully executed+++++++++++++++++++
+
+
+
+Assembly Name: SetUp
+Class Name: CoutriesBLL
+Name Space: SetUp.BLL
+Assemblies referenced: SetUp.DAL
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Insert Method-------------------
+
+Country item = new Country
+{
+    Code="TZ",
+    Name="Tanzania"
+};
+MessageBox.Show(CoutriesBLL.Insert(item));
+Execution Status: Successful
+--------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Update Method-------------------
+
+Country item = new Country
+{
+    Code="TZ",
+    Name="Tanzania Republic"
+};
+MessageBox.Show(CoutriesBLL.Update(item));
+Execution Status: Successful
+------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Delete Method---------------------
+
+MessageBox.Show(CoutriesBLL.DeletePermanently("TZ"));
+Execution Status: Successful
+----------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Select Methods---------------------
+
+ctrlGrid.DataSource = CoutriesBLL.Retrieve(String.Empty);
+ctrlGrid.DataSource = CoutriesBLL.Retrieve("NGN");
+Execution Status: Successful
+

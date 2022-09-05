@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Registry" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="RegistryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admissions" EntityType="Registry.Admission" />
+    <EntitySet Name="Exams" EntityType="Registry.Exam" />
+    <EntitySet Name="Students" EntityType="Registry.Student" />
+    <EntitySet Name="Tickets" EntityType="Registry.Ticket" />
+    <FunctionImport Name="SPAdmissionsDelete" EntitySet="Admissions" ReturnType="Collection(Registry.Admission)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAdmissionsDeletePermanently" EntitySet="Admissions" ReturnType="Collection(Registry.Admission)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPAdmissionsInsertUpdate" EntitySet="Admissions" ReturnType="Collection(Registry.Admission)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="AwardCode" Mode="In" Type="String" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+      <Parameter Name="EntryMode" Mode="In" Type="String" />
+      <Parameter Name="StudyMode" Mode="In" Type="String" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="Score" Mode="In" Type="Int32" />
+      <Parameter Name="JambScore" Mode="In" Type="Int32" />
+      <Parameter Name="CutOffMax" Mode="In" Type="Int32" />
+      <Parameter Name="AdmissionStatus" Mode="In" Type="String" />
+      <Parameter Name="StatusReason" Mode="In" Type="String" />
+      <Parameter Name="TotalScore" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPAdmissionsSelect" EntitySet="Admissions" ReturnType="Collection(Registry.Admission)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPExamsDelete" EntitySet="Exams" ReturnType="Collection(Registry.Exam)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPExamsDeletePermanently" EntitySet="Exams" ReturnType="Collection(Registry.Exam)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPExamsInsertUpdate" EntitySet="Exams" ReturnType="Collection(Registry.Exam)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="TypeCode" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="AwardCode" Mode="In" Type="String" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+      <Parameter Name="EntryMode" Mode="In" Type="String" />
+      <Parameter Name="StudyMode" Mode="In" Type="String" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="DateApplied" Mode="In" Type="DateTime" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="NoOfSitting" Mode="In" Type="Int32" />
+      <Parameter Name="NoOfCredits" Mode="In" Type="Int32" />
+      <Parameter Name="NoOfPasses" Mode="In" Type="Int32" />
+      <Parameter Name="NoOfDistinctions" Mode="In" Type="Int32" />
+      <Parameter Name="NoOfFails" Mode="In" Type="Int32" />
+      <Parameter Name="Total" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPExamsSelect" EntitySet="Exams" ReturnType="Collection(Registry.Exam)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPStudentsDelete" EntitySet="Students" ReturnType="Collection(Registry.Student)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPStudentsDeletePermanently" EntitySet="Students" ReturnType="Collection(Registry.Student)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SPStudentsInsertUpdate" EntitySet="Students" ReturnType="Collection(Registry.Student)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+      <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+      <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+      <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+      <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+      <Parameter Name="MatricNo" Mode="In" Type="String" />
+      <Parameter Name="AccountCode" Mode="In" Type="String" />
+      <Parameter Name="EntryMode" Mode="In" Type="String" />
+      <Parameter Name="StudyMode" Mode="In" Type="String" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="AdmittedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="AwardCode" Mode="In" Type="String" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPStudentsSelect" EntitySet="Students" ReturnType="Collection(Registry.Student)">
+      <Parameter Name="Code" Mode="In" Type="Int64" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="MatricNo" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SPTicketsDelete" EntitySet="Tickets" ReturnType="Collection(Registry.Ticket)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPTicketsDeletePermanently" EntitySet="Tickets" ReturnType="Collection(Registry.Ticket)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SPTicketsInsertUpdate" EntitySet="Tickets" ReturnType="Collection(Registry.Ticket)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="ScreenCode" Mode="In" Type="String" />
+      <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+      <Parameter Name="SemesterCode" Mode="In" Type="String" />
+      <Parameter Name="PinCode" Mode="In" Type="Decimal" />
+      <Parameter Name="DateX" Mode="In" Type="DateTime" />
+      <Parameter Name="StatusCode" Mode="In" Type="String" />
+      <Parameter Name="NoOfUse" Mode="In" Type="Int32" />
+      <Parameter Name="MaxNoUse" Mode="In" Type="Int32" />
+      <Parameter Name="ExpiryDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+      <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+      <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPTicketsSelect" EntitySet="Tickets" ReturnType="Collection(Registry.Ticket)">
+      <Parameter Name="Code" Mode="In" Type="Decimal" />
+      <Parameter Name="UniversityCode" Mode="In" Type="String" />
+      <Parameter Name="PinCode" Mode="In" Type="Decimal" />
+      <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Admission">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="AwardCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="EntryMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StudyMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="JambScore" Type="Int32" />
+    <Property Name="CutOffMax" Type="Int32" />
+    <Property Name="AdmissionStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StatusReason" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="TotalScore" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Exam">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="AwardCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EntryMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StudyMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="DateApplied" Type="DateTime" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="Notes" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="NoOfSitting" Type="Int32" />
+    <Property Name="NoOfCredits" Type="Int32" />
+    <Property Name="NoOfPasses" Type="Int32" />
+    <Property Name="NoOfDistinctions" Type="Int32" />
+    <Property Name="NoOfFails" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Code" />
+      <PropertyRef Name="MatricNo" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FacultyCode" Type="Int64" />
+    <Property Name="DepartmentCode" Type="Int64" />
+    <Property Name="ProgramCode" Type="Int64" />
+    <Property Name="CourseCode" Type="Int64" />
+    <Property Name="LevelCode" Type="Int32" />
+    <Property Name="MatricNo" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EntryMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StudyMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="AdmittedOn" Type="DateTime" />
+    <Property Name="AwardCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="Code" />
+      <PropertyRef Name="PinCode" />
+    </Key>
+    <Property Name="Code" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SessionCode" Type="Int64" />
+    <Property Name="SemesterCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PinCode" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="DateX" Type="DateTime" />
+    <Property Name="StatusCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NoOfUse" Type="Int32" />
+    <Property Name="MaxNoUse" Type="Int32" />
+    <Property Name="ExpiryDate" Type="DateTime" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

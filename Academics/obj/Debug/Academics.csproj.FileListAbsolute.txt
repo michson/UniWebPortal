@@ -1,0 +1,18 @@
+c:\users\administrator\documents\visual studio 2010\Projects\University\Academics\bin\Debug\Academics.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\Academics\bin\Debug\Academics.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\University\Academics\obj\Debug\ResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2010\Projects\University\Academics\obj\Debug\Academics.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\Academics\obj\Debug\Academics.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\Academics\bin\Debug\Academics.dll.config
+E:\UniversityPortal\Academics\bin\Debug\Academics.dll.config
+E:\UniversityPortal\Academics\bin\Debug\Academics.dll
+E:\UniversityPortal\Academics\bin\Debug\Academics.pdb
+E:\UniversityPortal\Academics\obj\Debug\ResolveAssemblyReference.cache
+E:\UniversityPortal\Academics\obj\Debug\Academics.dll
+E:\UniversityPortal\Academics\obj\Debug\Academics.pdb
+H:\NatGualang\UniversityPortal\Academics\bin\Debug\Academics.dll.config
+H:\NatGualang\UniversityPortal\Academics\bin\Debug\Academics.dll
+H:\NatGualang\UniversityPortal\Academics\bin\Debug\Academics.pdb
+H:\NatGualang\UniversityPortal\Academics\obj\Debug\ResolveAssemblyReference.cache
+H:\NatGualang\UniversityPortal\Academics\obj\Debug\Academics.dll
+H:\NatGualang\UniversityPortal\Academics\obj\Debug\Academics.pdb

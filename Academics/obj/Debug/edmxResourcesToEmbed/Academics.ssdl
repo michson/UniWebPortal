@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Academics.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="AcademicsStoreContainer">
+    <EntitySet Name="FinalSignatories" EntityType="Academics.Store.FinalSignatories" store:Type="Tables" Schema="Academics" />
+    <EntitySet Name="Registrations" EntityType="Academics.Store.Registrations" store:Type="Tables" Schema="Academics" />
+    <EntitySet Name="Semesters" EntityType="Academics.Store.Semesters" store:Type="Tables" Schema="Academics" />
+    <EntitySet Name="Sessions" EntityType="Academics.Store.Sessions" store:Type="Tables" Schema="Academics" />
+    <EntitySet Name="SigningHierarchy" EntityType="Academics.Store.SigningHierarchy" store:Type="Tables" Schema="Academics" />
+    <EntitySet Name="Submissions" EntityType="Academics.Store.Submissions" store:Type="Tables" Schema="Academics" />
+    <AssociationSet Name="FK_Semesters_Sessions" Association="Academics.Store.FK_Semesters_Sessions">
+      <End Role="Sessions" EntitySet="Sessions" />
+      <End Role="Semesters" EntitySet="Semesters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SigningHierarchy_Sessions" Association="Academics.Store.FK_SigningHierarchy_Sessions">
+      <End Role="Sessions" EntitySet="Sessions" />
+      <End Role="SigningHierarchy" EntitySet="SigningHierarchy" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FinalSignatories">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FacultyCode" Type="bigint" />
+    <Property Name="DepartmentCode" Type="bigint" />
+    <Property Name="CourseCode" Type="bigint" />
+    <Property Name="ProgramCode" Type="bigint" />
+    <Property Name="LevelCode" Type="int" />
+    <Property Name="StudentCode" Type="bigint" />
+    <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="bigint" />
+    <Property Name="Signed" Type="bit" />
+    <Property Name="SignedOn" Type="datetime2" />
+    <Property Name="SignedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="DesignationCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Registrations">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StudentCode" Type="bigint" />
+    <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FacultyCode" Type="bigint" />
+    <Property Name="DepartmentCode" Type="bigint" />
+    <Property Name="CourseCode" Type="bigint" />
+    <Property Name="ProgramCode" Type="bigint" />
+    <Property Name="LevelCode" Type="int" />
+    <Property Name="TypeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="bigint" />
+    <Property Name="SubCourseCode" Type="bigint" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Signed" Type="bit" />
+    <Property Name="SignedOn" Type="datetime2" />
+    <Property Name="SignedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelfSigned" Type="bit" />
+    <Property Name="SelfSignedOn" Type="datetime2" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="TicketCode" Type="numeric" />
+    <Property Name="PinCode" Type="numeric" />
+  </EntityType>
+  <EntityType Name="Semesters">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" />
+    <Property Name="SemesterCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="StartDate" Type="datetime2" />
+    <Property Name="Endate" Type="datetime2" />
+    <Property Name="RegistrationClosingDate" Type="datetime2" />
+    <Property Name="SemesterStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalDays" Type="int" />
+    <Property Name="Applicable" Type="bit" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sessions">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrentYear" Type="int" />
+    <Property Name="NextYear" Type="int" />
+    <Property Name="SessionStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime2" />
+    <Property Name="EndDate" Type="datetime2" />
+    <Property Name="Applicable" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SigningHierarchy">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DesignationCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="Applicable" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Submissions">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" Nullable="false" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FacultyCode" Type="bigint" />
+    <Property Name="DepartmentCode" Type="bigint" />
+    <Property Name="CourseCode" Type="bigint" />
+    <Property Name="ProgramCode" Type="bigint" />
+    <Property Name="LevelCode" Type="int" />
+    <Property Name="StudentCode" Type="bigint" />
+    <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionCode" Type="bigint" />
+    <Property Name="SemesterCode" Type="bigint" />
+    <Property Name="Submitted" Type="bit" />
+    <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime2" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Accepted" Type="bit" />
+    <Property Name="AcceptedOn" Type="datetime2" />
+    <Property Name="AcceptedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Semesters_Sessions">
+    <End Role="Sessions" Type="Academics.Store.Sessions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Semesters" Type="Academics.Store.Semesters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sessions">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Semesters">
+        <PropertyRef Name="SessionCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SigningHierarchy_Sessions">
+    <End Role="Sessions" Type="Academics.Store.Sessions" Multiplicity="0..1" />
+    <End Role="SigningHierarchy" Type="Academics.Store.SigningHierarchy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sessions">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="SigningHierarchy">
+        <PropertyRef Name="SessionCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SPFinalSignatoriesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFinalSignatoriesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPFinalSignatoriesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+    <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+    <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+    <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+    <Parameter Name="LevelCode" Type="int" Mode="In" />
+    <Parameter Name="StudentCode" Type="bigint" Mode="In" />
+    <Parameter Name="MatricNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="bigint" Mode="In" />
+    <Parameter Name="Signed" Type="bit" Mode="In" />
+    <Parameter Name="SignedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="SignedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DesignationCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPFinalSignatoriesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPRegistrationsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPRegistrationsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPRegistrationsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+    <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+    <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+    <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+    <Parameter Name="LevelCode" Type="int" Mode="In" />
+    <Parameter Name="StudentCode" Type="bigint" Mode="In" />
+    <Parameter Name="MatricNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="bigint" Mode="In" />
+    <Parameter Name="TypeCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCourseCode" Type="bigint" Mode="In" />
+    <Parameter Name="Status" Type="nvarchar" Mode="In" />
+    <Parameter Name="TicketCode" Type="numeric" Mode="In" />
+    <Parameter Name="PinCode" Type="numeric" Mode="In" />
+    <Parameter Name="Signed" Type="bit" Mode="In" />
+    <Parameter Name="SignedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="SignedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="SelfSigned" Type="bit" Mode="In" />
+    <Parameter Name="SelfSignedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPRegistrationsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPSemestersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSemestersDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPSemestersInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime2" Mode="In" />
+    <Parameter Name="Endate" Type="datetime2" Mode="In" />
+    <Parameter Name="RegistrationClosingDate" Type="datetime2" Mode="In" />
+    <Parameter Name="SemesterStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="TotalDays" Type="int" Mode="In" />
+    <Parameter Name="Applicable" Type="bit" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSemestersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPSessionsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSessionsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPSessionsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CurrentYear" Type="int" Mode="In" />
+    <Parameter Name="NextYear" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime2" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime2" Mode="In" />
+    <Parameter Name="SessionStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="Applicable" Type="bit" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSessionsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPSigningHierarchyDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSigningHierarchyDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPSigningHierarchyInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="DesignationCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrderCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="Applicable" Type="bit" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSigningHierarchySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SPSubmissionsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSubmissionsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPSubmissionsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+    <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+    <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+    <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+    <Parameter Name="LevelCode" Type="int" Mode="In" />
+    <Parameter Name="StudentCode" Type="bigint" Mode="In" />
+    <Parameter Name="MatricNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+    <Parameter Name="SemesterCode" Type="bigint" Mode="In" />
+    <Parameter Name="Submitted" Type="bit" Mode="In" />
+    <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Accepted" Type="bit" Mode="In" />
+    <Parameter Name="AcceptedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="AcceptedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+    <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+    <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPSubmissionsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+    <Parameter Name="Code" Type="bigint" Mode="In" />
+    <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deleted" Type="bit" Mode="In" />
+  </Function>
+</Schema>

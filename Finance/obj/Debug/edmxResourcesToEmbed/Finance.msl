@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FinanceStoreContainer" CdmEntityContainer="FinanceEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="Finance.Account">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AccountTypeCode" ColumnName="AccountTypeCode" />
+          <ScalarProperty Name="AccountSubCode" ColumnName="AccountSubCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.Account">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPAccountsInsertUpdate">
+            <ScalarProperty Name="AccountSubCode" ParameterName="AccountSubCode" />
+            <ScalarProperty Name="AccountTypeCode" ParameterName="AccountTypeCode" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPAccountsInsertUpdate">
+            <ScalarProperty Name="AccountSubCode" ParameterName="AccountSubCode" Version="Current" />
+            <ScalarProperty Name="AccountTypeCode" ParameterName="AccountTypeCode" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPAccountsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountSubs">
+      <EntityTypeMapping TypeName="Finance.AccountSub">
+        <MappingFragment StoreEntitySet="AccountSub">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="DescriptionCode" ColumnName="DescriptionCode" />
+          <ScalarProperty Name="ParameterCode" ColumnName="ParameterCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.AccountSub">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPAccountSubInsertUpdate">
+            <ScalarProperty Name="ParameterCode" ParameterName="ParameterCode" />
+            <ScalarProperty Name="DescriptionCode" ParameterName="DescriptionCode" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPAccountSubInsertUpdate">
+            <ScalarProperty Name="ParameterCode" ParameterName="ParameterCode" Version="Current" />
+            <ScalarProperty Name="DescriptionCode" ParameterName="DescriptionCode" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPAccountSubDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountTypes">
+      <EntityTypeMapping TypeName="Finance.AccountType">
+        <MappingFragment StoreEntitySet="AccountTypes">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AccountSubCode" ColumnName="AccountSubCode" />
+          <ScalarProperty Name="DescriptionCode" ColumnName="DescriptionCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.AccountType">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPAccountTypesInsertUpdate">
+            <ScalarProperty Name="AccountSubCode" ParameterName="AccountSubCode" />
+            <ScalarProperty Name="DescriptionCode" ParameterName="DescriptionCode" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPAccountTypesInsertUpdate">
+            <ScalarProperty Name="AccountSubCode" ParameterName="AccountSubCode" Version="Current" />
+            <ScalarProperty Name="DescriptionCode" ParameterName="DescriptionCode" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPAccountTypesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeeAllotments">
+      <EntityTypeMapping TypeName="Finance.FeeAllotment">
+        <MappingFragment StoreEntitySet="FeeAllotment">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+          <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+          <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+          <ScalarProperty Name="FeeDefinitionCode" ColumnName="FeeDefinitionCode" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="EntryMode" ColumnName="EntryMode" />
+          <ScalarProperty Name="StudyMode" ColumnName="StudyMode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+          <ScalarProperty Name="DiscountedAmount" ColumnName="DiscountedAmount" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="ApproveBy" ColumnName="ApproveBy" />
+          <ScalarProperty Name="ApproveOn" ColumnName="ApproveOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.FeeAllotment">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPFeeAllotmentInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" />
+            <ScalarProperty Name="ApproveOn" ParameterName="ApproveOn" />
+            <ScalarProperty Name="ApproveBy" ParameterName="ApproveBy" />
+            <ScalarProperty Name="Approved" ParameterName="Approved" />
+            <ScalarProperty Name="DiscountPercentage" ParameterName="DiscountPercentage" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" />
+            <ScalarProperty Name="FeeDefinitionCode" ParameterName="FeeDefinitionCode" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="StudyMode" ParameterName="StudyMode" />
+            <ScalarProperty Name="EntryMode" ParameterName="EntryMode" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPFeeAllotmentInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" Version="Current" />
+            <ScalarProperty Name="ApproveOn" ParameterName="ApproveOn" Version="Current" />
+            <ScalarProperty Name="ApproveBy" ParameterName="ApproveBy" Version="Current" />
+            <ScalarProperty Name="Approved" ParameterName="Approved" Version="Current" />
+            <ScalarProperty Name="DiscountPercentage" ParameterName="DiscountPercentage" Version="Current" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" Version="Current" />
+            <ScalarProperty Name="FeeDefinitionCode" ParameterName="FeeDefinitionCode" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="StudyMode" ParameterName="StudyMode" Version="Current" />
+            <ScalarProperty Name="EntryMode" ParameterName="EntryMode" Version="Current" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" Version="Current" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPFeeAllotmentDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeeDefinitions">
+      <EntityTypeMapping TypeName="Finance.FeeDefinition">
+        <MappingFragment StoreEntitySet="FeeDefinition">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FeeStatusCode" ColumnName="FeeStatusCode" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.FeeDefinition">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPFeeDefinitionInsertUpdate">
+            <ScalarProperty Name="FeeStatusCode" ParameterName="FeeStatusCode" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPFeeDefinitionInsertUpdate">
+            <ScalarProperty Name="FeeStatusCode" ParameterName="FeeStatusCode" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPFeeDefinitionDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fees">
+      <EntityTypeMapping TypeName="Finance.Fee">
+        <MappingFragment StoreEntitySet="Fees">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="MatricNo" ColumnName="MatricNo" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+          <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+          <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="AccountTitle" ColumnName="AccountTitle" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+          <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="DateX" ColumnName="DateX" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.Fee">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPFeesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="PaymentStatus" ParameterName="PaymentStatus" />
+            <ScalarProperty Name="Balance" ParameterName="Balance" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" />
+            <ScalarProperty Name="PaymentMode" ParameterName="PaymentMode" />
+            <ScalarProperty Name="BankBranch" ParameterName="BankBranch" />
+            <ScalarProperty Name="BankCode" ParameterName="BankCode" />
+            <ScalarProperty Name="AccountNo" ParameterName="AccountNo" />
+            <ScalarProperty Name="AccountTitle" ParameterName="AccountTitle" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPFeesInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="PaymentStatus" ParameterName="PaymentStatus" Version="Current" />
+            <ScalarProperty Name="Balance" ParameterName="Balance" Version="Current" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" Version="Current" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" Version="Current" />
+            <ScalarProperty Name="PaymentMode" ParameterName="PaymentMode" Version="Current" />
+            <ScalarProperty Name="BankBranch" ParameterName="BankBranch" Version="Current" />
+            <ScalarProperty Name="BankCode" ParameterName="BankCode" Version="Current" />
+            <ScalarProperty Name="AccountNo" ParameterName="AccountNo" Version="Current" />
+            <ScalarProperty Name="AccountTitle" ParameterName="AccountTitle" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" Version="Current" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPFeesDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeesDetails">
+      <EntityTypeMapping TypeName="Finance.FeesDetail">
+        <MappingFragment StoreEntitySet="FeesDetail">
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="MatricNo" ColumnName="MatricNo" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+          <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+          <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+          <ScalarProperty Name="FeesCode" ColumnName="FeesCode" />
+          <ScalarProperty Name="FeeDefinitionCode" ColumnName="FeeDefinitionCode" />
+          <ScalarProperty Name="FeeAllotmentCode" ColumnName="FeeAllotmentCode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ExtraDiscount" ColumnName="ExtraDiscount" />
+          <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.FeesDetail">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPFeesDetailInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="FinalAmount" ParameterName="FinalAmount" />
+            <ScalarProperty Name="ExtraDiscount" ParameterName="ExtraDiscount" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" />
+            <ScalarProperty Name="FeeAllotmentCode" ParameterName="FeeAllotmentCode" />
+            <ScalarProperty Name="FeeDefinitionCode" ParameterName="FeeDefinitionCode" />
+            <ScalarProperty Name="FeesCode" ParameterName="FeesCode" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPFeesDetailInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="FinalAmount" ParameterName="FinalAmount" Version="Current" />
+            <ScalarProperty Name="ExtraDiscount" ParameterName="ExtraDiscount" Version="Current" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" Version="Current" />
+            <ScalarProperty Name="FeeAllotmentCode" ParameterName="FeeAllotmentCode" Version="Current" />
+            <ScalarProperty Name="FeeDefinitionCode" ParameterName="FeeDefinitionCode" Version="Current" />
+            <ScalarProperty Name="FeesCode" ParameterName="FeesCode" Version="Current" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" Version="Current" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPFeesDetailDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentPlanDetails">
+      <EntityTypeMapping TypeName="Finance.PaymentPlanDetail">
+        <MappingFragment StoreEntitySet="PaymentPlanDetails">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="PaymentPlanCode" ColumnName="PaymentPlanCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DiscountedAmount" ColumnName="DiscountedAmount" />
+          <ScalarProperty Name="DiscountedPercentage" ColumnName="DiscountedPercentage" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.PaymentPlanDetail">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPPaymentPlanDetailsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Total" ParameterName="Total" />
+            <ScalarProperty Name="DiscountedPercentage" ParameterName="DiscountedPercentage" />
+            <ScalarProperty Name="DiscountedAmount" ParameterName="DiscountedAmount" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="PaymentPlanCode" ParameterName="PaymentPlanCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPPaymentPlanDetailsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Total" ParameterName="Total" Version="Current" />
+            <ScalarProperty Name="DiscountedPercentage" ParameterName="DiscountedPercentage" Version="Current" />
+            <ScalarProperty Name="DiscountedAmount" ParameterName="DiscountedAmount" Version="Current" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="PaymentPlanCode" ParameterName="PaymentPlanCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPPaymentPlanDetailsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentPlans">
+      <EntityTypeMapping TypeName="Finance.PaymentPlan">
+        <MappingFragment StoreEntitySet="PaymentPlans">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="NoOfPaymentAllowed" ColumnName="NoOfPaymentAllowed" />
+          <ScalarProperty Name="DateX" ColumnName="DateX" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="Applicable" ColumnName="Applicable" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.PaymentPlan">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPPaymentPlansInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Applicable" ParameterName="Applicable" />
+            <ScalarProperty Name="StatusCode" ParameterName="StatusCode" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" />
+            <ScalarProperty Name="NoOfPaymentAllowed" ParameterName="NoOfPaymentAllowed" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPPaymentPlansInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Applicable" ParameterName="Applicable" Version="Current" />
+            <ScalarProperty Name="StatusCode" ParameterName="StatusCode" Version="Current" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" Version="Current" />
+            <ScalarProperty Name="NoOfPaymentAllowed" ParameterName="NoOfPaymentAllowed" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPPaymentPlansDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refunds">
+      <EntityTypeMapping TypeName="Finance.Refund">
+        <MappingFragment StoreEntitySet="Refunds">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="MatricNo" ColumnName="MatricNo" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+          <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+          <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+          <ScalarProperty Name="FeesCode" ColumnName="FeesCode" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Refunded" ColumnName="Refunded" />
+          <ScalarProperty Name="RefundedOn" ColumnName="RefundedOn" />
+          <ScalarProperty Name="RefundedBy" ColumnName="RefundedBy" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="ApproveBy" ColumnName="ApproveBy" />
+          <ScalarProperty Name="ApproveOn" ColumnName="ApproveOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.Refund">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPRefundsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="ApproveOn" ParameterName="ApproveOn" />
+            <ScalarProperty Name="ApproveBy" ParameterName="ApproveBy" />
+            <ScalarProperty Name="Approved" ParameterName="Approved" />
+            <ScalarProperty Name="RefundedBy" ParameterName="RefundedBy" />
+            <ScalarProperty Name="RefundedOn" ParameterName="RefundedOn" />
+            <ScalarProperty Name="Refunded" ParameterName="Refunded" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="FeesCode" ParameterName="FeesCode" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPRefundsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="ApproveOn" ParameterName="ApproveOn" Version="Current" />
+            <ScalarProperty Name="ApproveBy" ParameterName="ApproveBy" Version="Current" />
+            <ScalarProperty Name="Approved" ParameterName="Approved" Version="Current" />
+            <ScalarProperty Name="RefundedBy" ParameterName="RefundedBy" Version="Current" />
+            <ScalarProperty Name="RefundedOn" ParameterName="RefundedOn" Version="Current" />
+            <ScalarProperty Name="Refunded" ParameterName="Refunded" Version="Current" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="FeesCode" ParameterName="FeesCode" Version="Current" />
+            <ScalarProperty Name="LevelCode" ParameterName="LevelCode" Version="Current" />
+            <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+            <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+            <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+            <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="MatricNo" ParameterName="MatricNo" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPRefundsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="Finance.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="TransactionActivityCode" ColumnName="TransactionActivityCode" />
+          <ScalarProperty Name="InvoiceTypeCode" ColumnName="InvoiceTypeCode" />
+          <ScalarProperty Name="LpoNo" ColumnName="LpoNo" />
+          <ScalarProperty Name="PoNo" ColumnName="PoNo" />
+          <ScalarProperty Name="CategoryCode" ColumnName="CategoryCode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="DateX" ColumnName="DateX" />
+          <ScalarProperty Name="AmountInWords" ColumnName="AmountInWords" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.Transaction">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPTransactionsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="AmountInWords" ParameterName="AmountInWords" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" />
+            <ScalarProperty Name="PaymentStatus" ParameterName="PaymentStatus" />
+            <ScalarProperty Name="CompanyCode" ParameterName="CompanyCode" />
+            <ScalarProperty Name="Total" ParameterName="Total" />
+            <ScalarProperty Name="Balance" ParameterName="Balance" />
+            <ScalarProperty Name="AmountPaid" ParameterName="AmountPaid" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" />
+            <ScalarProperty Name="CategoryCode" ParameterName="CategoryCode" />
+            <ScalarProperty Name="PoNo" ParameterName="PoNo" />
+            <ScalarProperty Name="LpoNo" ParameterName="LpoNo" />
+            <ScalarProperty Name="InvoiceTypeCode" ParameterName="InvoiceTypeCode" />
+            <ScalarProperty Name="TransactionActivityCode" ParameterName="TransactionActivityCode" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPTransactionsInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="AmountInWords" ParameterName="AmountInWords" Version="Current" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" Version="Current" />
+            <ScalarProperty Name="PaymentStatus" ParameterName="PaymentStatus" Version="Current" />
+            <ScalarProperty Name="CompanyCode" ParameterName="CompanyCode" Version="Current" />
+            <ScalarProperty Name="Total" ParameterName="Total" Version="Current" />
+            <ScalarProperty Name="Balance" ParameterName="Balance" Version="Current" />
+            <ScalarProperty Name="AmountPaid" ParameterName="AmountPaid" Version="Current" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" Version="Current" />
+            <ScalarProperty Name="CategoryCode" ParameterName="CategoryCode" Version="Current" />
+            <ScalarProperty Name="PoNo" ParameterName="PoNo" Version="Current" />
+            <ScalarProperty Name="LpoNo" ParameterName="LpoNo" Version="Current" />
+            <ScalarProperty Name="InvoiceTypeCode" ParameterName="InvoiceTypeCode" Version="Current" />
+            <ScalarProperty Name="TransactionActivityCode" ParameterName="TransactionActivityCode" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPTransactionsDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionsDetails">
+      <EntityTypeMapping TypeName="Finance.TransactionsDetail">
+        <MappingFragment StoreEntitySet="TransactionsDetail">
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="InvoiceCode" ColumnName="InvoiceCode" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TaxType" ColumnName="TaxType" />
+          <ScalarProperty Name="TaxValue" ColumnName="TaxValue" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.TransactionsDetail">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPTransactionsDetailInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="TotalCost" ParameterName="TotalCost" />
+            <ScalarProperty Name="TaxValue" ParameterName="TaxValue" />
+            <ScalarProperty Name="TaxType" ParameterName="TaxType" />
+            <ScalarProperty Name="DiscountAmount" ParameterName="DiscountAmount" />
+            <ScalarProperty Name="DiscountPercentage" ParameterName="DiscountPercentage" />
+            <ScalarProperty Name="UnitCost" ParameterName="UnitCost" />
+            <ScalarProperty Name="Unit" ParameterName="Unit" />
+            <ScalarProperty Name="Quantity" ParameterName="Quantity" />
+            <ScalarProperty Name="ItemDescription" ParameterName="ItemDescription" />
+            <ScalarProperty Name="InvoiceCode" ParameterName="InvoiceCode" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPTransactionsDetailInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="TotalCost" ParameterName="TotalCost" Version="Current" />
+            <ScalarProperty Name="TaxValue" ParameterName="TaxValue" Version="Current" />
+            <ScalarProperty Name="TaxType" ParameterName="TaxType" Version="Current" />
+            <ScalarProperty Name="DiscountAmount" ParameterName="DiscountAmount" Version="Current" />
+            <ScalarProperty Name="DiscountPercentage" ParameterName="DiscountPercentage" Version="Current" />
+            <ScalarProperty Name="UnitCost" ParameterName="UnitCost" Version="Current" />
+            <ScalarProperty Name="Unit" ParameterName="Unit" Version="Current" />
+            <ScalarProperty Name="Quantity" ParameterName="Quantity" Version="Current" />
+            <ScalarProperty Name="ItemDescription" ParameterName="ItemDescription" Version="Current" />
+            <ScalarProperty Name="InvoiceCode" ParameterName="InvoiceCode" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPTransactionsDetailDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vouchers">
+      <EntityTypeMapping TypeName="Finance.Voucher">
+        <MappingFragment StoreEntitySet="Vouchers">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+          <ScalarProperty Name="AccountGroupCode" ColumnName="AccountGroupCode" />
+          <ScalarProperty Name="AccountSubCode" ColumnName="AccountSubCode" />
+          <ScalarProperty Name="AccountTypeCode" ColumnName="AccountTypeCode" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="VoucherTypeCode" ColumnName="VoucherTypeCode" />
+          <ScalarProperty Name="TransactionTypeCode" ColumnName="TransactionTypeCode" />
+          <ScalarProperty Name="EntityTypeCode" ColumnName="EntityTypeCode" />
+          <ScalarProperty Name="ParticularsCode" ColumnName="ParticularsCode" />
+          <ScalarProperty Name="DateX" ColumnName="DateX" />
+          <ScalarProperty Name="DebitAmount" ColumnName="DebitAmount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="ApproveBy" ColumnName="ApproveBy" />
+          <ScalarProperty Name="ApproveOn" ColumnName="ApproveOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Finance.Voucher">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Finance.Store.SPVouchersInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" />
+            <ScalarProperty Name="ApproveOn" ParameterName="ApproveOn" />
+            <ScalarProperty Name="ApproveBy" ParameterName="ApproveBy" />
+            <ScalarProperty Name="Approved" ParameterName="Approved" />
+            <ScalarProperty Name="Narration" ParameterName="Narration" />
+            <ScalarProperty Name="CreditAmount" ParameterName="CreditAmount" />
+            <ScalarProperty Name="DebitAmount" ParameterName="DebitAmount" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" />
+            <ScalarProperty Name="ParticularsCode" ParameterName="ParticularsCode" />
+            <ScalarProperty Name="EntityTypeCode" ParameterName="EntityTypeCode" />
+            <ScalarProperty Name="TransactionTypeCode" ParameterName="TransactionTypeCode" />
+            <ScalarProperty Name="VoucherTypeCode" ParameterName="VoucherTypeCode" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" />
+            <ScalarProperty Name="AccountTypeCode" ParameterName="AccountTypeCode" />
+            <ScalarProperty Name="AccountSubCode" ParameterName="AccountSubCode" />
+            <ScalarProperty Name="AccountGroupCode" ParameterName="AccountGroupCode" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Finance.Store.SPVouchersInsertUpdate">
+            <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+            <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+            <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+            <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+            <ScalarProperty Name="Notes" ParameterName="Notes" Version="Current" />
+            <ScalarProperty Name="ApproveOn" ParameterName="ApproveOn" Version="Current" />
+            <ScalarProperty Name="ApproveBy" ParameterName="ApproveBy" Version="Current" />
+            <ScalarProperty Name="Approved" ParameterName="Approved" Version="Current" />
+            <ScalarProperty Name="Narration" ParameterName="Narration" Version="Current" />
+            <ScalarProperty Name="CreditAmount" ParameterName="CreditAmount" Version="Current" />
+            <ScalarProperty Name="DebitAmount" ParameterName="DebitAmount" Version="Current" />
+            <ScalarProperty Name="DateX" ParameterName="DateX" Version="Current" />
+            <ScalarProperty Name="ParticularsCode" ParameterName="ParticularsCode" Version="Current" />
+            <ScalarProperty Name="EntityTypeCode" ParameterName="EntityTypeCode" Version="Current" />
+            <ScalarProperty Name="TransactionTypeCode" ParameterName="TransactionTypeCode" Version="Current" />
+            <ScalarProperty Name="VoucherTypeCode" ParameterName="VoucherTypeCode" Version="Current" />
+            <ScalarProperty Name="AccountCode" ParameterName="AccountCode" Version="Current" />
+            <ScalarProperty Name="AccountTypeCode" ParameterName="AccountTypeCode" Version="Current" />
+            <ScalarProperty Name="AccountSubCode" ParameterName="AccountSubCode" Version="Current" />
+            <ScalarProperty Name="AccountGroupCode" ParameterName="AccountGroupCode" Version="Current" />
+            <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+            <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+            <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+            <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Finance.Store.SPVouchersDeletePermanently">
+            <ScalarProperty Name="Code" ParameterName="Code" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SPAccountsDeletePermanently" FunctionName="Finance.Store.SPAccountsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPAccountsInsertUpdate" FunctionName="Finance.Store.SPAccountsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPAccountsSelect" FunctionName="Finance.Store.SPAccountsSelect" />
+    <FunctionImportMapping FunctionImportName="SPAccountSubDeletePermanently" FunctionName="Finance.Store.SPAccountSubDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPAccountSubInsertUpdate" FunctionName="Finance.Store.SPAccountSubInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPAccountSubSelect" FunctionName="Finance.Store.SPAccountSubSelect" />
+    <FunctionImportMapping FunctionImportName="SPAccountTypesDeletePermanently" FunctionName="Finance.Store.SPAccountTypesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPAccountTypesInsertUpdate" FunctionName="Finance.Store.SPAccountTypesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPAccountTypesSelect" FunctionName="Finance.Store.SPAccountTypesSelect" />
+    <FunctionImportMapping FunctionImportName="SPFeeAllotmentDelete" FunctionName="Finance.Store.SPFeeAllotmentDelete" />
+    <FunctionImportMapping FunctionImportName="SPFeeAllotmentDeletePermanently" FunctionName="Finance.Store.SPFeeAllotmentDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPFeeAllotmentInsertUpdate" FunctionName="Finance.Store.SPFeeAllotmentInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPFeeAllotmentSelect" FunctionName="Finance.Store.SPFeeAllotmentSelect" />
+    <FunctionImportMapping FunctionImportName="SPFeeDefinitionDeletePermanently" FunctionName="Finance.Store.SPFeeDefinitionDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPFeeDefinitionInsertUpdate" FunctionName="Finance.Store.SPFeeDefinitionInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPFeeDefinitionSelect" FunctionName="Finance.Store.SPFeeDefinitionSelect" />
+    <FunctionImportMapping FunctionImportName="SPFeesDelete" FunctionName="Finance.Store.SPFeesDelete" />
+    <FunctionImportMapping FunctionImportName="SPFeesDeletePermanently" FunctionName="Finance.Store.SPFeesDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPFeesDetailDeletePermanently" FunctionName="Finance.Store.SPFeesDetailDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPFeesDetailInsertUpdate" FunctionName="Finance.Store.SPFeesDetailInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPFeesDetailSelect" FunctionName="Finance.Store.SPFeesDetailSelect" />
+    <FunctionImportMapping FunctionImportName="SPFeesInsertUpdate" FunctionName="Finance.Store.SPFeesInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPFeesSelect" FunctionName="Finance.Store.SPFeesSelect" />
+    <FunctionImportMapping FunctionImportName="SPPaymentPlanDetailsDelete" FunctionName="Finance.Store.SPPaymentPlanDetailsDelete" />
+    <FunctionImportMapping FunctionImportName="SPPaymentPlanDetailsDeletePermanently" FunctionName="Finance.Store.SPPaymentPlanDetailsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPPaymentPlanDetailsInsertUpdate" FunctionName="Finance.Store.SPPaymentPlanDetailsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPPaymentPlanDetailsSelect" FunctionName="Finance.Store.SPPaymentPlanDetailsSelect" />
+    <FunctionImportMapping FunctionImportName="SPPaymentPlansDelete" FunctionName="Finance.Store.SPPaymentPlansDelete" />
+    <FunctionImportMapping FunctionImportName="SPPaymentPlansDeletePermanently" FunctionName="Finance.Store.SPPaymentPlansDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPPaymentPlansInsertUpdate" FunctionName="Finance.Store.SPPaymentPlansInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPPaymentPlansSelect" FunctionName="Finance.Store.SPPaymentPlansSelect" />
+    <FunctionImportMapping FunctionImportName="SPRefundsDelete" FunctionName="Finance.Store.SPRefundsDelete" />
+    <FunctionImportMapping FunctionImportName="SPRefundsDeletePermanently" FunctionName="Finance.Store.SPRefundsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPRefundsInsertUpdate" FunctionName="Finance.Store.SPRefundsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPRefundsSelect" FunctionName="Finance.Store.SPRefundsSelect" />
+    <FunctionImportMapping FunctionImportName="SPTransactionsDelete" FunctionName="Finance.Store.SPTransactionsDelete" />
+    <FunctionImportMapping FunctionImportName="SPTransactionsDeletePermanently" FunctionName="Finance.Store.SPTransactionsDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPTransactionsDetailDeletePermanently" FunctionName="Finance.Store.SPTransactionsDetailDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPTransactionsDetailInsertUpdate" FunctionName="Finance.Store.SPTransactionsDetailInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPTransactionsDetailSelect" FunctionName="Finance.Store.SPTransactionsDetailSelect" />
+    <FunctionImportMapping FunctionImportName="SPTransactionsInsertUpdate" FunctionName="Finance.Store.SPTransactionsInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPTransactionsSelect" FunctionName="Finance.Store.SPTransactionsSelect" />
+    <FunctionImportMapping FunctionImportName="SPVouchersDelete" FunctionName="Finance.Store.SPVouchersDelete" />
+    <FunctionImportMapping FunctionImportName="SPVouchersDeletePermanently" FunctionName="Finance.Store.SPVouchersDeletePermanently" />
+    <FunctionImportMapping FunctionImportName="SPVouchersInsertUpdate" FunctionName="Finance.Store.SPVouchersInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="SPVouchersSelect" FunctionName="Finance.Store.SPVouchersSelect" />
+    <FunctionImportMapping FunctionImportName="SPFeesDetailDelete" FunctionName="Finance.Store.SPFeesDetailDelete" />
+    <FunctionImportMapping FunctionImportName="SPTransactionsDetailDelete" FunctionName="Finance.Store.SPTransactionsDetailDelete" />
+  </EntityContainerMapping>
+</Mapping>

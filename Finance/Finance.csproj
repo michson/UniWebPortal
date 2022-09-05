@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E92F7A1A-636E-4AE0-A130-655B695903CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Finance</RootNamespace>
+    <AssemblyName>Finance</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AccountsBLL.cs" />
+    <Compile Include="BLL\AccountSubsBLL.cs" />
+    <Compile Include="BLL\AccountTypesBLL.cs" />
+    <Compile Include="BLL\FeeAllotmentsBLL.cs" />
+    <Compile Include="BLL\FeeDefinitionsBLL.cs" />
+    <Compile Include="BLL\FeesBLL.cs" />
+    <Compile Include="BLL\FeesDetailsBLL.cs" />
+    <Compile Include="BLL\PaymentPlanDetailsBLL.cs" />
+    <Compile Include="BLL\PaymentPlansBLL.cs" />
+    <Compile Include="BLL\RefundsBLL.cs" />
+    <Compile Include="BLL\TransactionsBLL.cs" />
+    <Compile Include="BLL\TransactionsDetailsBLL.cs" />
+    <Compile Include="BLL\VouchersBLL.cs" />
+    <Compile Include="DAL\AccountsDAL.cs" />
+    <Compile Include="DAL\AccountSubsDAL.cs" />
+    <Compile Include="DAL\AccountTypesDAL.cs" />
+    <Compile Include="DAL\FeeAllotmentsDAL.cs" />
+    <Compile Include="DAL\FeeDefinitionsDAL.cs" />
+    <Compile Include="DAL\FeesDAL.cs" />
+    <Compile Include="DAL\FeesDetailsDAL.cs" />
+    <Compile Include="DAL\PaymentPlanDetailsDAL.cs" />
+    <Compile Include="DAL\PaymentPlansDAL.cs" />
+    <Compile Include="DAL\RefundsDAL.cs" />
+    <Compile Include="DAL\TransactionsDAL.cs" />
+    <Compile Include="DAL\TransactionsDetailsDAL.cs" />
+    <Compile Include="DAL\VouchersDAL.cs" />
+    <Compile Include="Finance.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Finance.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Finance.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Finance.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

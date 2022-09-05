@@ -1,0 +1,8 @@
+http://en.wikipedia.org/wiki/Database_schema
+http://en.wikipedia.org/wiki/Database_design
+http://en.wikipedia.org/wiki/Three_schema_approach
+http://en.wikipedia.org/wiki/Entity-relationship_model
+http://databases.aspfaq.com/database/what-naming-convention-should-i-use-in-my-database.html
+http://en.wikipedia.org/wiki/User_interface_design
+http://www.edtech.vt.edu/edtech/id/interface/index.html
+http://www.metaltoad.com/web-interface-design

@@ -1,0 +1,12 @@
+E:\UniversityPortal\Personals\obj\Debug\ResolveAssemblyReference.cache
+E:\UniversityPortal\Personals\bin\Debug\Personals.dll.config
+E:\UniversityPortal\Personals\bin\Debug\Personals.dll
+E:\UniversityPortal\Personals\bin\Debug\Personals.pdb
+E:\UniversityPortal\Personals\obj\Debug\Personals.dll
+E:\UniversityPortal\Personals\obj\Debug\Personals.pdb
+H:\NatGualang\UniversityPortal\Personals\bin\Debug\Personals.dll.config
+H:\NatGualang\UniversityPortal\Personals\bin\Debug\Personals.dll
+H:\NatGualang\UniversityPortal\Personals\bin\Debug\Personals.pdb
+H:\NatGualang\UniversityPortal\Personals\obj\Debug\ResolveAssemblyReference.cache
+H:\NatGualang\UniversityPortal\Personals\obj\Debug\Personals.dll
+H:\NatGualang\UniversityPortal\Personals\obj\Debug\Personals.pdb

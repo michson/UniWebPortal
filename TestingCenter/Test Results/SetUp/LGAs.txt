@@ -1,0 +1,54 @@
+﻿
++++++++++++++++Tested By		:	Godwin Mathias+++++++++++++++
++++++++++++++++Reviewer			:	Godwin Mathias++++++++++++++++++++++	
++++++++++++++++Tested On		:	07/22/2011+++++++++++++++++++ 
++++++++++++++++Test Remark		:	All the Methods were successfully executed+++++++++++++++++++
+
+
+
+Assembly Name: SetUp
+Class Name: LGAsBLL
+Name Space: SetUp.BLL
+Assemblies referenced: SetUp.DAL
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Insert Method-------------------
+
+LGA item = new LGA
+{
+    Code = "OYW",
+    LgName = "Oyo West",
+    StatesCode = "OY",
+    CountriesCode = "NGN"
+};
+MessageBox.Show(LGAsBLL.Insert(item));
+Execution Status: Successful
+--------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Update Method-------------------
+
+LGA item = new LGA
+{
+    Code = "OYW",
+    LgName = "Oyo-West",
+    StatesCode = "OY",
+    CountriesCode = "NGN"
+};
+MessageBox.Show(LGAsBLL.Update(item));
+Execution Status: Successful
+------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Delete Method---------------------
+
+MessageBox.Show(LGAsBLL.DeletePermanently("OYW", "OY", "NGN"));
+Execution Status: Successful
+----------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+--------------Select Methods---------------------
+
+ctrlGrid.DataSource = LGAsBLL.Retrieve(String.Empty, "OY", "ngn");
+ctrlGrid.DataSource = LGAsBLL.Retrieve("ATB", "OY", "NGN");
+Execution Status: Successful
+

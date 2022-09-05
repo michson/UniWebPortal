@@ -1,0 +1,1124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UsersManagement" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="UsersManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="aspnet_Applications" EntityType="UsersManagement.aspnet_Applications" />
+    <EntitySet Name="aspnet_Membership" EntityType="UsersManagement.aspnet_Membership" />
+    <EntitySet Name="aspnet_Paths" EntityType="UsersManagement.aspnet_Paths" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="UsersManagement.aspnet_PersonalizationAllUsers" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="UsersManagement.aspnet_PersonalizationPerUser" />
+    <EntitySet Name="aspnet_Profile" EntityType="UsersManagement.aspnet_Profile" />
+    <EntitySet Name="aspnet_Roles" EntityType="UsersManagement.aspnet_Roles" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="UsersManagement.aspnet_SchemaVersions" />
+    <EntitySet Name="aspnet_Users" EntityType="UsersManagement.aspnet_Users" />
+    <EntitySet Name="aspnet_UsersInBranches" EntityType="UsersManagement.aspnet_UsersInBranches" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="UsersManagement.aspnet_UsersInRoles" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="UsersManagement.aspnet_WebEvent_Events" />
+    <EntitySet Name="vw_aspnet_Applications" EntityType="UsersManagement.vw_aspnet_Applications" />
+    <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="UsersManagement.vw_aspnet_MembershipUsers" />
+    <EntitySet Name="vw_aspnet_Profiles" EntityType="UsersManagement.vw_aspnet_Profiles" />
+    <EntitySet Name="vw_aspnet_Roles" EntityType="UsersManagement.vw_aspnet_Roles" />
+    <EntitySet Name="vw_aspnet_Users" EntityType="UsersManagement.vw_aspnet_Users" />
+    <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="UsersManagement.vw_aspnet_UsersInRoles" />
+    <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="UsersManagement.vw_aspnet_WebPartState_Paths" />
+    <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="UsersManagement.vw_aspnet_WebPartState_Shared" />
+    <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="UsersManagement.vw_aspnet_WebPartState_User" />
+    <AssociationSet Name="FK__aspnet_Me__Appli__395884C4" Association="UsersManagement.FK__aspnet_Me__Appli__395884C4">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__Appli__3A4CA8FD" Association="UsersManagement.FK__aspnet_Me__Appli__3A4CA8FD">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__Appli__3B40CD36" Association="UsersManagement.FK__aspnet_Me__Appli__3B40CD36">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__Appli__3C34F16F" Association="UsersManagement.FK__aspnet_Me__Appli__3C34F16F">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__40F9A68C" Association="UsersManagement.FK__aspnet_Pa__Appli__40F9A68C">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__41EDCAC5" Association="UsersManagement.FK__aspnet_Pa__Appli__41EDCAC5">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__42E1EEFE" Association="UsersManagement.FK__aspnet_Pa__Appli__42E1EEFE">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__43D61337" Association="UsersManagement.FK__aspnet_Pa__Appli__43D61337">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__540C7B00" Association="UsersManagement.FK__aspnet_Ro__Appli__540C7B00">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__55009F39" Association="UsersManagement.FK__aspnet_Ro__Appli__55009F39">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__55F4C372" Association="UsersManagement.FK__aspnet_Ro__Appli__55F4C372">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__56E8E7AB" Association="UsersManagement.FK__aspnet_Ro__Appli__56E8E7AB">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__57DD0BE4" Association="UsersManagement.FK__aspnet_Us__Appli__57DD0BE4">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__58D1301D" Association="UsersManagement.FK__aspnet_Us__Appli__58D1301D">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__59C55456" Association="UsersManagement.FK__aspnet_Us__Appli__59C55456">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__5AB9788F" Association="UsersManagement.FK__aspnet_Us__Appli__5AB9788F">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__3D2915A8" Association="UsersManagement.FK__aspnet_Me__UserI__3D2915A8">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__3E1D39E1" Association="UsersManagement.FK__aspnet_Me__UserI__3E1D39E1">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__3F115E1A" Association="UsersManagement.FK__aspnet_Me__UserI__3F115E1A">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__40058253" Association="UsersManagement.FK__aspnet_Me__UserI__40058253">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__44CA3770" Association="UsersManagement.FK__aspnet_Pe__PathI__44CA3770">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__45BE5BA9" Association="UsersManagement.FK__aspnet_Pe__PathI__45BE5BA9">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__46B27FE2" Association="UsersManagement.FK__aspnet_Pe__PathI__46B27FE2">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__47A6A41B" Association="UsersManagement.FK__aspnet_Pe__PathI__47A6A41B">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__489AC854" Association="UsersManagement.FK__aspnet_Pe__PathI__489AC854">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__498EEC8D" Association="UsersManagement.FK__aspnet_Pe__PathI__498EEC8D">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__4A8310C6" Association="UsersManagement.FK__aspnet_Pe__PathI__4A8310C6">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__4B7734FF" Association="UsersManagement.FK__aspnet_Pe__PathI__4B7734FF">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__4C6B5938" Association="UsersManagement.FK__aspnet_Pe__UserI__4C6B5938">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__4D5F7D71" Association="UsersManagement.FK__aspnet_Pe__UserI__4D5F7D71">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__4E53A1AA" Association="UsersManagement.FK__aspnet_Pe__UserI__4E53A1AA">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__4F47C5E3" Association="UsersManagement.FK__aspnet_Pe__UserI__4F47C5E3">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__503BEA1C" Association="UsersManagement.FK__aspnet_Pr__UserI__503BEA1C">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__51300E55" Association="UsersManagement.FK__aspnet_Pr__UserI__51300E55">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__5224328E" Association="UsersManagement.FK__aspnet_Pr__UserI__5224328E">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__531856C7" Association="UsersManagement.FK__aspnet_Pr__UserI__531856C7">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__2CF37936" Association="UsersManagement.FK__aspnet_Us__RoleI__2CF37936">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__50FBCF82" Association="UsersManagement.FK__aspnet_Us__RoleI__50FBCF82">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__5AEF4E10" Association="UsersManagement.FK__aspnet_Us__RoleI__5AEF4E10">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__7EF7A45C" Association="UsersManagement.FK__aspnet_Us__RoleI__7EF7A45C">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__2DE79D6F" Association="UsersManagement.FK__aspnet_Us__UserI__2DE79D6F">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__51EFF3BB" Association="UsersManagement.FK__aspnet_Us__UserI__51EFF3BB">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__5BE37249" Association="UsersManagement.FK__aspnet_Us__UserI__5BE37249">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__7FEBC895" Association="UsersManagement.FK__aspnet_Us__UserI__7FEBC895">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_aspnet_UsersInBranches_aspnet_Users" Association="UsersManagement.FK_aspnet_UsersInBranches_aspnet_Users">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInBranches" EntitySet="aspnet_UsersInBranches" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="UsersManagement.FK__aspnet_Me__Appli__395884C4" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Membership1" Relationship="UsersManagement.FK__aspnet_Me__Appli__3A4CA8FD" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Membership2" Relationship="UsersManagement.FK__aspnet_Me__Appli__3B40CD36" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Membership3" Relationship="UsersManagement.FK__aspnet_Me__Appli__3C34F16F" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="UsersManagement.FK__aspnet_Pa__Appli__40F9A68C" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths1" Relationship="UsersManagement.FK__aspnet_Pa__Appli__41EDCAC5" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths2" Relationship="UsersManagement.FK__aspnet_Pa__Appli__42E1EEFE" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths3" Relationship="UsersManagement.FK__aspnet_Pa__Appli__43D61337" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="UsersManagement.FK__aspnet_Ro__Appli__540C7B00" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Roles1" Relationship="UsersManagement.FK__aspnet_Ro__Appli__55009F39" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Roles2" Relationship="UsersManagement.FK__aspnet_Ro__Appli__55F4C372" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Roles3" Relationship="UsersManagement.FK__aspnet_Ro__Appli__56E8E7AB" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="UsersManagement.FK__aspnet_Us__Appli__57DD0BE4" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users1" Relationship="UsersManagement.FK__aspnet_Us__Appli__58D1301D" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users2" Relationship="UsersManagement.FK__aspnet_Us__Appli__59C55456" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users3" Relationship="UsersManagement.FK__aspnet_Us__Appli__5AB9788F" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="UsersManagement.FK__aspnet_Me__Appli__395884C4" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications1" Relationship="UsersManagement.FK__aspnet_Me__Appli__3A4CA8FD" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications2" Relationship="UsersManagement.FK__aspnet_Me__Appli__3B40CD36" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications3" Relationship="UsersManagement.FK__aspnet_Me__Appli__3C34F16F" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="UsersManagement.FK__aspnet_Me__UserI__3D2915A8" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users1" Relationship="UsersManagement.FK__aspnet_Me__UserI__3E1D39E1" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users2" Relationship="UsersManagement.FK__aspnet_Me__UserI__3F115E1A" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users3" Relationship="UsersManagement.FK__aspnet_Me__UserI__40058253" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="UsersManagement.FK__aspnet_Pa__Appli__40F9A68C" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications1" Relationship="UsersManagement.FK__aspnet_Pa__Appli__41EDCAC5" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications2" Relationship="UsersManagement.FK__aspnet_Pa__Appli__42E1EEFE" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications3" Relationship="UsersManagement.FK__aspnet_Pa__Appli__43D61337" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="UsersManagement.FK__aspnet_Pe__PathI__44CA3770" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers1" Relationship="UsersManagement.FK__aspnet_Pe__PathI__45BE5BA9" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers2" Relationship="UsersManagement.FK__aspnet_Pe__PathI__46B27FE2" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers3" Relationship="UsersManagement.FK__aspnet_Pe__PathI__47A6A41B" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="UsersManagement.FK__aspnet_Pe__PathI__489AC854" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser1" Relationship="UsersManagement.FK__aspnet_Pe__PathI__498EEC8D" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser2" Relationship="UsersManagement.FK__aspnet_Pe__PathI__4A8310C6" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser3" Relationship="UsersManagement.FK__aspnet_Pe__PathI__4B7734FF" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="UsersManagement.FK__aspnet_Pe__PathI__44CA3770" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths1" Relationship="UsersManagement.FK__aspnet_Pe__PathI__45BE5BA9" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths2" Relationship="UsersManagement.FK__aspnet_Pe__PathI__46B27FE2" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths3" Relationship="UsersManagement.FK__aspnet_Pe__PathI__47A6A41B" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="UsersManagement.FK__aspnet_Pe__PathI__489AC854" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths1" Relationship="UsersManagement.FK__aspnet_Pe__PathI__498EEC8D" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths2" Relationship="UsersManagement.FK__aspnet_Pe__PathI__4A8310C6" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths3" Relationship="UsersManagement.FK__aspnet_Pe__PathI__4B7734FF" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Users" Relationship="UsersManagement.FK__aspnet_Pe__UserI__4C6B5938" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users1" Relationship="UsersManagement.FK__aspnet_Pe__UserI__4D5F7D71" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users2" Relationship="UsersManagement.FK__aspnet_Pe__UserI__4E53A1AA" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users3" Relationship="UsersManagement.FK__aspnet_Pe__UserI__4F47C5E3" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PropertyValuesString" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PropertyValuesBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="aspnet_Users" Relationship="UsersManagement.FK__aspnet_Pr__UserI__503BEA1C" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users1" Relationship="UsersManagement.FK__aspnet_Pr__UserI__51300E55" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users2" Relationship="UsersManagement.FK__aspnet_Pr__UserI__5224328E" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users3" Relationship="UsersManagement.FK__aspnet_Pr__UserI__531856C7" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="UsersManagement.FK__aspnet_Ro__Appli__540C7B00" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications1" Relationship="UsersManagement.FK__aspnet_Ro__Appli__55009F39" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications2" Relationship="UsersManagement.FK__aspnet_Ro__Appli__55F4C372" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications3" Relationship="UsersManagement.FK__aspnet_Ro__Appli__56E8E7AB" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_UsersInRoles" Relationship="UsersManagement.FK__aspnet_Us__RoleI__2CF37936" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+    <NavigationProperty Name="aspnet_UsersInRoles1" Relationship="UsersManagement.FK__aspnet_Us__RoleI__50FBCF82" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+    <NavigationProperty Name="aspnet_UsersInRoles2" Relationship="UsersManagement.FK__aspnet_Us__RoleI__5AEF4E10" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+    <NavigationProperty Name="aspnet_UsersInRoles3" Relationship="UsersManagement.FK__aspnet_Us__RoleI__7EF7A45C" FromRole="aspnet_Roles" ToRole="aspnet_UsersInRoles" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="CompatibleSchemaVersion" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="UsersManagement.FK__aspnet_Us__Appli__57DD0BE4" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications1" Relationship="UsersManagement.FK__aspnet_Us__Appli__58D1301D" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications2" Relationship="UsersManagement.FK__aspnet_Us__Appli__59C55456" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications3" Relationship="UsersManagement.FK__aspnet_Us__Appli__5AB9788F" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="UsersManagement.FK__aspnet_Me__UserI__3D2915A8" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Membership1" Relationship="UsersManagement.FK__aspnet_Me__UserI__3E1D39E1" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Membership2" Relationship="UsersManagement.FK__aspnet_Me__UserI__3F115E1A" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Membership3" Relationship="UsersManagement.FK__aspnet_Me__UserI__40058253" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="UsersManagement.FK__aspnet_Pe__UserI__4C6B5938" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser1" Relationship="UsersManagement.FK__aspnet_Pe__UserI__4D5F7D71" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser2" Relationship="UsersManagement.FK__aspnet_Pe__UserI__4E53A1AA" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser3" Relationship="UsersManagement.FK__aspnet_Pe__UserI__4F47C5E3" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_Profile" Relationship="UsersManagement.FK__aspnet_Pr__UserI__503BEA1C" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="aspnet_Profile1" Relationship="UsersManagement.FK__aspnet_Pr__UserI__51300E55" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="aspnet_Profile2" Relationship="UsersManagement.FK__aspnet_Pr__UserI__5224328E" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="aspnet_Profile3" Relationship="UsersManagement.FK__aspnet_Pr__UserI__531856C7" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="aspnet_UsersInRoles" Relationship="UsersManagement.FK__aspnet_Us__UserI__2DE79D6F" FromRole="aspnet_Users" ToRole="aspnet_UsersInRoles" />
+    <NavigationProperty Name="aspnet_UsersInRoles1" Relationship="UsersManagement.FK__aspnet_Us__UserI__51EFF3BB" FromRole="aspnet_Users" ToRole="aspnet_UsersInRoles" />
+    <NavigationProperty Name="aspnet_UsersInRoles2" Relationship="UsersManagement.FK__aspnet_Us__UserI__5BE37249" FromRole="aspnet_Users" ToRole="aspnet_UsersInRoles" />
+    <NavigationProperty Name="aspnet_UsersInRoles3" Relationship="UsersManagement.FK__aspnet_Us__UserI__7FEBC895" FromRole="aspnet_Users" ToRole="aspnet_UsersInRoles" />
+    <NavigationProperty Name="aspnet_UsersInBranches" Relationship="UsersManagement.FK_aspnet_UsersInBranches_aspnet_Users" FromRole="aspnet_Users" ToRole="aspnet_UsersInBranches" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInBranches">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="SchoolCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DefaultBranch" Type="Boolean" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Users" Relationship="UsersManagement.FK_aspnet_UsersInBranches_aspnet_Users" FromRole="aspnet_UsersInBranches" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="SchoolCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ModifiedOn" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="UsersManagement.FK__aspnet_Us__RoleI__2CF37936" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Roles1" Relationship="UsersManagement.FK__aspnet_Us__RoleI__50FBCF82" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Roles2" Relationship="UsersManagement.FK__aspnet_Us__RoleI__5AEF4E10" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Roles3" Relationship="UsersManagement.FK__aspnet_Us__RoleI__7EF7A45C" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="UsersManagement.FK__aspnet_Us__UserI__2DE79D6F" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users1" Relationship="UsersManagement.FK__aspnet_Us__UserI__51EFF3BB" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users2" Relationship="UsersManagement.FK__aspnet_Us__UserI__5BE37249" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users3" Relationship="UsersManagement.FK__aspnet_Us__UserI__7FEBC895" FromRole="aspnet_UsersInRoles" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+    <Property Name="EventTimeUtc" Type="DateTime" Nullable="false" />
+    <Property Name="EventTime" Type="DateTime" Nullable="false" />
+    <Property Name="EventType" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="EventSequence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventOccurrence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventCode" Type="Int32" Nullable="false" />
+    <Property Name="EventDetailCode" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationVirtualPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MachineName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="RequestUrl" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="ExceptionType" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationName" />
+      <PropertyRef Name="LoweredApplicationName" />
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_MembershipUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="PasswordFormat" />
+      <PropertyRef Name="IsApproved" />
+      <PropertyRef Name="IsLockedOut" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="LastLoginDate" />
+      <PropertyRef Name="LastPasswordChangedDate" />
+      <PropertyRef Name="LastLockoutDate" />
+      <PropertyRef Name="FailedPasswordAttemptCount" />
+      <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="DataSize" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Roles">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="LoweredRoleName" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Users">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="LoweredUserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_Paths">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="Path" />
+      <PropertyRef Name="LoweredPath" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_Shared">
+    <Key>
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="DataSize" Type="Int32" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_User">
+    <Key>
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="DataSize" Type="Int32" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__395884C4">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="UsersManagement.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__Appli__3A4CA8FD">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="UsersManagement.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__Appli__3B40CD36">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="UsersManagement.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__Appli__3C34F16F">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="UsersManagement.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__40F9A68C">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__41EDCAC5">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__42E1EEFE">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__43D61337">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__540C7B00">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="UsersManagement.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__55009F39">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="UsersManagement.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__55F4C372">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="UsersManagement.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__56E8E7AB">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="UsersManagement.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__57DD0BE4">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__58D1301D">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__59C55456">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__5AB9788F">
+    <End Role="aspnet_Applications" Type="UsersManagement.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__3D2915A8">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="UsersManagement.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__3E1D39E1">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="UsersManagement.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__3F115E1A">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="UsersManagement.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__40058253">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="UsersManagement.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__44CA3770">
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="UsersManagement.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__45BE5BA9">
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="UsersManagement.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__46B27FE2">
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="UsersManagement.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__47A6A41B">
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="UsersManagement.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__489AC854">
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="UsersManagement.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__498EEC8D">
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="UsersManagement.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__4A8310C6">
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="UsersManagement.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__4B7734FF">
+    <End Role="aspnet_Paths" Type="UsersManagement.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="UsersManagement.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__4C6B5938">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="UsersManagement.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__4D5F7D71">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="UsersManagement.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__4E53A1AA">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="UsersManagement.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__4F47C5E3">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="UsersManagement.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__503BEA1C">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="UsersManagement.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__51300E55">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="UsersManagement.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__5224328E">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="UsersManagement.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__531856C7">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="UsersManagement.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__2CF37936">
+    <End Role="aspnet_Roles" Type="UsersManagement.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="UsersManagement.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__50FBCF82">
+    <End Role="aspnet_Roles" Type="UsersManagement.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="UsersManagement.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__5AEF4E10">
+    <End Role="aspnet_Roles" Type="UsersManagement.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="UsersManagement.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__7EF7A45C">
+    <End Role="aspnet_Roles" Type="UsersManagement.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="UsersManagement.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__2DE79D6F">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="UsersManagement.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__51EFF3BB">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="UsersManagement.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__5BE37249">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="UsersManagement.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__7FEBC895">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="UsersManagement.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_aspnet_UsersInBranches_aspnet_Users">
+    <End Role="aspnet_Users" Type="UsersManagement.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_UsersInBranches" Type="UsersManagement.aspnet_UsersInBranches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInBranches">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

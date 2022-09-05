@@ -1,0 +1,18 @@
+c:\users\administrator\documents\visual studio 2010\Projects\University\Finance\bin\Debug\Finance.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\Finance\bin\Debug\Finance.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\University\Finance\obj\Debug\ResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2010\Projects\University\Finance\obj\Debug\Finance.dll
+c:\users\administrator\documents\visual studio 2010\Projects\University\Finance\obj\Debug\Finance.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\University\Finance\bin\Debug\Finance.dll.config
+E:\UniversityPortal\Finance\bin\Debug\Finance.dll.config
+E:\UniversityPortal\Finance\bin\Debug\Finance.dll
+E:\UniversityPortal\Finance\bin\Debug\Finance.pdb
+E:\UniversityPortal\Finance\obj\Debug\ResolveAssemblyReference.cache
+E:\UniversityPortal\Finance\obj\Debug\Finance.dll
+E:\UniversityPortal\Finance\obj\Debug\Finance.pdb
+H:\NatGualang\UniversityPortal\Finance\bin\Debug\Finance.dll.config
+H:\NatGualang\UniversityPortal\Finance\bin\Debug\Finance.dll
+H:\NatGualang\UniversityPortal\Finance\bin\Debug\Finance.pdb
+H:\NatGualang\UniversityPortal\Finance\obj\Debug\ResolveAssemblyReference.cache
+H:\NatGualang\UniversityPortal\Finance\obj\Debug\Finance.dll
+H:\NatGualang\UniversityPortal\Finance\obj\Debug\Finance.pdb

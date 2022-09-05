@@ -1,0 +1,1325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Academics.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AcademicsStoreContainer">
+          <EntitySet Name="FinalSignatories" EntityType="Academics.Store.FinalSignatories" store:Type="Tables" Schema="Academics" />
+          <EntitySet Name="Registrations" EntityType="Academics.Store.Registrations" store:Type="Tables" Schema="Academics" />
+          <EntitySet Name="Semesters" EntityType="Academics.Store.Semesters" store:Type="Tables" Schema="Academics" />
+          <EntitySet Name="Sessions" EntityType="Academics.Store.Sessions" store:Type="Tables" Schema="Academics" />
+          <EntitySet Name="SigningHierarchy" EntityType="Academics.Store.SigningHierarchy" store:Type="Tables" Schema="Academics" />
+          <EntitySet Name="Submissions" EntityType="Academics.Store.Submissions" store:Type="Tables" Schema="Academics" />
+          <AssociationSet Name="FK_Semesters_Sessions" Association="Academics.Store.FK_Semesters_Sessions">
+            <End Role="Sessions" EntitySet="Sessions" />
+            <End Role="Semesters" EntitySet="Semesters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SigningHierarchy_Sessions" Association="Academics.Store.FK_SigningHierarchy_Sessions">
+            <End Role="Sessions" EntitySet="Sessions" />
+            <End Role="SigningHierarchy" EntitySet="SigningHierarchy" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FinalSignatories">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="bigint" Nullable="false" />
+          <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="FacultyCode" Type="bigint" />
+          <Property Name="DepartmentCode" Type="bigint" />
+          <Property Name="CourseCode" Type="bigint" />
+          <Property Name="ProgramCode" Type="bigint" />
+          <Property Name="LevelCode" Type="int" />
+          <Property Name="StudentCode" Type="bigint" />
+          <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionCode" Type="bigint" />
+          <Property Name="SemesterCode" Type="bigint" />
+          <Property Name="Signed" Type="bit" />
+          <Property Name="SignedOn" Type="datetime2" />
+          <Property Name="SignedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DesignationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime2" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime2" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime2" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Registrations">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StudentCode" Type="bigint" />
+          <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="FacultyCode" Type="bigint" />
+          <Property Name="DepartmentCode" Type="bigint" />
+          <Property Name="CourseCode" Type="bigint" />
+          <Property Name="ProgramCode" Type="bigint" />
+          <Property Name="LevelCode" Type="int" />
+          <Property Name="TypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionCode" Type="bigint" />
+          <Property Name="SemesterCode" Type="bigint" />
+          <Property Name="SubCourseCode" Type="bigint" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Signed" Type="bit" />
+          <Property Name="SignedOn" Type="datetime2" />
+          <Property Name="SignedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="SelfSigned" Type="bit" />
+          <Property Name="SelfSignedOn" Type="datetime2" />
+          <Property Name="CreatedOn" Type="datetime2" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime2" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime2" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="TicketCode" Type="numeric" />
+          <Property Name="PinCode" Type="numeric" />
+        </EntityType>
+        <EntityType Name="Semesters">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="bigint" Nullable="false" />
+          <Property Name="SemesterCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionCode" Type="bigint" />
+          <Property Name="StartDate" Type="datetime2" />
+          <Property Name="Endate" Type="datetime2" />
+          <Property Name="RegistrationClosingDate" Type="datetime2" />
+          <Property Name="SemesterStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="TotalDays" Type="int" />
+          <Property Name="Applicable" Type="bit" />
+          <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime2" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime2" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime2" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sessions">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="bigint" Nullable="false" />
+          <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CurrentYear" Type="int" />
+          <Property Name="NextYear" Type="int" />
+          <Property Name="SessionStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime2" />
+          <Property Name="EndDate" Type="datetime2" />
+          <Property Name="Applicable" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime2" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime2" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime2" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SigningHierarchy">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DesignationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionCode" Type="bigint" />
+          <Property Name="Applicable" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime2" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime2" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime2" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Submissions">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="bigint" Nullable="false" />
+          <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="FacultyCode" Type="bigint" />
+          <Property Name="DepartmentCode" Type="bigint" />
+          <Property Name="CourseCode" Type="bigint" />
+          <Property Name="ProgramCode" Type="bigint" />
+          <Property Name="LevelCode" Type="int" />
+          <Property Name="StudentCode" Type="bigint" />
+          <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionCode" Type="bigint" />
+          <Property Name="SemesterCode" Type="bigint" />
+          <Property Name="Submitted" Type="bit" />
+          <Property Name="ScreenCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime2" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime2" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime2" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Accepted" Type="bit" />
+          <Property Name="AcceptedOn" Type="datetime2" />
+          <Property Name="AcceptedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Semesters_Sessions">
+          <End Role="Sessions" Type="Academics.Store.Sessions" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Semesters" Type="Academics.Store.Semesters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sessions">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Semesters">
+              <PropertyRef Name="SessionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SigningHierarchy_Sessions">
+          <End Role="Sessions" Type="Academics.Store.Sessions" Multiplicity="0..1" />
+          <End Role="SigningHierarchy" Type="Academics.Store.SigningHierarchy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sessions">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="SigningHierarchy">
+              <PropertyRef Name="SessionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SPFinalSignatoriesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPFinalSignatoriesDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SPFinalSignatoriesInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+          <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+          <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+          <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+          <Parameter Name="LevelCode" Type="int" Mode="In" />
+          <Parameter Name="StudentCode" Type="bigint" Mode="In" />
+          <Parameter Name="MatricNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+          <Parameter Name="SemesterCode" Type="bigint" Mode="In" />
+          <Parameter Name="Signed" Type="bit" Mode="In" />
+          <Parameter Name="SignedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="SignedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DesignationCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPFinalSignatoriesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="SPRegistrationsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPRegistrationsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SPRegistrationsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+          <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+          <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+          <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+          <Parameter Name="LevelCode" Type="int" Mode="In" />
+          <Parameter Name="StudentCode" Type="bigint" Mode="In" />
+          <Parameter Name="MatricNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+          <Parameter Name="SemesterCode" Type="bigint" Mode="In" />
+          <Parameter Name="TypeCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="SubCourseCode" Type="bigint" Mode="In" />
+          <Parameter Name="Status" Type="nvarchar" Mode="In" />
+          <Parameter Name="TicketCode" Type="numeric" Mode="In" />
+          <Parameter Name="PinCode" Type="numeric" Mode="In" />
+          <Parameter Name="Signed" Type="bit" Mode="In" />
+          <Parameter Name="SignedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="SignedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="SelfSigned" Type="bit" Mode="In" />
+          <Parameter Name="SelfSignedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPRegistrationsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="SPSemestersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPSemestersDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SPSemestersInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+          <Parameter Name="SemesterCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="StartDate" Type="datetime2" Mode="In" />
+          <Parameter Name="Endate" Type="datetime2" Mode="In" />
+          <Parameter Name="RegistrationClosingDate" Type="datetime2" Mode="In" />
+          <Parameter Name="SemesterStatus" Type="nvarchar" Mode="In" />
+          <Parameter Name="TotalDays" Type="int" Mode="In" />
+          <Parameter Name="Applicable" Type="bit" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPSemestersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="SPSessionsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPSessionsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SPSessionsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="CurrentYear" Type="int" Mode="In" />
+          <Parameter Name="NextYear" Type="int" Mode="In" />
+          <Parameter Name="StartDate" Type="datetime2" Mode="In" />
+          <Parameter Name="EndDate" Type="datetime2" Mode="In" />
+          <Parameter Name="SessionStatus" Type="nvarchar" Mode="In" />
+          <Parameter Name="Applicable" Type="bit" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPSessionsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="SPSigningHierarchyDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPSigningHierarchyDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SPSigningHierarchyInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="DesignationCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+          <Parameter Name="Applicable" Type="bit" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPSigningHierarchySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="SPSubmissionsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPSubmissionsDeletePermanently" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SPSubmissionsInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="FacultyCode" Type="bigint" Mode="In" />
+          <Parameter Name="DepartmentCode" Type="bigint" Mode="In" />
+          <Parameter Name="CourseCode" Type="bigint" Mode="In" />
+          <Parameter Name="ProgramCode" Type="bigint" Mode="In" />
+          <Parameter Name="LevelCode" Type="int" Mode="In" />
+          <Parameter Name="StudentCode" Type="bigint" Mode="In" />
+          <Parameter Name="MatricNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="SessionCode" Type="bigint" Mode="In" />
+          <Parameter Name="SemesterCode" Type="bigint" Mode="In" />
+          <Parameter Name="Submitted" Type="bit" Mode="In" />
+          <Parameter Name="ScreenCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Accepted" Type="bit" Mode="In" />
+          <Parameter Name="AcceptedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="AcceptedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModifiedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+          <Parameter Name="DeletedOn" Type="datetime2" Mode="In" />
+          <Parameter Name="DeletedBy" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SPSubmissionsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Academics">
+          <Parameter Name="Code" Type="bigint" Mode="In" />
+          <Parameter Name="UniversityCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Deleted" Type="bit" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Academics" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AcademicsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FinalSignatories" EntityType="Academics.FinalSignatory" />
+          <EntitySet Name="Registrations" EntityType="Academics.Registration" />
+          <EntitySet Name="Semesters" EntityType="Academics.Semester" />
+          <EntitySet Name="Sessions" EntityType="Academics.Session" />
+          <EntitySet Name="SigningHierarchies" EntityType="Academics.SigningHierarchy" />
+          <EntitySet Name="Submissions" EntityType="Academics.Submission" />
+          <AssociationSet Name="FK_Semesters_Sessions" Association="Academics.FK_Semesters_Sessions">
+            <End Role="Sessions" EntitySet="Sessions" />
+            <End Role="Semesters" EntitySet="Semesters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SigningHierarchy_Sessions" Association="Academics.FK_SigningHierarchy_Sessions">
+            <End Role="Sessions" EntitySet="Sessions" />
+            <End Role="SigningHierarchy" EntitySet="SigningHierarchies" />
+          </AssociationSet>
+          <FunctionImport Name="SPFinalSignatoriesDelete" EntitySet="FinalSignatories" ReturnType="Collection(Academics.FinalSignatory)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPFinalSignatoriesDeletePermanently" EntitySet="FinalSignatories" ReturnType="Collection(Academics.FinalSignatory)">
+          <Parameter Name="Code" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SPFinalSignatoriesInsertUpdate" EntitySet="FinalSignatories" ReturnType="Collection(Academics.FinalSignatory)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+            <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+            <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+            <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+            <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+            <Parameter Name="StudentCode" Mode="In" Type="Int64" />
+            <Parameter Name="MatricNo" Mode="In" Type="String" />
+            <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+            <Parameter Name="SemesterCode" Mode="In" Type="Int64" />
+            <Parameter Name="Signed" Mode="In" Type="Boolean" />
+            <Parameter Name="SignedBy" Mode="In" Type="String" />
+            <Parameter Name="SignedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DesignationCode" Mode="In" Type="String" />
+            <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+            <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPFinalSignatoriesSelect" EntitySet="FinalSignatories" ReturnType="Collection(Academics.FinalSignatory)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="SPRegistrationsDelete" EntitySet="Registrations" ReturnType="Collection(Academics.Registration)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPRegistrationsDeletePermanently" EntitySet="Registrations" ReturnType="Collection(Academics.Registration)">
+          <Parameter Name="Code" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SPRegistrationsInsertUpdate" EntitySet="Registrations" ReturnType="Collection(Academics.Registration)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+            <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+            <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+            <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+            <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+            <Parameter Name="StudentCode" Mode="In" Type="Int64" />
+            <Parameter Name="MatricNo" Mode="In" Type="String" />
+            <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+            <Parameter Name="SemesterCode" Mode="In" Type="Int64" />
+            <Parameter Name="TypeCode" Mode="In" Type="String" />
+            <Parameter Name="SubCourseCode" Mode="In" Type="Int64" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="TicketCode" Mode="In" Type="Decimal" />
+            <Parameter Name="PinCode" Mode="In" Type="Decimal" />
+            <Parameter Name="Signed" Mode="In" Type="Boolean" />
+            <Parameter Name="SignedBy" Mode="In" Type="String" />
+            <Parameter Name="SignedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="SelfSigned" Mode="In" Type="Boolean" />
+            <Parameter Name="SelfSignedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+            <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPRegistrationsSelect" EntitySet="Registrations" ReturnType="Collection(Academics.Registration)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="SPSemestersDelete" EntitySet="Semesters" ReturnType="Collection(Academics.Semester)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPSemestersDeletePermanently" EntitySet="Semesters" ReturnType="Collection(Academics.Semester)">
+          <Parameter Name="Code" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SPSemestersInsertUpdate" EntitySet="Semesters" ReturnType="Collection(Academics.Semester)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+            <Parameter Name="SemesterCode" Mode="In" Type="String" />
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Endate" Mode="In" Type="DateTime" />
+            <Parameter Name="RegistrationClosingDate" Mode="In" Type="DateTime" />
+            <Parameter Name="SemesterStatus" Mode="In" Type="String" />
+            <Parameter Name="TotalDays" Mode="In" Type="Int32" />
+            <Parameter Name="Applicable" Mode="In" Type="Boolean" />
+            <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+            <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPSemestersSelect" EntitySet="Semesters" ReturnType="Collection(Academics.Semester)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="SPSessionsDelete" EntitySet="Sessions" ReturnType="Collection(Academics.Session)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPSessionsDeletePermanently" EntitySet="Sessions" ReturnType="Collection(Academics.Session)">
+          <Parameter Name="Code" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SPSessionsInsertUpdate" EntitySet="Sessions" ReturnType="Collection(Academics.Session)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="CurrentYear" Mode="In" Type="Int32" />
+            <Parameter Name="NextYear" Mode="In" Type="Int32" />
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+            <Parameter Name="SessionStatus" Mode="In" Type="String" />
+            <Parameter Name="Applicable" Mode="In" Type="Boolean" />
+            <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+            <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPSessionsSelect" EntitySet="Sessions" ReturnType="Collection(Academics.Session)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="SPSigningHierarchyDelete" EntitySet="SigningHierarchies" ReturnType="Collection(Academics.SigningHierarchy)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPSigningHierarchyDeletePermanently" EntitySet="SigningHierarchies" ReturnType="Collection(Academics.SigningHierarchy)">
+          <Parameter Name="Code" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SPSigningHierarchyInsertUpdate" EntitySet="SigningHierarchies" ReturnType="Collection(Academics.SigningHierarchy)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="DesignationCode" Mode="In" Type="String" />
+            <Parameter Name="OrderCode" Mode="In" Type="String" />
+            <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+            <Parameter Name="Applicable" Mode="In" Type="Boolean" />
+            <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+            <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPSigningHierarchySelect" EntitySet="SigningHierarchies" ReturnType="Collection(Academics.SigningHierarchy)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="SPSubmissionsDelete" EntitySet="Submissions" ReturnType="Collection(Academics.Submission)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPSubmissionsDeletePermanently" EntitySet="Submissions" ReturnType="Collection(Academics.Submission)">
+          <Parameter Name="Code" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SPSubmissionsInsertUpdate" EntitySet="Submissions" ReturnType="Collection(Academics.Submission)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="FacultyCode" Mode="In" Type="Int64" />
+            <Parameter Name="DepartmentCode" Mode="In" Type="Int64" />
+            <Parameter Name="CourseCode" Mode="In" Type="Int64" />
+            <Parameter Name="ProgramCode" Mode="In" Type="Int64" />
+            <Parameter Name="LevelCode" Mode="In" Type="Int32" />
+            <Parameter Name="StudentCode" Mode="In" Type="Int64" />
+            <Parameter Name="MatricNo" Mode="In" Type="String" />
+            <Parameter Name="SessionCode" Mode="In" Type="Int64" />
+            <Parameter Name="SemesterCode" Mode="In" Type="Int64" />
+            <Parameter Name="Submitted" Mode="In" Type="Boolean" />
+            <Parameter Name="ScreenCode" Mode="In" Type="String" />
+            <Parameter Name="Accepted" Mode="In" Type="Boolean" />
+            <Parameter Name="AcceptedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="AcceptedBy" Mode="In" Type="String" />
+            <Parameter Name="CreatedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+            <Parameter Name="ModifiedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+            <Parameter Name="DeletedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="DeletedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPSubmissionsSelect" EntitySet="Submissions" ReturnType="Collection(Academics.Submission)">
+            <Parameter Name="Code" Mode="In" Type="Int64" />
+            <Parameter Name="UniversityCode" Mode="In" Type="String" />
+            <Parameter Name="Deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="FinalSignatory">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int64" Nullable="false" />
+          <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FacultyCode" Type="Int64" />
+          <Property Name="DepartmentCode" Type="Int64" />
+          <Property Name="CourseCode" Type="Int64" />
+          <Property Name="ProgramCode" Type="Int64" />
+          <Property Name="LevelCode" Type="Int32" />
+          <Property Name="StudentCode" Type="Int64" />
+          <Property Name="MatricNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SessionCode" Type="Int64" />
+          <Property Name="SemesterCode" Type="Int64" />
+          <Property Name="Signed" Type="Boolean" />
+          <Property Name="SignedOn" Type="DateTime" />
+          <Property Name="SignedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DesignationCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentCode" Type="Int64" />
+          <Property Name="MatricNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FacultyCode" Type="Int64" />
+          <Property Name="DepartmentCode" Type="Int64" />
+          <Property Name="CourseCode" Type="Int64" />
+          <Property Name="ProgramCode" Type="Int64" />
+          <Property Name="LevelCode" Type="Int32" />
+          <Property Name="TypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SessionCode" Type="Int64" />
+          <Property Name="SemesterCode" Type="Int64" />
+          <Property Name="SubCourseCode" Type="Int64" />
+          <Property Name="Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Signed" Type="Boolean" />
+          <Property Name="SignedOn" Type="DateTime" />
+          <Property Name="SignedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SelfSigned" Type="Boolean" />
+          <Property Name="SelfSignedOn" Type="DateTime" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TicketCode" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PinCode" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Semester">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int64" Nullable="false" />
+          <Property Name="SemesterCode" Type="String" />
+          <Property Name="SessionCode" Type="Int64" />
+          <Property Name="StartDate" Type="DateTime" />
+          <Property Name="Endate" Type="DateTime" />
+          <Property Name="RegistrationClosingDate" Type="DateTime" />
+          <Property Name="SemesterStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TotalDays" Type="Int32" />
+          <Property Name="Applicable" Type="Boolean" />
+          <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Session" Relationship="Academics.FK_Semesters_Sessions" FromRole="Semesters" ToRole="Sessions" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int64" Nullable="false" />
+          <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CurrentYear" Type="Int32" />
+          <Property Name="NextYear" Type="Int32" />
+          <Property Name="SessionStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
+          <Property Name="Applicable" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Semesters" Relationship="Academics.FK_Semesters_Sessions" FromRole="Sessions" ToRole="Semesters" />
+          <NavigationProperty Name="SigningHierarchies" Relationship="Academics.FK_SigningHierarchy_Sessions" FromRole="Sessions" ToRole="SigningHierarchy" />
+        </EntityType>
+        <EntityType Name="SigningHierarchy">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DesignationCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OrderCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SessionCode" Type="Int64" />
+          <Property Name="Applicable" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Session" Relationship="Academics.FK_SigningHierarchy_Sessions" FromRole="SigningHierarchy" ToRole="Sessions" />
+        </EntityType>
+        <EntityType Name="Submission">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int64" Nullable="false" />
+          <Property Name="UniversityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FacultyCode" Type="Int64" />
+          <Property Name="DepartmentCode" Type="Int64" />
+          <Property Name="CourseCode" Type="Int64" />
+          <Property Name="ProgramCode" Type="Int64" />
+          <Property Name="LevelCode" Type="Int32" />
+          <Property Name="StudentCode" Type="Int64" />
+          <Property Name="MatricNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SessionCode" Type="Int64" />
+          <Property Name="SemesterCode" Type="Int64" />
+          <Property Name="Submitted" Type="Boolean" />
+          <Property Name="ScreenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Accepted" Type="Boolean" />
+          <Property Name="AcceptedOn" Type="DateTime" />
+          <Property Name="AcceptedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Semesters_Sessions">
+          <End Role="Sessions" Type="Academics.Session" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Semesters" Type="Academics.Semester" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sessions">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Semesters">
+              <PropertyRef Name="SessionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SigningHierarchy_Sessions">
+          <End Role="Sessions" Type="Academics.Session" Multiplicity="0..1" />
+          <End Role="SigningHierarchy" Type="Academics.SigningHierarchy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sessions">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="SigningHierarchy">
+              <PropertyRef Name="SessionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AcademicsStoreContainer" CdmEntityContainer="AcademicsEntities">
+          <EntitySetMapping Name="FinalSignatories"><EntityTypeMapping TypeName="Academics.FinalSignatory"><MappingFragment StoreEntitySet="FinalSignatories">
+            <ScalarProperty Name="Code" ColumnName="Code" />
+            <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+            <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+            <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+            <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+            <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+            <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+            <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+            <ScalarProperty Name="MatricNo" ColumnName="MatricNo" />
+            <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+            <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+            <ScalarProperty Name="Signed" ColumnName="Signed" />
+            <ScalarProperty Name="SignedOn" ColumnName="SignedOn" />
+            <ScalarProperty Name="SignedBy" ColumnName="SignedBy" />
+            <ScalarProperty Name="DesignationCode" ColumnName="DesignationCode" />
+            <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+            <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+            <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+            <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          </MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="Academics.FinalSignatory">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Academics.Store.SPFinalSignatoriesInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+                  <ScalarProperty Name="DesignationCode" ParameterName="DesignationCode" />
+                  <ScalarProperty Name="SignedOn" ParameterName="SignedOn" />
+                  <ScalarProperty Name="SignedBy" ParameterName="SignedBy" />
+                  <ScalarProperty Name="Signed" ParameterName="Signed" />
+                  <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+                  <ScalarProperty Name="MatricNo" ParameterName="MatricNo" />
+                  <ScalarProperty Name="StudentCode" ParameterName="StudentCode" />
+                  <ScalarProperty Name="LevelCode" ParameterName="LevelCode" />
+                  <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+                  <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+                  <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+                  <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Academics.Store.SPFinalSignatoriesInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+                  <ScalarProperty Name="DesignationCode" ParameterName="DesignationCode" Version="Current" />
+                  <ScalarProperty Name="SignedOn" ParameterName="SignedOn" Version="Current" />
+                  <ScalarProperty Name="SignedBy" ParameterName="SignedBy" Version="Current" />
+                  <ScalarProperty Name="Signed" ParameterName="Signed" Version="Current" />
+                  <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+                  <ScalarProperty Name="MatricNo" ParameterName="MatricNo" Version="Current" />
+                  <ScalarProperty Name="StudentCode" ParameterName="StudentCode" Version="Current" />
+                  <ScalarProperty Name="LevelCode" ParameterName="LevelCode" Version="Current" />
+                  <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+                  <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+                  <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+                  <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+                  <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Academics.Store.SPFinalSignatoriesDeletePermanently">
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Registrations"><EntityTypeMapping TypeName="Academics.Registration"><MappingFragment StoreEntitySet="Registrations">
+            <ScalarProperty Name="Code" ColumnName="Code" />
+            <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+            <ScalarProperty Name="MatricNo" ColumnName="MatricNo" />
+            <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+            <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+            <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+            <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+            <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+            <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+            <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+            <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+            <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+            <ScalarProperty Name="SubCourseCode" ColumnName="SubCourseCode" />
+            <ScalarProperty Name="Status" ColumnName="Status" />
+            <ScalarProperty Name="Signed" ColumnName="Signed" />
+            <ScalarProperty Name="SignedOn" ColumnName="SignedOn" />
+            <ScalarProperty Name="SignedBy" ColumnName="SignedBy" />
+            <ScalarProperty Name="SelfSigned" ColumnName="SelfSigned" />
+            <ScalarProperty Name="SelfSignedOn" ColumnName="SelfSignedOn" />
+            <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+            <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+            <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+            <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+            <ScalarProperty Name="TicketCode" ColumnName="TicketCode" />
+            <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          </MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="Academics.Registration">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Academics.Store.SPRegistrationsInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+                  <ScalarProperty Name="SelfSignedOn" ParameterName="SelfSignedOn" />
+                  <ScalarProperty Name="SelfSigned" ParameterName="SelfSigned" />
+                  <ScalarProperty Name="SignedOn" ParameterName="SignedOn" />
+                  <ScalarProperty Name="SignedBy" ParameterName="SignedBy" />
+                  <ScalarProperty Name="Signed" ParameterName="Signed" />
+                  <ScalarProperty Name="PinCode" ParameterName="PinCode" />
+                  <ScalarProperty Name="TicketCode" ParameterName="TicketCode" />
+                  <ScalarProperty Name="Status" ParameterName="Status" />
+                  <ScalarProperty Name="SubCourseCode" ParameterName="SubCourseCode" />
+                  <ScalarProperty Name="TypeCode" ParameterName="TypeCode" />
+                  <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+                  <ScalarProperty Name="MatricNo" ParameterName="MatricNo" />
+                  <ScalarProperty Name="StudentCode" ParameterName="StudentCode" />
+                  <ScalarProperty Name="LevelCode" ParameterName="LevelCode" />
+                  <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+                  <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+                  <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+                  <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Academics.Store.SPRegistrationsInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+                  <ScalarProperty Name="SelfSignedOn" ParameterName="SelfSignedOn" Version="Current" />
+                  <ScalarProperty Name="SelfSigned" ParameterName="SelfSigned" Version="Current" />
+                  <ScalarProperty Name="SignedOn" ParameterName="SignedOn" Version="Current" />
+                  <ScalarProperty Name="SignedBy" ParameterName="SignedBy" Version="Current" />
+                  <ScalarProperty Name="Signed" ParameterName="Signed" Version="Current" />
+                  <ScalarProperty Name="PinCode" ParameterName="PinCode" Version="Current" />
+                  <ScalarProperty Name="TicketCode" ParameterName="TicketCode" Version="Current" />
+                  <ScalarProperty Name="Status" ParameterName="Status" Version="Current" />
+                  <ScalarProperty Name="SubCourseCode" ParameterName="SubCourseCode" Version="Current" />
+                  <ScalarProperty Name="TypeCode" ParameterName="TypeCode" Version="Current" />
+                  <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+                  <ScalarProperty Name="MatricNo" ParameterName="MatricNo" Version="Current" />
+                  <ScalarProperty Name="StudentCode" ParameterName="StudentCode" Version="Current" />
+                  <ScalarProperty Name="LevelCode" ParameterName="LevelCode" Version="Current" />
+                  <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+                  <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+                  <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+                  <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+                  <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Academics.Store.SPRegistrationsDeletePermanently">
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Semesters"><EntityTypeMapping TypeName="Academics.Semester"><MappingFragment StoreEntitySet="Semesters">
+            <ScalarProperty Name="Code" ColumnName="Code" />
+            <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+            <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+            <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+            <ScalarProperty Name="Endate" ColumnName="Endate" />
+            <ScalarProperty Name="RegistrationClosingDate" ColumnName="RegistrationClosingDate" />
+            <ScalarProperty Name="SemesterStatus" ColumnName="SemesterStatus" />
+            <ScalarProperty Name="TotalDays" ColumnName="TotalDays" />
+            <ScalarProperty Name="Applicable" ColumnName="Applicable" />
+            <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+            <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+            <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+            <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+            <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          </MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="Academics.Semester">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Academics.Store.SPSemestersInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+                  <ScalarProperty Name="Applicable" ParameterName="Applicable" />
+                  <ScalarProperty Name="TotalDays" ParameterName="TotalDays" />
+                  <ScalarProperty Name="SemesterStatus" ParameterName="SemesterStatus" />
+                  <ScalarProperty Name="RegistrationClosingDate" ParameterName="RegistrationClosingDate" />
+                  <ScalarProperty Name="Endate" ParameterName="Endate" />
+                  <ScalarProperty Name="StartDate" ParameterName="StartDate" />
+                  <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Academics.Store.SPSemestersInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+                  <ScalarProperty Name="Applicable" ParameterName="Applicable" Version="Current" />
+                  <ScalarProperty Name="TotalDays" ParameterName="TotalDays" Version="Current" />
+                  <ScalarProperty Name="SemesterStatus" ParameterName="SemesterStatus" Version="Current" />
+                  <ScalarProperty Name="RegistrationClosingDate" ParameterName="RegistrationClosingDate" Version="Current" />
+                  <ScalarProperty Name="Endate" ParameterName="Endate" Version="Current" />
+                  <ScalarProperty Name="StartDate" ParameterName="StartDate" Version="Current" />
+                  <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+                  <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Academics.Store.SPSemestersDeletePermanently">
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Sessions"><EntityTypeMapping TypeName="Academics.Session"><MappingFragment StoreEntitySet="Sessions">
+            <ScalarProperty Name="Code" ColumnName="Code" />
+            <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+            <ScalarProperty Name="CurrentYear" ColumnName="CurrentYear" />
+            <ScalarProperty Name="NextYear" ColumnName="NextYear" />
+            <ScalarProperty Name="SessionStatus" ColumnName="SessionStatus" />
+            <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+            <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+            <ScalarProperty Name="Applicable" ColumnName="Applicable" />
+            <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+            <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+            <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+            <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          </MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="Academics.Session">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Academics.Store.SPSessionsInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+                  <ScalarProperty Name="Applicable" ParameterName="Applicable" />
+                  <ScalarProperty Name="SessionStatus" ParameterName="SessionStatus" />
+                  <ScalarProperty Name="EndDate" ParameterName="EndDate" />
+                  <ScalarProperty Name="StartDate" ParameterName="StartDate" />
+                  <ScalarProperty Name="NextYear" ParameterName="NextYear" />
+                  <ScalarProperty Name="CurrentYear" ParameterName="CurrentYear" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Academics.Store.SPSessionsInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+                  <ScalarProperty Name="Applicable" ParameterName="Applicable" Version="Current" />
+                  <ScalarProperty Name="SessionStatus" ParameterName="SessionStatus" Version="Current" />
+                  <ScalarProperty Name="EndDate" ParameterName="EndDate" Version="Current" />
+                  <ScalarProperty Name="StartDate" ParameterName="StartDate" Version="Current" />
+                  <ScalarProperty Name="NextYear" ParameterName="NextYear" Version="Current" />
+                  <ScalarProperty Name="CurrentYear" ParameterName="CurrentYear" Version="Current" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+                  <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Academics.Store.SPSessionsDeletePermanently">
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SigningHierarchies"><EntityTypeMapping TypeName="Academics.SigningHierarchy"><MappingFragment StoreEntitySet="SigningHierarchy">
+            <ScalarProperty Name="Code" ColumnName="Code" />
+            <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+            <ScalarProperty Name="DesignationCode" ColumnName="DesignationCode" />
+            <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+            <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+            <ScalarProperty Name="Applicable" ColumnName="Applicable" />
+            <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+            <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+            <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+            <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          </MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="Academics.SigningHierarchy">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Academics.Store.SPSigningHierarchyInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+                  <ScalarProperty Name="Applicable" ParameterName="Applicable" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+                  <ScalarProperty Name="OrderCode" ParameterName="OrderCode" />
+                  <ScalarProperty Name="DesignationCode" ParameterName="DesignationCode" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Academics.Store.SPSigningHierarchyInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+                  <ScalarProperty Name="Applicable" ParameterName="Applicable" Version="Current" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+                  <ScalarProperty Name="OrderCode" ParameterName="OrderCode" Version="Current" />
+                  <ScalarProperty Name="DesignationCode" ParameterName="DesignationCode" Version="Current" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+                  <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Academics.Store.SPSigningHierarchyDeletePermanently">
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Submissions"><EntityTypeMapping TypeName="Academics.Submission"><MappingFragment StoreEntitySet="Submissions">
+            <ScalarProperty Name="Code" ColumnName="Code" />
+            <ScalarProperty Name="UniversityCode" ColumnName="UniversityCode" />
+            <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+            <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+            <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+            <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+            <ScalarProperty Name="LevelCode" ColumnName="LevelCode" />
+            <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+            <ScalarProperty Name="MatricNo" ColumnName="MatricNo" />
+            <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+            <ScalarProperty Name="SemesterCode" ColumnName="SemesterCode" />
+            <ScalarProperty Name="Submitted" ColumnName="Submitted" />
+            <ScalarProperty Name="ScreenCode" ColumnName="ScreenCode" />
+            <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+            <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+            <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+            <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+            <ScalarProperty Name="Accepted" ColumnName="Accepted" />
+            <ScalarProperty Name="AcceptedOn" ColumnName="AcceptedOn" />
+            <ScalarProperty Name="AcceptedBy" ColumnName="AcceptedBy" />
+          </MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="Academics.Submission">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Academics.Store.SPSubmissionsInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" />
+                  <ScalarProperty Name="AcceptedBy" ParameterName="AcceptedBy" />
+                  <ScalarProperty Name="AcceptedOn" ParameterName="AcceptedOn" />
+                  <ScalarProperty Name="Accepted" ParameterName="Accepted" />
+                  <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" />
+                  <ScalarProperty Name="Submitted" ParameterName="Submitted" />
+                  <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" />
+                  <ScalarProperty Name="MatricNo" ParameterName="MatricNo" />
+                  <ScalarProperty Name="StudentCode" ParameterName="StudentCode" />
+                  <ScalarProperty Name="LevelCode" ParameterName="LevelCode" />
+                  <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" />
+                  <ScalarProperty Name="CourseCode" ParameterName="CourseCode" />
+                  <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" />
+                  <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" />
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Academics.Store.SPSubmissionsInsertUpdate">
+                  <ScalarProperty Name="DeletedBy" ParameterName="DeletedBy" Version="Current" />
+                  <ScalarProperty Name="DeletedOn" ParameterName="DeletedOn" Version="Current" />
+                  <ScalarProperty Name="Deleted" ParameterName="Deleted" Version="Current" />
+                  <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+                  <ScalarProperty Name="ModifiedOn" ParameterName="ModifiedOn" Version="Current" />
+                  <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" Version="Current" />
+                  <ScalarProperty Name="CreatedOn" ParameterName="CreatedOn" Version="Current" />
+                  <ScalarProperty Name="AcceptedBy" ParameterName="AcceptedBy" Version="Current" />
+                  <ScalarProperty Name="AcceptedOn" ParameterName="AcceptedOn" Version="Current" />
+                  <ScalarProperty Name="Accepted" ParameterName="Accepted" Version="Current" />
+                  <ScalarProperty Name="ScreenCode" ParameterName="ScreenCode" Version="Current" />
+                  <ScalarProperty Name="Submitted" ParameterName="Submitted" Version="Current" />
+                  <ScalarProperty Name="SemesterCode" ParameterName="SemesterCode" Version="Current" />
+                  <ScalarProperty Name="SessionCode" ParameterName="SessionCode" Version="Current" />
+                  <ScalarProperty Name="MatricNo" ParameterName="MatricNo" Version="Current" />
+                  <ScalarProperty Name="StudentCode" ParameterName="StudentCode" Version="Current" />
+                  <ScalarProperty Name="LevelCode" ParameterName="LevelCode" Version="Current" />
+                  <ScalarProperty Name="ProgramCode" ParameterName="ProgramCode" Version="Current" />
+                  <ScalarProperty Name="CourseCode" ParameterName="CourseCode" Version="Current" />
+                  <ScalarProperty Name="DepartmentCode" ParameterName="DepartmentCode" Version="Current" />
+                  <ScalarProperty Name="FacultyCode" ParameterName="FacultyCode" Version="Current" />
+                  <ScalarProperty Name="UniversityCode" ParameterName="UniversityCode" Version="Current" />
+                  <ScalarProperty Name="Code" ParameterName="Code" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Academics.Store.SPSubmissionsDeletePermanently">
+                  <ScalarProperty Name="Code" ParameterName="Code" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SPFinalSignatoriesDelete" FunctionName="Academics.Store.SPFinalSignatoriesDelete" />
+          <FunctionImportMapping FunctionImportName="SPFinalSignatoriesDeletePermanently" FunctionName="Academics.Store.SPFinalSignatoriesDeletePermanently" />
+          <FunctionImportMapping FunctionImportName="SPFinalSignatoriesInsertUpdate" FunctionName="Academics.Store.SPFinalSignatoriesInsertUpdate" />
+          <FunctionImportMapping FunctionImportName="SPFinalSignatoriesSelect" FunctionName="Academics.Store.SPFinalSignatoriesSelect" />
+          <FunctionImportMapping FunctionImportName="SPRegistrationsDelete" FunctionName="Academics.Store.SPRegistrationsDelete" />
+          <FunctionImportMapping FunctionImportName="SPRegistrationsDeletePermanently" FunctionName="Academics.Store.SPRegistrationsDeletePermanently" />
+          <FunctionImportMapping FunctionImportName="SPRegistrationsInsertUpdate" FunctionName="Academics.Store.SPRegistrationsInsertUpdate" />
+          <FunctionImportMapping FunctionImportName="SPRegistrationsSelect" FunctionName="Academics.Store.SPRegistrationsSelect" />
+          <FunctionImportMapping FunctionImportName="SPSemestersDelete" FunctionName="Academics.Store.SPSemestersDelete" />
+          <FunctionImportMapping FunctionImportName="SPSemestersDeletePermanently" FunctionName="Academics.Store.SPSemestersDeletePermanently" />
+          <FunctionImportMapping FunctionImportName="SPSemestersInsertUpdate" FunctionName="Academics.Store.SPSemestersInsertUpdate" />
+          <FunctionImportMapping FunctionImportName="SPSemestersSelect" FunctionName="Academics.Store.SPSemestersSelect" />
+          <FunctionImportMapping FunctionImportName="SPSessionsDelete" FunctionName="Academics.Store.SPSessionsDelete" />
+          <FunctionImportMapping FunctionImportName="SPSessionsDeletePermanently" FunctionName="Academics.Store.SPSessionsDeletePermanently" />
+          <FunctionImportMapping FunctionImportName="SPSessionsInsertUpdate" FunctionName="Academics.Store.SPSessionsInsertUpdate" />
+          <FunctionImportMapping FunctionImportName="SPSessionsSelect" FunctionName="Academics.Store.SPSessionsSelect" />
+          <FunctionImportMapping FunctionImportName="SPSigningHierarchyDelete" FunctionName="Academics.Store.SPSigningHierarchyDelete" />
+          <FunctionImportMapping FunctionImportName="SPSigningHierarchyDeletePermanently" FunctionName="Academics.Store.SPSigningHierarchyDeletePermanently" />
+          <FunctionImportMapping FunctionImportName="SPSigningHierarchyInsertUpdate" FunctionName="Academics.Store.SPSigningHierarchyInsertUpdate" />
+          <FunctionImportMapping FunctionImportName="SPSigningHierarchySelect" FunctionName="Academics.Store.SPSigningHierarchySelect" />
+          <FunctionImportMapping FunctionImportName="SPSubmissionsDelete" FunctionName="Academics.Store.SPSubmissionsDelete" />
+          <FunctionImportMapping FunctionImportName="SPSubmissionsDeletePermanently" FunctionName="Academics.Store.SPSubmissionsDeletePermanently" />
+          <FunctionImportMapping FunctionImportName="SPSubmissionsInsertUpdate" FunctionName="Academics.Store.SPSubmissionsInsertUpdate" />
+          <FunctionImportMapping FunctionImportName="SPSubmissionsSelect" FunctionName="Academics.Store.SPSubmissionsSelect" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="Academics" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Academics" ZoomLevel="48">
+        <EntityTypeShape EntityType="Academics.FinalSignatory" Width="1.5" PointX="5.75" PointY="0.75" Height="5.2494108072916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Academics.Registration" Width="1.5" PointX="5.75" PointY="6.75" Height="6.4032194010416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Academics.Semester" Width="1.5" PointX="3" PointY="1.25" Height="4.480205078125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Academics.Session" Width="1.5" PointX="0.75" PointY="3.625" Height="4.2879036458333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Academics.SigningHierarchy" Width="1.5" PointX="3" PointY="6.5" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Academics.Submission" Width="1.5" PointX="7.75" PointY="0.625" Height="5.4417122395833326" IsExpanded="true" />
+        <AssociationConnector Association="Academics.FK_Semesters_Sessions" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.6776025390625" />
+          <ConnectorPoint PointX="3" PointY="4.6776025390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Academics.FK_SigningHierarchy_Sessions" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.2064518229166667" />
+          <ConnectorPoint PointX="3" PointY="7.2064518229166667" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
