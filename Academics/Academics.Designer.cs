@@ -16,7 +16,6 @@ using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
-
 [assembly: EdmRelationshipAttribute("Academics", "FK_Semesters_Sessions", "Sessions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Academics.Session), "Semesters", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Academics.Semester), true)]
 [assembly: EdmRelationshipAttribute("Academics", "FK_SigningHierarchy_Sessions", "Sessions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Academics.Session), "SigningHierarchy", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Academics.SigningHierarchy), true)]
 
