@@ -6,6 +6,7 @@ using System.ComponentModel;
 
 namespace Academics
 {
+
     [DataObject]
     public static class Messages
     {
