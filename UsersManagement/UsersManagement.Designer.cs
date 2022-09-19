@@ -76,7 +76,6 @@ namespace UsersManagement
     public partial class UsersManagementEntities : ObjectContext
     {
         #region Constructors
-    
         /// <summary>
         /// Initializes a new UsersManagementEntities object using the connection string found in the 'UsersManagementEntities' section of the application configuration file.
         /// </summary>
