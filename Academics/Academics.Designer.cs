@@ -20,7 +20,6 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("Academics", "FK_SigningHierarchy_Sessions", "Sessions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Academics.Session), "SigningHierarchy", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Academics.SigningHierarchy), true)]
 
 #endregion
-
 namespace Academics
 {
     #region Contexts
