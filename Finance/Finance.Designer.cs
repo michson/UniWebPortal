@@ -26,7 +26,6 @@ using System.Runtime.Serialization;
 namespace Finance
 {
     #region Contexts
-    
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
