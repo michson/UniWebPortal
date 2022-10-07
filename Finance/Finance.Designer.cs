@@ -70,6 +70,7 @@ namespace Finance
     
         #region ObjectSet Properties
     
+            
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
