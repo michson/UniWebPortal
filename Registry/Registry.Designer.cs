@@ -18,7 +18,6 @@ using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 
-
 namespace Registry
 {
     #region Contexts
