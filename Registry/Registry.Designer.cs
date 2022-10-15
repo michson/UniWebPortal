@@ -56,6 +56,7 @@ namespace Registry
             OnContextCreated();
         }
     
+
         #endregion
     
         #region Partial Methods
