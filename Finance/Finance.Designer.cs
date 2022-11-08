@@ -23,6 +23,7 @@ using System.Runtime.Serialization;
 
 #endregion
 
+
 namespace Finance
 {
     #region Contexts
