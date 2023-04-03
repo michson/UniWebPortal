@@ -42,6 +42,7 @@ namespace Finance
             OnContextCreated();
         }
     
+        
         /// <summary>
         /// Initialize a new FinanceEntities object.
         /// </summary>
